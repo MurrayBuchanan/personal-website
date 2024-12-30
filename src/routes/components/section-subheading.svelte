@@ -4,6 +4,7 @@
   export let desc = '';
   export let subDesc = '';
   export let link = '';
+  export const favourite = false;
 </script>
 
 <main class="px-4 py-3 rounded-3xl hover:bg-secondary-light hover:dark:bg-primary-dark hover:bg-gray-200 transition-transform transform hover:-translate-y-1 cursor-pointer animate">
