@@ -77,7 +77,11 @@
     <Container>
         <SectionHeading
             title="Murray Buchanan"
-            desc="Here are some of the projects I have worked on over the years.">
+            desc="Here are some of the projects I have worked on over the years."
+            links={[
+                { url: "", title: "About" },
+                { url: "", title: "Gallery" }
+            ]}>
         </SectionHeading>
 
         <!-- All Animate should be reanimated when button is clicked -->
