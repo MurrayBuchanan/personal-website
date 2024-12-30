@@ -36,10 +36,6 @@
             desc="Using head and phone position, we can transform these image matrices - better (more) training data."
         />
 
-    </Container>
-
-    <!-- Footer Component -->
-    <Container>
         <Footer />
     </Container>
 

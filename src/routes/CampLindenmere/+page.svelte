@@ -64,15 +64,7 @@
         />
     </div>
     
-        
-
-    
-    
-    </Container>
-
-    <!-- Footer Component -->
-    <Container custom="mt-24">
-        <Footer />
+    <Footer />
     </Container>
 
 </body>

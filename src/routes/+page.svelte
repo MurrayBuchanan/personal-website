@@ -26,7 +26,7 @@
         {
             title: "Google Developer Group",
             subDesc: "2023 · Community, Google, Teaching, Competing",
-            image: "static/assets/experience-icons/google.png",
+            image: "../static/assets/experience-icons/google.png",
             link: "/GoogleDeveloperGroup",
         },
         {
@@ -107,9 +107,7 @@
             </button>
         </div>
         
-    </Container>
-
-    <Container>
+ 
         <Footer />
     </Container>
 </body>
