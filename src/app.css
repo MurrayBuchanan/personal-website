@@ -18,4 +18,23 @@
         font-optical-sizing: auto;
         font-variation-settings: "wdth" 100;
     }
+
+    @keyframes slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate {
+        opacity: 0;
+    }
+
+    .animated {
+        opacity: 0;
+        animation: slide-up 0.5s ease-in-out forwards;
+    }
 }

@@ -1,8 +1,10 @@
+
 <script lang="ts">
-    import Title from './components/title.svelte';
     import Footer from './components/footer.svelte';
+    import { useAnimate } from './animation/animation';
     import Container from './components/container.svelte';
-    import SectionTitle from './components/section-subTitle.svelte';
+    import SectionSubtitle from './components/section-subtitle.svelte';
+    import SectionHeading from './components/section-heading.svelte';
 
         // State to track visibility for each timeline content
         let timelines = [
@@ -32,7 +34,7 @@
         },
         {
             title: "University of Strathclyde",
-            // desc: "MEng, Computer Science",
+            desc: "MEng, Computer Science",
             subDesc: "2022 · Education, Computer Science, GDG, H&S",
             image: "static/assets/experience-icons/strathclyde.png",
             link: "/UniversityOfStrathclyde",
@@ -58,25 +60,38 @@
 
 </script>
 
+<style>
+    .animate {
+        opacity: 0;
+    }
+</style>
+
 <body class="mx10 bg-primary-light dark:bg-secondary-dark">
 
+    <div use:useAnimate={0.1}>
     <!-- Main Title Component -->
-    <Title />
+    <!-- <Title /> -->
+
+    <Container>
+    <SectionHeading
+        title="Murray Buchanan"
+        desc="Here are some of the projects I have worked on over the years.">
+    </SectionHeading>
+
 
     <!-- Project Titles -->
-    <Container>
-        <h2 class="text-3xl py-2 font-semibold text-gray-900 dark:text-white">Experience</h2>
+ 
+        <!-- <h2 class="animate text-3xl font-semibold text-gray-900 dark:text-white">Experience</h2> -->
     
-        <span>
-            {#each timelines as { title, desc, subDesc, image, link}}
-                <SectionTitle {title} {desc} {subDesc} {image} {link} />
-            {/each}
-        </span>
+        {#each timelines as { title, desc, subDesc, image, link}}
+            <SectionSubtitle {title} {desc} {subDesc} {image} {link} />
+        {/each}
+
     </Container>
 
     <!-- Footer Component -->
      <Container>
         <Footer />
     </Container>
-
+</div>
 </body>

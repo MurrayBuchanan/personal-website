@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { useAnimate } from '../animation/animation';
     import Container from '../components/container.svelte';
     import SectionText from '../components/section-text.svelte';
     import SectionMedia from '../components/section-media.svelte';
@@ -7,8 +8,8 @@
     import SectionHeading from '../components/section-heading.svelte';
 </script>
 
-<body class="bg-primary-light dark:bg-secondary-dark">
-    <Container custom="mt-48">
+<body class="bg-primary-light dark:bg-secondary-dark" use:useAnimate={0.1}>
+    <Container>
         <SectionHeading
         title="Camp Lindenmere"
         desc="2024 · Academia, Teaching, Java, React, UI, UX"

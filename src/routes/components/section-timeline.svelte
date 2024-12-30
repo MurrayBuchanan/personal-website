@@ -5,6 +5,7 @@
    export let events = [];
 </script>
 
+<main class="animate">
 {#if events.length === 1}
   <!-- Single Event Display -->
   <div class="p-4 bg-white rounded-lg dark:bg-gray-700">
@@ -91,3 +92,4 @@
     {/each}
   </ol>
 {/if}
+</main>

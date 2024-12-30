@@ -2,7 +2,7 @@
     import Toggle from './footer-theme.svelte';
 </script>
 
-<main class="bottom-0 pt-10 w-full">    
+<main class="bottom-0 pt-10 mt-24 w-full animate">    
     <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400 uppercase">Reach me</p>
 
     <span class="inline-flex justify-between w-full">
