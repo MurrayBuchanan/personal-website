@@ -9,7 +9,7 @@
 
 <main class="pt-20 pb-6">
     {#if image}
-        <img src="{image}" alt="Preview of {title}" class="w-full h-auto mr-4 my-2 image" />
+        <img src="{image}" alt="Preview of {title}" class="w-full rounded-3xl h-auto mr-4 my-2 image" />
     {/if}
     <TextSection
         {title} {desc} {custom}

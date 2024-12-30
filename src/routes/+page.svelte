@@ -8,44 +8,49 @@
         let timelines = [
         {
             title: "JPMorgan Chase & Co",
-            subDesc: "UI, UX, Data Processing, Charity",
+            subDesc: "Now · Work, Analyst, Python",
             image: "static/assets/experience-icons/jpmc.png",
             link: "/JPMorganChaseCo",
         },
         {
             title: "Camp Lindenmere",
-            subDesc: "Academia, Teaching, CS",
+            subDesc: "2024 · Academia, Teaching, Java, React, UI, UX",
             image: "static/assets/experience-icons/lindenmere.png",
             link: "/CampLindenmere",
         },
         {
-            title: "Direct Distribution",
-            subDesc: "Marketing, Sales",
-            image: "static/assets/experience-icons/distribution.png",
-            link: "/DirectDistribution",
-        },
-        {
             title: "Google Developer Group",
-            subDesc: "Community, GDG, Google",
+            subDesc: "2023 · Community, Google, Teaching, Competing",
             image: "static/assets/experience-icons/google.png",
             link: "/GoogleDeveloperGroup",
         },
         {
+            title: "Direct Distribution",
+            subDesc: "2022 · Marketing, Distribution, Logistics, IT",
+            image: "static/assets/experience-icons/distribution.png",
+            link: "/DirectDistribution",
+        },
+        {
             title: "University of Strathclyde",
-            desc: "MEng, Computer Science",
-            subDesc: "Education, Computer Science, GDG, H&S",
+            // desc: "MEng, Computer Science",
+            subDesc: "2022 · Education, Computer Science, GDG, H&S",
             image: "static/assets/experience-icons/strathclyde.png",
             link: "/UniversityOfStrathclyde",
         },
         {
             title: "Chibb",
-            subDesc: "2024 · Signal processing, ML, UX",
+            subDesc: "2020 · Signal processing, ML, UX",
             image: "static/assets/banners/chibb.png",
             link: "/Chibb",
         },
         {
-            title: "Jordanhill School",
-            subDesc: "Education, CS, SCQF, Charity",
+            title: "Minecraft",
+            subDesc: "2015 · Leadership, Java",
+            image: "static/assets/experience-icons/jordanhill.png",
+            link: "/JordanhillSchool",
+        },
+        {
+            title: "Unlisted Projects",
             image: "static/assets/experience-icons/jordanhill.png",
             link: "/JordanhillSchool",
         }
