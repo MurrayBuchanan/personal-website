@@ -1,8 +1,10 @@
-<script> 
+<script>
     export let title = "";
     export let desc = "";
+    export let newPage = false;
+    
     /**
-     * @type {{url: string, title: string}[]}
+     * @type {{url: string, title: string, newPage?: boolean}[]}
      */
     export let links = [];
 </script>
@@ -21,7 +23,7 @@
   <!-- each link -->
   <div class="flex pb-6">
       {#each links as link}
-          <a href={link.url} class="transition-transform transform hover:-translate-y-1 cursor-pointer text-gray-900 text-base underline underline-offset-2 hover:text-blue-700 focus:outline-none focus:text-blue-700 dark:text-gray-200 dark:hover:text-white mr-4" target="_blank">{link.title}</a>
+          <a href={link.url} class="transition-transform transform hover:-translate-y-1 cursor-pointer text-gray-900 text-base underline underline-offset-2 hover:text-blue-700 focus:outline-none focus:text-blue-700 dark:text-gray-200 dark:hover:text-white mr-4" target={newPage ? "_blank" : "_self"}>{link.title}</a>
       {/each}
   </div>
 </main>

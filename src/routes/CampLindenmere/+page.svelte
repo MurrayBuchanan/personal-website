@@ -39,7 +39,7 @@
 
 
         <SectionMedia
-            image="static/assets/banners/CampLindenmere.jpg"
+            image="/assets/banners/CampLindenmere.jpg"
             title="Updated"
             desc="Without depth sensor, we want to use eye saccades as a form of identification."
         />

@@ -12,47 +12,47 @@
         {
             title: "JPMorgan Chase & Co",
             subDesc: "Now · Work, Analyst, Python",
-            image: "static/assets/experience-icons/jpmc.png",
+            image: "assets/experience-icons/jpmc.png",
             link: "/JPMorganChaseCo",
             favourite: true,
         },
         {
             title: "Camp Lindenmere",
             subDesc: "2024 · Academia, Teaching, Java, React, UI, UX",
-            image: "static/assets/experience-icons/lindenmere.png",
+            image: "assets/experience-icons/lindenmere.png",
             link: "/CampLindenmere",
             favourite: true,
         },
         {
             title: "Google Developer Group",
             subDesc: "2023 · Community, Google, Teaching, Competing",
-            image: "../static/assets/experience-icons/google.png",
+            image: "../assets/experience-icons/google.png",
             link: "/GoogleDeveloperGroup",
         },
         {
             title: "Direct Distribution",
             subDesc: "2022 · Marketing, Distribution, Logistics, IT",
-            image: "static/assets/experience-icons/distribution.png",
+            image: "assets/experience-icons/distribution.png",
             link: "/DirectDistribution",
         },
         {
             title: "University of Strathclyde",
             desc: "MEng, Computer Science",
             subDesc: "2022 · Education, Computer Science, GDG, H&S",
-            image: "static/assets/experience-icons/strathclyde.png",
+            image: "assets/experience-icons/strathclyde.png",
             link: "/UniversityOfStrathclyde",
         },
         {
             title: "Chibb",
             subDesc: "2020 · Signal processing, ML, UX",
-            image: "static/assets/banners/chibb.png",
+            image: "assets/banners/chibb.png",
             link: "/Chibb",
             favourite: true,
         },
         {
             title: "Minecraft",
             subDesc: "2015 · Leadership, Java",
-            image: "static/assets/experience-icons/jordanhill.png",
+            image: "assets/experience-icons/jordanhill.png",
             link: "/JordanhillSchool",
             favourite: true,
         }
@@ -79,8 +79,8 @@
             title="Murray Buchanan"
             desc="Here are some of the projects I have worked on over the years."
             links={[
-                { url: "", title: "About" },
-                { url: "", title: "Gallery" }
+                { url: "/About", newPage: false, title: "About" },
+                { url: "/Gallery", newPage: false, title: "Gallery" }
             ]}>
         </SectionHeading>
 

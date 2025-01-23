@@ -13,6 +13,7 @@
         <SectionHeading
         title="JP Morgan Chase & Co"
         desc="Now · Work, Analyst, Python"
+        newPage={true}
         links={[
             { url: "https://www.jpmorganchase.com/", title: "Visit Website" }
         ]}
@@ -21,7 +22,7 @@
         <SectionPara paragraphs={["Following my second year, I was invited to be a Summer Analyst for the 2025 Cohort. "]}/>
 
         <SectionMedia
-            image="static/assets/banners/JPMorganChase.jpg"
+            image="/assets/banners/JPMorganChase.jpg"
             title="Updated"
             desc="Without depth sensor, we want to use eye saccades as a form of identification."
         />
