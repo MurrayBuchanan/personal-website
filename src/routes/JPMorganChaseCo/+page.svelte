@@ -19,12 +19,13 @@
         ]}
         />
 
-        <SectionPara paragraphs={["Following my second year, I was invited to be a Summer Analyst for the 2025 Cohort. "]}/>
+
+        <SectionPara paragraphs={["I was part of the 2024 Spring into Tech class, where we were guests at the brand-new Tech Center, which is where I met some incredible people and got a real insight into J.P. Morgan by listening to some amazing speakers and attending various workshops and presentations. "]}/>
 
         <SectionMedia
             image="/assets/banners/JPMorganChase.jpg"
-            title="Updated"
-            desc="Without depth sensor, we want to use eye saccades as a form of identification."
+            title="First Day"
+            desc="Photo of 2024 Spring into Tech Cohort."
         />
 
         <SectionText
@@ -33,7 +34,12 @@
         />
 
         <SectionText 
-            title="Internship Program"
+            title="Code for Good"
+            desc="We developed an interactive learning platform for a charity named Deafblind Scotland. The purpose was to create an easy way to learn the Deafblind Manual. We recieved the 1st place prize in this challenge for our efforts."
+        />
+
+        <SectionText 
+            title="Summer Analyst"
             desc="Using head and phone position, we can transform these image matrices - better (more) training data."
         />
 

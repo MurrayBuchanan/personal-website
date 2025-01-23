@@ -5,6 +5,7 @@
     import SectionHeading from './components/section-heading.svelte';
     import SectionSubheading from './components/section-subheading.svelte';
     import Footer from './components/footer.svelte';
+    import { slide, fade } from 'svelte/transition';
 
     let showAll = false;
 
@@ -58,20 +59,26 @@
         }
     ];
 
+    // Reactive statement for favorites
     $: favourites = projects.filter(project => project.favourite);
 
     function toggleShowAll() {
-    showAll = !showAll;
-    // Reapply animation when showAll changes
-    setTimeout(() => {
-        const elements = document.body.querySelectorAll('.mx10');
-        elements.forEach(element => {
-            useAnimate(element as HTMLElement, 0.1);
-        });
-    }, 0); // Delay to ensure DOM updates
-}
-
+        showAll = !showAll;
+        setTimeout(() => {
+            const elements = document.body.querySelectorAll('.project');
+            elements.forEach(element => {
+                useAnimate(element as HTMLElement, 0.1);
+            });
+        }, 0); // Delay to ensure DOM updates
+    }
 </script>
+
+<style>
+    .project {
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+</style>
 
 <body class="mx10 bg-primary-light dark:bg-secondary-dark" use:useAnimate={0.1}>
     <Container>
@@ -84,34 +91,19 @@
             ]}>
         </SectionHeading>
 
-        <!-- All Animate should be reanimated when button is clicked -->
         <div class="body">
-            {#each (showAll ? projects : favourites) as { title, subDesc, image, link }}
-                <SectionSubheading {title} {subDesc} {image} {link} />
+            <!-- Animate items and include transition -->
+            {#each (showAll ? projects : favourites) as { title, subDesc, image, link } (title)}
+                <div class="project" transition:slide|fade>
+                    <SectionSubheading {title} {subDesc} {image} {link} />
+                </div>
             {/each}
     
-
-            <button on:click={toggleShowAll} class="animate inline-flex items-center px-4 py-2 mt-4 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 mr-4" target="_blank">
-            {showAll ? 'Show Less' : 'Show More'}
-            <svg
-            class="w-3 h-3 ms-2 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-            >
-                <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-            </svg>
+            <button on:click={toggleShowAll} class="animate inline-flex items-center px-4 py-2 mt-4 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 mr-4">
+                {showAll ? 'Show Less' : 'Show More'}
             </button>
         </div>
         
- 
         <Footer />
     </Container>
 </body>

@@ -48,7 +48,7 @@
     <div class="grid grid-cols-2 gap-8 pb-32">
     <SectionMedia title="Updated" desc="Without depth sensor, we want to use eye saccades as a form of identification." />
         
-                  <SectionMedia
+        <SectionMedia
             title="Updated"
             desc="Without depth sensor, we want to use eye saccades as a form of identification."
         />

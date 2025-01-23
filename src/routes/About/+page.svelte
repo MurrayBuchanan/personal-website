@@ -10,31 +10,13 @@
 
 <body class="bg-primary-light dark:bg-secondary-dark" use:useAnimate={0.1}>
     <Container>
-        <SectionHeading
-        title="About"
-        desc="Now · Work, Analyst, Python"
-        links={[
-            { url: "https://www.jpmorganchase.com/", title: "Visit Website" }
-        ]}
-        />
+        <SectionHeading title="About" />
 
-        <SectionPara paragraphs={["Following my second year, I was invited to be a Summer Analyst for the 2025 Cohort. "]}/>
+        <SectionPara paragraphs={["Hi I’m Murray, currently in my penultimate year studying Computer Science at the University of Strathclyde. My main CS activity’s at the moment are working with Swift and Svelte. "]}/>
 
-        <SectionMedia
-            image="/assets/banners/JPMorganChase.jpg"
-            title="Updated"
-            desc="Without depth sensor, we want to use eye saccades as a form of identification."
-        />
+        <SectionPara paragraphs={["I would assume because your here you might know me or something...? If you don't here are a couple things about me... "]}/>
 
-        <SectionText
-            title="Insight Program"
-            desc="Keep your head still and take a photo of your eyes from below, now from above. That's the premise."
-        />
-
-        <SectionText 
-            title="Internship Program"
-            desc="Using head and phone position, we can transform these image matrices - better (more) training data."
-        />
+        <SectionPara paragraphs={["Website is currently underdevelopment."]}/>
 
         <Footer />
     </Container>
