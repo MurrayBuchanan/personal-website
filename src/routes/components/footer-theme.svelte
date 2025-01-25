@@ -49,14 +49,14 @@
 </script>
 
 <main>
-  <div class="relative flex items-center w-36 h-6 border-2 border-gray-900 dark:border-gray-200 rounded-full cursor-pointer overflow-hidden">
-    <div class={`flex-1 flex items-center justify-center cursor-pointer ${theme === 'light' ? 'bg-gray-900 text-white rounded-full px-0.5' : 'text-gray-900 dark:text-gray-200'}`} on:click={() => setTheme('light')}>
+  <div class="relative flex items-center w-36 h-6 overflow-hidden border border-gray-900 dark:border-gray-200 rounded-lg cursor-pointer">
+    <div class={`hover:bg-gray-900 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black  flex-1 flex items-center justify-center cursor-pointer px-0.5 rounded-md transition-transform duration-150 hover:scale-105 ease-out ${theme === 'light' ? 'bg-gray-900 text-white border border-gray-900 dark:border-gray-200' : 'text-black dark:text-white'}`} on:click={() => setTheme('light')}>
       <p class="text-sm">Light</p>
     </div>
-    <div class={`flex-1 flex items-center justify-center cursor-pointer ${theme === 'dark' ? 'bg-gray-200 text-gray-900 rounded-full px-0.5' : 'text-gray-900 dark:text-gray-200'}`} on:click={() => setTheme('dark')}>
+    <div class={`hover:bg-gray-900 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black  flex-1 flex items-center justify-center cursor-pointer px-0.5 rounded-md transition-transform duration-150 hover:scale-105 ease-out ${theme === 'dark' ? 'bg-gray-200 text-black border border-gray-200 dark:border-gray-200' : 'text-black dark:text-white'}`} on:click={() => setTheme('dark')}>
       <p class="text-sm">Dark</p>
     </div>
-    <div class={`flex-1 flex items-center justify-center cursor-pointer ${theme === 'auto' ? 'bg-gray-900 text-white dark:bg-gray-200 dark:text-gray-900 rounded-full px-0.5' : 'text-gray-900 dark:text-gray-200'}`} on:click={() => setTheme('auto')}>
+    <div class={`hover:bg-gray-900 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black flex-1 flex items-center justify-center cursor-pointer px-0.5 rounded-md transition-transform duration-150 hover:scale-105 ease-out ${theme === 'auto' ? 'bg-gray-900 text-white border border-gray-900 dark:border-gray-200 dark:bg-gray-200 dark:text-black ' : 'text-black dark:text-white'}`} on:click={() => setTheme('auto')}>
       <p class="text-sm">Auto</p>
     </div>
   </div>

@@ -7,13 +7,12 @@
   export const favourite = false;
 </script>
 
-<main class="px-4 py-3 rounded-3xl hover:bg-secondary-light hover:dark:bg-primary-dark hover:bg-gray-200 transition-transform transform hover:-translate-y-1 cursor-pointer animate">
+<main class="transition-transform duration-150 hover:scale-105 ease-out px-4 py-3 rounded-3xl hover:bg-secondary-light hover:dark:bg-primary-dark hover:bg-gray-200 cursor-pointer animate">
 <a href={link}> 
   <!-- If link exists -->
   <div class="flex items-center">
       {#if image}
-        <!-- svelte-ignore a11y-img-redundant-alt -->
-        <img src={image} alt="Profile Image" class="w-12 h-auto mr-4 my-2" />
+      <img src={image} alt="Thumbnail of {title}" class="w-8 h-8 object-contain mr-4 my-2" on:error="{() => image = 'assets/placeholder.png'}" />
       {/if}
     
     <div class="flex flex-col justify-center">
