@@ -49,15 +49,22 @@
 </script>
 
 <main>
-  <div class="relative flex items-center w-36 h-6 overflow-hidden border border-gray-900 dark:border-gray-200 rounded-lg cursor-pointer">
-    <div class={`hover:bg-gray-900 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black  flex-1 flex items-center justify-center cursor-pointer px-0.5 rounded-md transition-transform duration-150 hover:scale-105 ease-out ${theme === 'light' ? 'bg-gray-900 text-white border border-gray-900 dark:border-gray-200' : 'text-black dark:text-white'}`} on:click={() => setTheme('light')}>
-      <p class="text-sm">Light</p>
+  <!-- Hover -> Selected -> Default -->
+  <div class="w-36 h-6 relative flex items-center space-between cursor-pointer">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class={`hover:bg-primary-dark dark:hover:bg-primary-light text-secondary-light dark:text-secondary-dark hover:text-secondary-dark dark:hover:text-secondary-light h-6 px-0.5 flex-1 flex items-center justify-center cursor-pointer rounded-lg transition-transform duration-150 hover:scale-105 ease-out ${theme === 'light' ? 'text-secondary-light dark:text-secondary-dark border border-tertiary-light dark:border-tertiary-dark' : 'text-secondary-light dark:text-secondary-dark'}`} on:click={() => setTheme('light')}>
+      <p class="text-sm font-normal">Light</p>
     </div>
-    <div class={`hover:bg-gray-900 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black  flex-1 flex items-center justify-center cursor-pointer px-0.5 rounded-md transition-transform duration-150 hover:scale-105 ease-out ${theme === 'dark' ? 'bg-gray-200 text-black border border-gray-200 dark:border-gray-200' : 'text-black dark:text-white'}`} on:click={() => setTheme('dark')}>
-      <p class="text-sm">Dark</p>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class={`hover:bg-primary-dark dark:hover:bg-primary-light text-secondary-light dark:text-secondary-dark hover:text-secondary-dark dark:hover:text-secondary-light h-6 px-0.5 flex-1 flex items-center justify-center cursor-pointer rounded-lg transition-transform duration-150 hover:scale-105 ease-out ${theme === 'dark'  ? 'text-secondary-light dark:text-secondary-dark border border-tertiary-light dark:border-tertiary-dark' : 'text-secondary-light dark:text-secondary-dark'}`} on:click={() => setTheme('dark')}>
+      <p class="text-sm font-normal">Dark</p>
     </div>
-    <div class={`hover:bg-gray-900 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black flex-1 flex items-center justify-center cursor-pointer px-0.5 rounded-md transition-transform duration-150 hover:scale-105 ease-out ${theme === 'auto' ? 'bg-gray-900 text-white border border-gray-900 dark:border-gray-200 dark:bg-gray-200 dark:text-black ' : 'text-black dark:text-white'}`} on:click={() => setTheme('auto')}>
-      <p class="text-sm">Auto</p>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class={`hover:bg-primary-dark dark:hover:bg-primary-light text-secondary-light dark:text-secondary-dark hover:text-secondary-dark dark:hover:text-secondary-light h-6 px-0.5 flex-1 flex items-center justify-center cursor-pointer rounded-lg transition-transform duration-150 hover:scale-105 ease-out ${theme === 'auto'  ? 'text-secondary-light dark:text-secondary-dark border border-tertiary-light dark:border-tertiary-dark' : 'text-secondary-light dark:text-secondary-dark'}`} on:click={() => setTheme('auto')}>
+      <p class="text-sm font-normal">Auto</p>
     </div>
   </div>
 </main>

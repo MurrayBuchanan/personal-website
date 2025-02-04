@@ -8,11 +8,11 @@
     import SectionHeading from '../components/section-heading.svelte';
 </script>
 
-<body class="bg-primary-light dark:bg-secondary-dark" use:useAnimate={0.1}>
+<body class="mx10 bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
     <Container>
         <SectionHeading
         title="University of Strathclyde"
-        desc="22 · Education, Computer Science"
+        desc="2022 · Education, Computer Science"
         newPage={true}
         />
         <SectionPara paragraphs={["Content coming soon!"]}/>

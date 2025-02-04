@@ -13,68 +13,69 @@
         {
             title: "JPMorgan Chase & Co",
             subDesc: "Now · Fintech, Analyst",
-            image: "assets/experience-icons/JPMorganChaseCo.png",
-            link: "/JPMorganChaseCo",
+            icon: "assets/experience-icons/JPMorganChaseCo.png",
+            url: "/JPMorganChaseCo",
+            banner: "assets/banners/banner.jpg",
             favourite: true,
         },
         {
             title: "Little Cheese",
             subDesc: "25 · Data Processing, Open Framework",
-            image: "assets/experience-icons/LittleCheese.png",
-            link: "/LittleCheese",
+            icon: "assets/experience-icons/LittleCheese.png",
+            url: "/LittleCheese",
             favourite: true,
         },
         {
             title: "Camp Lindenmere",
             subDesc: "24 · Academia, Teaching",
-            image: "assets/experience-icons/CampLindenmere.png",
-            link: "/CampLindenmere",
+            icon: "assets/experience-icons/CampLindenmere.png",
+            url: "/CampLindenmere",
             favourite: true,
         },
         {
             title: "The Good Calendar",
             subDesc: "24 · Productivity, Cross-platform",
-            image: "assets/experience-icons/TheGoodCalendar.png",
-            link: "/TheGoodCalendar",
+            icon: "assets/experience-icons/TheGoodCalendar.png",
+            url: "/TheGoodCalendar",
         },
         {
             title: "Google Developer Group",
             subDesc: "23 · Community Engadgement, Presenting",
-            image: "../assets/experience-icons/GoogleDeveloperGroup.png",
-            link: "/GoogleDeveloperGroup",
+            icon: "../assets/experience-icons/GoogleDeveloperGroup.png",
+            url: "/GoogleDeveloperGroup",
         },
         {
             title: "University of Strathclyde",
             desc: "MEng, Computer Science",
             subDesc: "22 · Education, Computer Science",
-            image: "assets/experience-icons/UniversityOfStrathclyde.png",
-            link: "/UniversityOfStrathclyde",
+            icon: "assets/experience-icons/UniversityOfStrathclyde.png",
+            url: "/UniversityOfStrathclyde",
             favourite: true,
         },
         {
             title: "Direct Distribution",
             subDesc: "22 · Marketing, Distribution",
-            image: "assets/experience-icons/DirectDistribution.png",
-            link: "/DirectDistribution",
+            icon: "assets/experience-icons/DirectDistribution.png",
+            url: "/DirectDistribution",
         },
         {
             title: "Chibb",
             subDesc: "21 · Game Design, iOS Dev",
-            image: "assets/experience-icons/Chibb.png",
-            link: "/Chibb",
+            icon: "assets/experience-icons/Chibb.png",
+            url: "/Chibb",
             favourite: true,
         },
         {
             title: "Buchanan Barbers",
             subDesc: "2020 · Hobby, Web Dev",
-            image: "assets/banners/BuchananBarbers.png",
-            link: "/BuchananBarbers",
+            icon: "assets/banners/BuchananBarbers.png",
+            url: "/BuchananBarbers",
         },
         {
             title: "Minecraft Plugins",
             subDesc: "2015 · Community Building, Hosting",
-            image: "assets/experience-icons/MinecraftPlugins.png",
-            link: "/MinecraftPlugins",
+            icon: "assets/experience-icons/MinecraftPlugins.png",
+            url: "/MinecraftPlugins",
         }
     ];
 
@@ -93,12 +94,11 @@
 
 <style>
     .project {
-        overflow: hidden;
         margin-bottom: 1rem;
     }
 </style>
 
-<body class="mx10 bg-primary-light dark:bg-secondary-dark" use:useAnimate={0.1}>
+<body class="mx10 bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
     <Container>
         <SectionHeading
             title="Murray Buchanan"
@@ -111,13 +111,16 @@
 
         <div class="body">
             <!-- Animate items and include transition -->
-            {#each (showAll ? projects : favourites) as { title, subDesc, image, link } (title)}
+            {#each (showAll ? projects : favourites) as { title, subDesc, icon, banner, url } (title)}
+            
                 <div class="project" transition:slide|fade>
-                    <SectionSubheading {title} {subDesc} {image} {link} />
+                    <div class="animate">
+                    <SectionSubheading {title} {subDesc} {banner} {icon} {url} />
+                </div>
                 </div>
             {/each}
 
-            <button on:click={toggleShowAll} class="transition-transform duration-150 hover:scale-105 ease-out inline-flex items-center px-4 py-1 my-4 text-sm font-medium rounded-lg border bg-white text-black border-black hover:bg-black hover:text-white dark:bg-black dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black cursor-pointer">
+            <button on:click={toggleShowAll} class="px-4 py-1 my-4 inline-flex items-center bg-primary-light dark:bg-primary-dark hover:bg-primary-dark dark:hover:bg-primary-light rounded-lg text-sm font-normal text-secondary-light hover:text-secondary-dark dark:text-secondary-dark hover:dark:text-secondary-light border border-tertiary-light hover:border-tertiary-dark dark:border-tertiary-dark hover:dark:border-tertiary-light transition-transform duration-150 hover:scale-105 ease-out cursor-pointer">
                 {showAll ? 'Show Less' : 'Show More'}
             </button>
         </div>

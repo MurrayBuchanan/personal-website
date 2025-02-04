@@ -33,27 +33,17 @@ export default {
         primary: {
           light: '#ffffff',          // White for light mode
           DEFAULT: '#ffffff',        // White for default
-          dark: '#1D1D1F',           // Black for dark mode
+          dark: '#161616',           // Black for dark mode
         },
         secondary: {
-          light: '#fafafa',          // Off-white light
-          DEFAULT: '#fafafa',        // Off-white
-          dark: '#000000',           // Darker gray
+          light: '#191919',          // Off-white light
+          DEFAULT: '#191919',        // Off-white
+          dark: '#FEF7EA',           // Darker gray
         },
         tertiary: {
-          light: '#949499',          // Light gray
-          DEFAULT: '#949499',        // Neutral gray
-          dark: '#5E5E63',           // Darker gray
-        },
-        quaternary: {
-          light: '#616164',          // Lighter gray
-          DEFAULT: '#616164',        // Default lighter gray
-          dark: '#fafafa',           // Neutral gray
-        },
-        red: {
-          light: '#FF3B30',          // Light red
-          DEFAULT: '#FF3B30',        // Default red
-          dark: '#FF453A',           // Darker red
+          light: '#777',          // Light gray
+          DEFAULT: '#777',        // Neutral gray
+          dark: '#66625E',           // Darker gray
         },
         orange: {
           light: '#FF9F00',          // Light orange

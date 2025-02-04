@@ -8,7 +8,7 @@
     import SectionHeading from '../components/section-heading.svelte';
 </script>
 
-<body class="bg-primary-light dark:bg-secondary-dark" use:useAnimate={0.1}>
+<body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
     <Container>
         <SectionHeading title="About" />
 

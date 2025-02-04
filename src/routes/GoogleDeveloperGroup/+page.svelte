@@ -23,7 +23,7 @@
         <SectionPara paragraphs={["Google Developer Groups, sponsored by Google, bring students together to learn tech skills, collaborate on projects, and solve real-world problems in a supportive community."]}/>
 
         <SectionMedia
-            image="/assets/banners/GoogleDeveloperGroup.jpg"
+            images={["/assets/banners/GoogleDeveloperGroup.jpg", "/assets/banners/GoogleDeveloperGroup.jpg", "/assets/banners/GoogleDeveloperGroup.jpg", "/assets/banners/GoogleDeveloperGroup.jpg"]}
             title="The Team"
             desc="Murray Buchanan, Sophie McCartney, Sofia Banya Ceregido, Akshay Srivats Venkataramana and Folaranmi Faboye"
         />

@@ -13,7 +13,7 @@
     /* Noto San-Serif */
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
-    h1, h2,h3,h4,h5,h6,p,a,li {
+    h1, h2, h3, h4, h5, h6, p, a, li {
         font-family: "SF Pro", sans-serif;
         font-optical-sizing: auto;
         font-variation-settings: "wdth" 100;

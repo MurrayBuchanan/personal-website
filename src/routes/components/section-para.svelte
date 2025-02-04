@@ -7,6 +7,6 @@
 
 <main class="animate">
     {#each paragraphs as paragraph}
-        <p class="text-base text-gray-700 dark:text-gray-300 pb-6">{paragraph}</p>
+        <p class="pb-6 text-base font-normal text-tertiary-light dark:tertiary-dark">{paragraph}</p>
     {/each}
 </main>
