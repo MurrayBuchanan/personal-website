@@ -13,8 +13,7 @@ export const nodes = [
 	() => import('./nodes/9'),
 	() => import('./nodes/10'),
 	() => import('./nodes/11'),
-	() => import('./nodes/12'),
-	() => import('./nodes/13')
+	() => import('./nodes/12')
 ];
 
 export const server_loads = [];
@@ -25,13 +24,12 @@ export const dictionary = {
 		"/BuchananBarbers": [4],
 		"/CampLindenmere": [5],
 		"/Chibb": [6],
-		"/DirectDistribution": [7],
-		"/GoogleDeveloperGroup": [8],
+		"/Conquer": [7],
+		"/DirectDistribution": [8],
 		"/JPMorganChaseCo": [9],
 		"/LittleCheese": [10],
-		"/MinecraftPlugins": [11],
-		"/TheGoodCalendar": [12],
-		"/UniversityOfStrathclyde": [13]
+		"/Minecraft": [11],
+		"/UniversityOfStrathclyde": [12]
 	};
 
 export const hooks = {

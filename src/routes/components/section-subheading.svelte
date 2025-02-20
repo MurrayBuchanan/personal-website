@@ -17,7 +17,7 @@
     <!-- If link exists -->
     <div class="flex items-center">
         {#if icon}
-        <img src={icon} alt="Thumbnail of {title}" class="w-8 h-8 object-contain mr-4 my-2" on:error="{() => icon = 'assets/placeholder.png'}" />
+        <img src={icon} alt="Thumbnail of {title}" style='stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"' class="w-9 h-9 object-contain mr-4 my-2 dark:invert dark:brightness-100" on:error="{() => icon = 'assets/icons/Placeholder.svg'}" />
         {/if}
       
       <div class="flex flex-col justify-center">

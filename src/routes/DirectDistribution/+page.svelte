@@ -12,7 +12,7 @@
     <Container>
         <SectionHeading
         title="Direct Distribution"
-        desc="22 · Marketing, Distribution"
+        desc="2022-2024 · Events, Marketing, Distribution"
         newPage={true}
         />
 

@@ -12,7 +12,7 @@
     <Container>
         <SectionHeading
         title="Buchanan Barbers"
-        desc="2020 · Hobby, Web Dev"
+        desc="2020-Now · Hairstyling, Web Dev"
         newPage={true}
         links={[{ url: "/Booking", newPage: false, title: "Reservations" }]
         }

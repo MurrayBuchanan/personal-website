@@ -12,22 +12,33 @@
     <Container>
         <SectionHeading
         title="JPMorgan Chase & Co"
-        desc="Now · Analyst, Fintech"
+        desc="2024-Now · Fintech, Insight, Summer Analyst"
         newPage={true}
         links={[
             { url: "https://www.jpmorganchase.com/", title: "Visit Website" }
         ]}
         />
 
-        <SectionPara paragraphs={["Text"]}/>
+        <!-- <SectionPara paragraphs={["I was part of the 2024 Spring into Tech class, where we were guests at the brand-new Tech Center, which is where I met some incredible people and got a real insight into J.P. Morgan by listening to some amazing speakers and attending various workshops and presentations. "]}/> -->
 
         <SectionMedia
-            image="/assets/banners/JPMorganChase.jpg"
-            title="First Day"
-            desc="Photo of 2024 Spring into Tech Cohort."
+            images={["/assets/banners/JPMorganChase.jpg"]}
+            title="Group photo of our Tech Cohort"
+
         />
+        <div class="grid grid-cols-2 gap-8">
+            <SectionMedia 
+                title="Insight Program" 
+                desc="My first experience at JPMorgan Chase was a week long program that includes networking events, workshops, and presentations from current employees." 
+            />
+            
+            <SectionMedia
+                title="Summer Analyst"
+                desc="I was invited back to JPMorgan Chase for a 10-week internship as a Summer Analyst, where I will work on various projects and gained experience in the Fintech industry."
+            />
+        </div>
         
-        <SectionPara paragraphs={["I was part of the 2024 Spring into Tech class, where we were guests at the brand-new Tech Center, which is where I met some incredible people and got a real insight into J.P. Morgan by listening to some amazing speakers and attending various workshops and presentations. "]}/>
+        
        
         
         <Footer />

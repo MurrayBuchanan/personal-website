@@ -12,70 +12,63 @@
     let projects = [
         {
             title: "JPMorgan Chase & Co",
-            subDesc: "Now · Fintech, Analyst",
-            icon: "assets/experience-icons/JPMorganChaseCo.png",
+            subDesc: "2024-Now · Fintech, Insight, Summer Analyst",
+            icon: "assets/icons/JPMorganChaseCo.svg",
             url: "/JPMorganChaseCo",
-            banner: "assets/banners/banner.jpg",
             favourite: true,
         },
         {
             title: "Little Cheese",
-            subDesc: "25 · Data Processing, Open Framework",
-            icon: "assets/experience-icons/LittleCheese.png",
+            subDesc: "2025 · Data Processing, Open Framework",
+            icon: "assets/icons/LittleCheese.svg",
             url: "/LittleCheese",
             favourite: true,
         },
         {
             title: "Camp Lindenmere",
-            subDesc: "24 · Academia, Teaching",
-            icon: "assets/experience-icons/CampLindenmere.png",
+            subDesc: "2024 · Academia, Teaching, Counsellor",
+            icon: "assets/icons/CampLindenmere.svg",
             url: "/CampLindenmere",
             favourite: true,
         },
         {
-            title: "The Good Calendar",
-            subDesc: "24 · Productivity, Cross-platform",
-            icon: "assets/experience-icons/TheGoodCalendar.png",
-            url: "/TheGoodCalendar",
-        },
-        {
-            title: "Google Developer Group",
-            subDesc: "23 · Community Engadgement, Presenting",
-            icon: "../assets/experience-icons/GoogleDeveloperGroup.png",
-            url: "/GoogleDeveloperGroup",
+            title: "Conquer",
+            subDesc: "2023-2025 · Productivity, Cross-platform",
+            icon: "assets/icons/Conquer.svg",
+            url: "/Conquer",
         },
         {
             title: "University of Strathclyde",
             desc: "MEng, Computer Science",
-            subDesc: "22 · Education, Computer Science",
-            icon: "assets/experience-icons/UniversityOfStrathclyde.png",
+            subDesc: "2022-Now · Education, MEng, Computer Science",
+            icon: "assets/icons/UniversityOfStrathclyde.svg",
             url: "/UniversityOfStrathclyde",
             favourite: true,
         },
         {
             title: "Direct Distribution",
-            subDesc: "22 · Marketing, Distribution",
-            icon: "assets/experience-icons/DirectDistribution.png",
+            subDesc: "2022-2024 · Events, Marketing, Distribution",
+            icon: "assets/icons/DirectDistribution.svg",
             url: "/DirectDistribution",
         },
         {
             title: "Chibb",
-            subDesc: "21 · Game Design, iOS Dev",
-            icon: "assets/experience-icons/Chibb.png",
+            subDesc: "2021-2023 · Game Design, Procedural Generation, iOS Dev",
+            icon: "assets/icons/Chibb.svg",
             url: "/Chibb",
             favourite: true,
         },
         {
             title: "Buchanan Barbers",
-            subDesc: "2020 · Hobby, Web Dev",
-            icon: "assets/banners/BuchananBarbers.png",
+            subDesc: "2020-Now · Hairstyling, Web Dev",
+            icon: "assets/icons/BuchananBarbers.svg",
             url: "/BuchananBarbers",
         },
         {
-            title: "Minecraft Plugins",
-            subDesc: "2015 · Community Building, Hosting",
-            icon: "assets/experience-icons/MinecraftPlugins.png",
-            url: "/MinecraftPlugins",
+            title: "Minecraft",
+            subDesc: "2015-2017 · Community Building, Server Hosting, Plugin Dev",
+            icon: "assets/icons/Minecraft.svg",
+            url: "/Minecraft",
         }
     ];
 
@@ -111,11 +104,11 @@
 
         <div class="body">
             <!-- Animate items and include transition -->
-            {#each (showAll ? projects : favourites) as { title, subDesc, icon, banner, url } (title)}
+            {#each (showAll ? projects : favourites) as { title, subDesc, icon, url } (title)}
             
                 <div class="project" transition:slide|fade>
                     <div class="animate">
-                    <SectionSubheading {title} {subDesc} {banner} {icon} {url} />
+                    <SectionSubheading {title} {subDesc} {icon} {url} />
                 </div>
                 </div>
             {/each}

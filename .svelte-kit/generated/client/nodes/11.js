@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/MinecraftPlugins/+page.svelte";
+export { default as component } from "../../../../src/routes/Minecraft/+page.svelte";

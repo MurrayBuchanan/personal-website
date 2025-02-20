@@ -11,10 +11,9 @@
 <body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
     <Container>
         <SectionHeading
-        title="Minecraft Plugins"
-        desc="15-18 · Community Building, OOP"
+        title="Minecraft"
+        desc="2015-2017 · Community Building, Server Hosting, Plugin Dev"
         newPage={true}
-    
         />
 
 

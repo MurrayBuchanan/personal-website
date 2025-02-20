@@ -11,12 +11,14 @@
 <body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
     <Container>
         <SectionHeading
-        title="Little Cheese"
-        desc="2025 · Data Processing, Open Framework"
+        title="Conquer"
+        desc="2023-2025 · Productivity, Cross-platform",
         newPage={true}
+    
         />
 
         <SectionPara paragraphs={["Content coming soon!"]}/>
+
         <Footer />
     </Container>
 

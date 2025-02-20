@@ -4,7 +4,7 @@
     /**
      * @type {any[]}
      */
-     export let images = [];
+    export let images = [];
     export let title = "";
     export let desc = "";
     export let custom = "text-center";

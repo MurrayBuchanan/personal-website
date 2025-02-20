@@ -12,39 +12,33 @@
     <Container>
         <SectionHeading
         title="Camp Lindenmere"
-        desc="2024 · Academia, Teaching, Java, React, UI, UX"
+        desc="2024 · Academia, Teaching, Counsellor"
         links={[
-            { url: "https://example.com", title: "Visit Website" },
-            { url: "https://another.com", title: "Materials" }
+            { url: "https://camplindenmere.com/", title: "Visit Website" }
         ]}
         />
-
-
-        <SectionMedia
-            image="/assets/banners/CampLindenmere.jpg"
-            title="Updated"
-            desc="Without depth sensor, we want to use eye saccades as a form of identification."
-        />
-
-
-    <div class="grid grid-cols-2 gap-8 pb-32">
-    <SectionMedia title="Updated" desc="Without depth sensor, we want to use eye saccades as a form of identification." />
         
-        <SectionMedia
-            title="Updated"
-            desc="Without depth sensor, we want to use eye saccades as a form of identification."
-        />
-        <SectionMedia
+        <SectionPara paragraphs={[
+            "During the summer between my second and third year at University, I was invited to teach at a Summer Camp in Penneslavania. This was an unforgettable experience, where I got to stay for 3 months and work alongside some of the most incredible people."
+            ]}/>
 
-            title="Updated"
-            desc="Without depth sensor, we want to use eye saccades as a form of identification."
-        />
         <SectionMedia
-
-            title="Updated"
-            desc="Without depth sensor, we want to use eye saccades as a form of identification."
+            images={["/assets/banners/CampLindenmere.jpg"]}
+            title="Computer Science Instructor"
+            desc="My role was a as a Computer Science Instructor where I taught groups of children between the ages of 10 and 17 the foundations of programming."
         />
-    </div>
+
+        <div class="grid grid-cols-2 gap-8">
+            <SectionMedia 
+                title="Councellor" 
+                desc="I was also a counsellor, where I was responsible for the well-being of the children in my group." 
+            />
+            
+            <SectionMedia
+                title="Spirit Leader"
+                desc="I was voted Spirit Leader by the camp directors and division leaders in recognition of my contributions throughout the summer. I led various activities and events, fostering enthusiasm and teamwork across the camp."
+            />
+        </div>
     
     <Footer />
     </Container>

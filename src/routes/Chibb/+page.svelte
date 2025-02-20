@@ -12,7 +12,7 @@
     <Container>
         <SectionHeading
         title="Chibb"
-        desc="21 · Game Design, iOS Dev"
+        desc="2021-2023 · Game Design, Procedural Generation, iOS Dev"
         newPage={true}
         />
         <SectionPara paragraphs={["Content coming soon!"]}/>
