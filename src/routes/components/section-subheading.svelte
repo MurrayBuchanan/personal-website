@@ -12,12 +12,12 @@
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <!-- Object growth should not affect other components -->
 
-<main class="relative flex items-center hover:border overflow-hidden hover:border-tertiary-light hover:dark:border-tertiary-dark px-4 py-10 rounded-2xl hover:bg-primary-light dark:hover:bg-primary-dark cursor-pointer transition-transform duration-300 hover:scale-105 ease-out h-20">
+<main class="relative flex items-center border border-primary-light dark:border-primary-dark overflow-hidden hover:border-tertiary-light hover:dark:border-tertiary-dark px-4 py-2 rounded-2xl hover:bg-primary-light dark:hover:bg-primary-dark cursor-pointer transition-transform duration-300 hover:scale-105 ease-out">
   <a href={url} class="relative block w-full"> 
     <!-- If link exists -->
     <div class="flex items-center">
         {#if icon}
-        <img src={icon} alt="Thumbnail of {title}" style='stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"' class="w-9 h-9 object-contain mr-4 my-2 dark:invert dark:brightness-100" on:error="{() => icon = 'assets/icons/Placeholder.svg'}" />
+        <img src={icon} alt="Thumbnail of {title}" style='stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"' class="w-8 h-8 object-contain mr-4 my-2 dark:invert dark:brightness-100" on:error="{() => icon = 'assets/icons/Placeholder.svg'}" />
         {/if}
       
       <div class="flex flex-col justify-center">
