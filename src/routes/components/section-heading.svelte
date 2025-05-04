@@ -38,7 +38,11 @@
   <!-- each link -->
   <div class="flex pb-6">
       {#each links as link}
-          <a href={link.url} class="mr-4 text-base font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-transform duration-150 ease-out cursor-pointer" target={newPage ? "_blank" : "_self"}>{link.title}</a>
+        {#if newPage}
+          <a href={link.url} class="mr-4 text-base font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-transform duration-150 ease-out cursor-pointer" target="_blank">{link.title}</a>
+        {:else}
+          <a href={link.url} class="mr-4 text-base font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-transform duration-150 ease-out cursor-pointer">{link.title}</a>
+        {/if}
       {/each}
   </div>
 </main>

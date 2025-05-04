@@ -19,6 +19,8 @@
     
         />
 
+        <!-- Bundle under jordanhill school and mention school captain raising 10k, prefect -->
+
         <SectionPara paragraphs={["Buchanan Barbers started during the pandemic in 2020 when I taught myself to cut hair. Since then, I’ve been hairdressing regularly and even had the chance to cut hair in countries all over the world. For my Advanced Higher Computer Science project, I built a booking site—combining what I thought was just a silly hobby with tech. It’s all about keeping things simple, meeting people, and helping others feel better. :)"]}/>
 
         <SectionPara paragraphs={["Booking functionality coming soon!"]}/>

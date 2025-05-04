@@ -17,6 +17,7 @@
             { url: "https://camplindenmere.com/", title: "Visit Website" }
         ]}
         />
+        <!-- Make a link to content, cover up to advanced higher computer science -->
         
         <SectionPara paragraphs={[
             "During the summer between my second and third year at University, I was invited to teach at a Summer Camp in Penneslavania. This was an unforgettable experience, where I got to stay for 3 months and work alongside some of the most incredible people."

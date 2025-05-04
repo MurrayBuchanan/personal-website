@@ -11,17 +11,17 @@
 
     let projects = [
         {
-            title: "JPMorgan Chase & Co",
+            title: "JPMorganChase",
             subDesc: "2024-Now · Fintech, Insight, Summer Analyst",
-            icon: "assets/icons/JPMorganChaseCo.svg",
-            url: "/JPMorganChaseCo",
+            icon: "assets/icons/JPMorganChase.svg",
+            url: "/JPMorganChase",
             favourite: true,
         },
         {
-            title: "Little Cheese",
-            subDesc: "2025 · Data Processing, Open Framework",
-            icon: "assets/icons/LittleCheese.svg",
-            url: "/LittleCheese",
+            title: "Set Piece",
+            subDesc: "2024-2025 · Team Training, App Dev, Data Analysis",
+            icon: "assets/icons/SetPiece.svg",
+            url: "/SetPiece",
             favourite: true,
         },
         {
@@ -95,7 +95,7 @@
     <Container>
         <SectionHeading
             title="Murray Buchanan"
-            desc="Here are some of the projects I have worked on over the years."
+            desc="Developer"
             links={[
                 { url: "/About", newPage: false, title: "About" },
                 { url: "/Contact", newPage: false, title: "Contact" }
@@ -106,14 +106,14 @@
             <!-- Animate items and include transition -->
             {#each (showAll ? projects : favourites) as { title, subDesc, icon, url } (title)}
             
-                <div class="project" transition:slide|fade>
+                <div class="project" transition:slide|fade={{ duration: 300 }}>
                     <div class="animate">
                     <SectionSubheading {title} {subDesc} {icon} {url} />
                 </div>
                 </div>
             {/each}
 
-            <button on:click={toggleShowAll} class="px-4 py-1 my-4 inline-flex items-center bg-primary-light dark:bg-primary-dark hover:bg-primary-dark dark:hover:bg-primary-light rounded-lg text-sm font-normal text-secondary-light hover:text-secondary-dark dark:text-secondary-dark hover:dark:text-secondary-light border border-tertiary-light hover:border-tertiary-dark dark:border-tertiary-dark hover:dark:border-tertiary-light transition-transform duration-150 hover:scale-105 ease-out cursor-pointer">
+            <button on:click={toggleShowAll} class="animate px-4 py-1 my-4 inline-flex items-center bg-primary-light dark:bg-primary-dark hover:bg-primary-dark dark:hover:bg-primary-light rounded-lg text-sm font-normal text-secondary-light hover:text-secondary-dark dark:text-secondary-dark hover:dark:text-secondary-light border border-tertiary-light hover:border-tertiary-dark dark:border-tertiary-dark hover:dark:border-tertiary-light transition-transform duration-150 hover:scale-105 ease-out cursor-pointer">
                 {showAll ? 'View Less' : 'View More'}
             </button>
         </div>
