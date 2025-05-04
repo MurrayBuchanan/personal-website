@@ -12,7 +12,7 @@
     <Container>
         <SectionHeading
         title="Conquer"
-        desc="2023-2025 · Productivity, Cross-platform",
+        desc="2023-2025 · Productivity, Cross-platform"
         newPage={true}
     
         />

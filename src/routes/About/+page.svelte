@@ -12,11 +12,12 @@
     <Container>
         <SectionHeading title="About" />
 
-        <SectionPara paragraphs={["Hi I’m Murray, currently in my penultimate year studying Computer Science at the University of Strathclyde. My main CS activity’s at the moment are working with Swift and Svelte. "]}/>
-
-        <SectionPara paragraphs={["I would assume because your here you might know me or something...? If you don't here are a couple things about me... "]}/>
-
-        <SectionPara paragraphs={["Website is currently underdevelopment."]}/>
+        <SectionPara paragraphs={[
+                                "As you're visiting my website, you might already know me, but just in case... ",
+                                "Hey, my name is Murray. I'm originally from Glasgow, and yes, I'm the one with the orange hair! Currently, I'm focused on studying Computer Science.",
+                                "When I'm not studying, I spend most of my time enjoying various sports, catching up with friends and family, always looking to learn new things, and exploring different places through travel.",
+                                "While I prefer not to share too many personal details online, I'm very friendly and always happy to connect. So please, feel free to say Hi and get in touch – I hope to hear from you!"
+                                ]}/>
 
         <Footer />
     </Container>

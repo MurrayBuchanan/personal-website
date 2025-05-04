@@ -8,7 +8,7 @@
     import SectionHeading from '../components/section-heading.svelte';
 </script>
 
-<body class="mx10 bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
+<body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
     <Container>
         <SectionHeading
         title="University of Strathclyde"
@@ -24,8 +24,8 @@
         Modules:
         Drop Downs like on uni website for each year with modules info and projects
         Year 5:
-        Year 4: Dissertation, Computer Security, 
-        Year 3: Building Software Systems, Foundations of Artificial Intelligence, Web Application Development, Computer Systems and Concurrency, Functional Programming, Mobile App Development.
+        Year 4: Dissertation, Computer Security, 	Software Architecture And Design, Information Access And Mining and 	Project Management 
+        Year 3: Building Software Systems, Foundations of Artificial Intelligence, Web App Development, Computer Systems and Concurrency, Functional Programming, Mobile App Development.
         Year 2: Advanced Programming, Logic and Algorithms, User and Data Modelling, Computer Systems and Architecture, Agile Software Development in Practice.
         Year 1: Internet of Things, Machines, Languages and Computation, Information and Information Systems, Programming Foundations, Computer Systems and Organisation, Introduction to Astronomy.
         
