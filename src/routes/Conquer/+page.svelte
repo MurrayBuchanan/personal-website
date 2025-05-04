@@ -9,7 +9,6 @@
 </script>
 
 <body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
-    <Container>
         <SectionHeading
         title="Conquer"
         desc="2023-2025 · Productivity, Cross-platform"
@@ -20,6 +19,5 @@
         <SectionPara paragraphs={["Content coming soon!"]}/>
 
         <Footer />
-    </Container>
 
 </body>

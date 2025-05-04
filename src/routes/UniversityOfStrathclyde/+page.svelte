@@ -9,7 +9,6 @@
 </script>
 
 <body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
-    <Container>
         <SectionHeading
         title="University of Strathclyde"
         desc="2022-Now · Education, MEng, Computer Science"
@@ -32,6 +31,5 @@
         Projects: -->
         <SectionPara paragraphs={["Content coming soon!"]}/>
         <Footer />
-    </Container>
 
 </body>
