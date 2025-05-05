@@ -44,11 +44,11 @@
 
                     {#if klass.project}
 
-                            <h5 class="mb-4 text-base font-normal text-tertiary-light dark:text-tertiary-dark">Project: {klass.project.title}</h5>
+                            <h5 class="mb-2 text-base font-normal text-tertiary-light dark:text-tertiary-dark">Project: {klass.project.title}</h5>
 
 
                             {#if klass.project.desc}
-                                <p class="mb-4 text-base text-tertiary-light dark:text-tertiary-dark">{klass.project.desc}</p>
+                                <p class="mb-2 text-base text-tertiary-light dark:text-tertiary-dark">{klass.project.desc}</p>
                             {/if}
 
                             {#if klass.project.url}
@@ -59,7 +59,7 @@
 
                             {#if klass.project.code}
                                 <a href={klass.project.code} target="_blank" rel="noopener noreferrer" class="mr-4 text-base font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-transform duration-150 ease-out cursor-pointer">
-                                    Github
+                                    Repo
                                 </a>
                             {/if}
 

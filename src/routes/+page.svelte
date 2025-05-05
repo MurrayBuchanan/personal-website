@@ -33,8 +33,7 @@
         },
         {
             title: "University of Strathclyde",
-            desc: "MEng, Computer Science",
-            subDesc: "2022-Now · Education, MEng, Computer Science",
+            subDesc: "2022-Now · Education, Undergraduate, Computer Science",
             icon: "assets/icons/UniversityOfStrathclyde.svg",
             url: "/UniversityOfStrathclyde",
             favourite: true,
