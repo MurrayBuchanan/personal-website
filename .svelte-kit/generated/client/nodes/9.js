@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/DirectDistribution/+page.svelte";
+export { default as component } from "../../../../src/routes/JPMorganChase/+page.svelte";

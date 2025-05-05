@@ -32,12 +32,6 @@
             favourite: true,
         },
         {
-            title: "Conquer",
-            subDesc: "2023-2025 · Productivity, Cross-platform",
-            icon: "assets/icons/Conquer.svg",
-            url: "/Conquer",
-        },
-        {
             title: "University of Strathclyde",
             desc: "MEng, Computer Science",
             subDesc: "2022-Now · Education, MEng, Computer Science",
@@ -59,16 +53,22 @@
             favourite: true,
         },
         {
-            title: "Buchanan Barbers",
-            subDesc: "2020-Now · Hairstyling, Web Dev",
-            icon: "assets/icons/BuchananBarbers.svg",
-            url: "/BuchananBarbers",
-        },
-        {
             title: "Minecraft",
-            subDesc: "2015-2017 · Community Building, Server Hosting, Plugin Dev",
+            subDesc: "2017-2019 · Community Building, Server Hosting, Plugin Dev",
             icon: "assets/icons/Minecraft.svg",
             url: "/Minecraft",
+        },
+        {
+            title: "Jordanhill School",
+            subDesc: "2009-2022 · Education, Computer Science, Volunteering",
+            icon: "assets/icons/JordanhillSchool.svg",
+            url: "/JordanhillSchool",
+        },
+        {
+            title: "Honourable Mentions",
+            subDesc: "Additional archived or scrapped projects",
+            icon: "assets/icons/HonourableMentions.svg",
+            url: "/HonourableMentions",
         }
     ];
 
@@ -98,7 +98,7 @@
             desc="Developer"
             links={[
                 { url: "/About", newPage: false, title: "About" },
-                { url: "/Contact", newPage: false, title: "Contact" }
+                { url: "mailto:hello@murrayb.com", newPage: false, title: "Contact" }
             ]}>
         </SectionHeading>
 

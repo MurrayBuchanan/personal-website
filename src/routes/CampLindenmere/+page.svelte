@@ -1,47 +1,28 @@
 <script lang="ts">
     import { useAnimate } from '../animation/animation';
     import Container from '../components/container.svelte';
-    import SectionText from '../components/section-text.svelte';
-    import SectionMedia from '../components/section-media.svelte';
-    import SectionPara from '../components/section-para.svelte';
+    import Heading from '../components/section-heading.svelte';
+    import Paragraph from '../components/section-text.svelte';
+    import Paragraphs from '../components/section-para.svelte';
     import Footer from '../components/footer.svelte';
-    import SectionHeading from '../components/section-heading.svelte';
 </script>
 
 <body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
     <Container>
-        <SectionHeading
-        title="Camp Lindenmere"
-        desc="2024 · Academia, Teaching, Counsellor"
-        links={[
-            { url: "https://camplindenmere.com/", title: "Visit Website" }
-        ]}
+        <Heading
+            title="Camp Lindenmere"
+            desc="2024 · Academia, Teaching, Counsellor"
+            links={[
+                { url: "https://camplindenmere.com/", title: "Visit Website" }
+            ]}
         />
-        <!-- Make a link to content, cover up to advanced higher computer science -->
+        <!-- Make a link to content, up to advanced higher computer science content -->
         
-        <SectionPara paragraphs={[
-            "During the summer between my second and third year at University, I was invited to teach at a Summer Camp in Penneslavania. This was an unforgettable experience, where I got to stay for 3 months and work alongside some of the most incredible people."
-            ]}/>
+        <Paragraphs paragraphs={["During the summer between my second and third year at University, I had the unforgettable opportunity to work at a Summer Camp in Pennsylvania for three months. It was an incredible experience, working alongside some truly amazing people."]}/>
+        <Paragraph title="Computer Science Instructor" desc="My primary role was as a Computer Science Instructor, where I had the chance to teach groups of children, aged 10 to 17, the foundations of programming."/>
+        <Paragraph title="Counsellor" desc="In addition to instructing, I also served as a Counsellor, responsible for the day-to-day well-being of the children in my group."/>
+        <Paragraph title="Spirit Leader" desc="Towards the end of the summer, I was honoured to be voted Spirit Leader by the camp directors and division leaders. This was a recognition of my contributions throughout the season, where I helped lead various activities and events, actively fostering enthusiasm and teamwork across the community."/>
 
-        <SectionMedia
-            images={["/assets/banners/CampLindenmere.jpg"]}
-            title="Computer Science Instructor"
-            desc="My role was a as a Computer Science Instructor where I taught groups of children between the ages of 10 and 17 the foundations of programming."
-        />
-
-        <div class="grid grid-cols-2 gap-8">
-            <SectionMedia 
-                title="Councellor" 
-                desc="I was also a counsellor, where I was responsible for the well-being of the children in my group." 
-            />
-            
-            <SectionMedia
-                title="Spirit Leader"
-                desc="I was voted Spirit Leader by the camp directors and division leaders in recognition of my contributions throughout the summer. I led various activities and events, fostering enthusiasm and teamwork across the camp."
-            />
-        </div>
-    
-    <Footer />
+        <Footer />
     </Container>
-
 </body>
