@@ -21,7 +21,7 @@
             desc="The page you’re looking for doesn’t exist." 
         />       
 
-        <DotLottieSvelte src="/assets/Animation.json" loop autoplay />
+        <DotLottieSvelte src="/assets/Animation.lottie" loop autoplay />
 
         <Footer />
 
