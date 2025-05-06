@@ -1,13 +1,60 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
-		<title>Murray Buchanan</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Murray Buchanan</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Portfolio of Murray Buchanan – Developer" />
+    <meta name="author" content="Murray Buchanan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://murrayb.com/" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/favicon.png" />
+
+    <!-- Social: Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://murrayb.com/" />
+    <meta property="og:title" content="Murray Buchanan | Developer" />
+    <meta property="og:description" content="Explore the projects and experience of Murray Buchanan, specializing in full-stack development." />
+    <meta property="og:image" content="https://murrayb.com/favicon.png" />
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Murray Buchanan | Developer" />
+    <meta name="twitter:description" content="Explore the projects and experience of Murray Buchanan, specializing in full-stack development." />
+    <meta name="twitter:image" content="https://murrayb.com/favicon.png" />
+
+    <!-- Referrer Policy -->
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Murray Buchanan",
+      "url": "https://murrayb.com",
+      "jobTitle": "Software Engineer",
+      "sameAs": [
+        "https://www.linkedin.com/in/murray-buchanan-33519220a/",
+        "https://github.com/MurrayBuchanan"
+      ]
+    }
+    </script>
+
+    <!-- SvelteKit Head -->
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
 </html>
