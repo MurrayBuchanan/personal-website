@@ -1,107 +1,58 @@
 import { c as create_ssr_component, v as validate_component } from "../../../chunks/ssr.js";
-import { C as Container, F as Footer } from "../../../chunks/container.js";
-import { S as Section_heading, a as Section_para, b as Section_text, c as Section_media } from "../../../chunks/section-heading.js";
+import { C as Container, S as Section_heading, F as Footer } from "../../../chunks/section-heading.js";
+import { S as Section_text } from "../../../chunks/section-text.js";
+import { S as Section_para } from "../../../chunks/section-para.js";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<body class="bg-primary-light dark:bg-secondary-dark">${validate_component(Container, "Container").$$render($$result, { custom: "mt-48" }, {}, {
+  return `<body class="bg-primary-light dark:bg-primary-dark">${validate_component(Container, "Container").$$render($$result, {}, {}, {
     default: () => {
-      return `${validate_component(Section_heading, "SectionHeading").$$render(
+      return `${validate_component(Section_heading, "Heading").$$render(
         $$result,
         {
           title: "Camp Lindenmere",
-          desc: "2024 · Academia, Teaching, Java, React, UI, UX",
+          desc: "2024 · Academia, Teaching, Counsellor",
           links: [
             {
-              url: "https://example.com",
+              url: "https://camplindenmere.com/",
               title: "Visit Website"
-            },
-            {
-              url: "https://another.com",
-              title: "Materials"
             }
           ]
         },
         {},
         {}
-      )} ${validate_component(Section_para, "SectionPara").$$render(
+      )}  ${validate_component(Section_para, "Paragraphs").$$render(
         $$result,
         {
           paragraphs: [
-            "During my time at University, I was invited to teach at a Summer Camp in Penneslavania. This was an unforgettable experience, where I got to stay for 3 months and work alongside like-minded individuals.",
-            "In this role, I was able to do a lot of reading, where I spend approximately 250 hours reading about Rust and work with different statically typed languages."
+            "During the summer between my second and third year at University, I had the unforgettable opportunity to work at a Summer Camp in Pennsylvania for three months. It was an incredible experience, working alongside some truly amazing people."
           ]
         },
         {},
         {}
-      )} ${validate_component(Section_text, "SectionText").$$render(
+      )} ${validate_component(Section_text, "Paragraph").$$render(
         $$result,
         {
-          title: "Initial Program",
-          desc: "Keep your head still and take a photo of your eyes from below, now from above. That's the premise."
+          title: "Computer Science Instructor",
+          desc: "My primary role was as a Computer Science Instructor, where I had the chance to teach groups of children, aged 10 to 17, the foundations of programming."
         },
         {},
         {}
-      )} ${validate_component(Section_text, "SectionText").$$render(
+      )} ${validate_component(Section_text, "Paragraph").$$render(
         $$result,
         {
-          title: "Updated Course",
-          desc: "Using head and phone position, we can transform these image matrices - better (more) training data."
+          title: "Counsellor",
+          desc: "In addition to instructing, I also served as a Counsellor, responsible for the day-to-day well-being of the children in my group."
         },
         {},
         {}
-      )} ${validate_component(Section_text, "SectionText").$$render(
+      )} ${validate_component(Section_text, "Paragraph").$$render(
         $$result,
         {
-          title: "Leadership",
-          desc: "Without depth sensor, we want to use eye saccades as a form of identification."
+          title: "Spirit Leader",
+          desc: "Towards the end of the summer, I was honoured to be voted Spirit Leader by the camp directors and division leaders. This was a recognition of my contributions throughout the season, where I helped lead various activities and events, actively fostering enthusiasm and teamwork across the community."
         },
         {},
         {}
-      )} ${validate_component(Section_media, "SectionMedia").$$render(
-        $$result,
-        {
-          image: "static/assets/banners/CampLindenmere.jpg",
-          title: "Updated",
-          desc: "Without depth sensor, we want to use eye saccades as a form of identification."
-        },
-        {},
-        {}
-      )} <div class="grid grid-cols-2 gap-8 pb-32">${validate_component(Section_media, "SectionMedia").$$render(
-        $$result,
-        {
-          title: "Updated",
-          desc: "Without depth sensor, we want to use eye saccades as a form of identification."
-        },
-        {},
-        {}
-      )} ${validate_component(Section_media, "SectionMedia").$$render(
-        $$result,
-        {
-          title: "Updated",
-          desc: "Without depth sensor, we want to use eye saccades as a form of identification."
-        },
-        {},
-        {}
-      )} ${validate_component(Section_media, "SectionMedia").$$render(
-        $$result,
-        {
-          title: "Updated",
-          desc: "Without depth sensor, we want to use eye saccades as a form of identification."
-        },
-        {},
-        {}
-      )} ${validate_component(Section_media, "SectionMedia").$$render(
-        $$result,
-        {
-          title: "Updated",
-          desc: "Without depth sensor, we want to use eye saccades as a form of identification."
-        },
-        {},
-        {}
-      )}</div>`;
-    }
-  })}  ${validate_component(Container, "Container").$$render($$result, { custom: "mt-24" }, {}, {
-    default: () => {
-      return `${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}`;
+      )} ${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}`;
     }
   })}</body>`;
 });

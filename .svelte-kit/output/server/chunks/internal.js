@@ -117,7 +117,7 @@ const options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<title>Murray Buchanan</title>\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<html lang="en">\n  <head>\n    <meta charset="utf-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <meta http-equiv="X-UA-Compatible" content="IE=edge" />\n    <title>Murray Buchanan</title>\n\n    <!-- SEO -->\n    <meta name="description" content="Portfolio of Murray Buchanan – Developer" />\n    <meta name="author" content="Murray Buchanan" />\n    <meta name="robots" content="index, follow" />\n    <link rel="canonical" href="https://murrayb.com/" />\n\n    <!-- Icons -->\n    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />\n    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />\n    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />\n    <meta name="theme-color" content="#ffffff" />\n    <meta name="msapplication-TileColor" content="#ffffff" />\n    <meta name="msapplication-TileImage" content="/favicon.png" />\n\n    <!-- Social: Open Graph -->\n    <meta property="og:type" content="website" />\n    <meta property="og:url" content="https://murrayb.com/" />\n    <meta property="og:title" content="Murray Buchanan | Developer" />\n    <meta property="og:description" content="Explore the projects and experience of Murray Buchanan, specializing in full-stack development." />\n    <meta property="og:image" content="https://murrayb.com/favicon.png" />\n\n    <!-- Social: Twitter -->\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="Murray Buchanan | Developer" />\n    <meta name="twitter:description" content="Explore the projects and experience of Murray Buchanan, specializing in full-stack development." />\n    <meta name="twitter:image" content="https://murrayb.com/favicon.png" />\n\n    <!-- Referrer Policy -->\n    <meta name="referrer" content="no-referrer-when-downgrade" />\n\n    <!-- Schema.org -->\n    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "Person",\n      "name": "Murray Buchanan",\n      "url": "https://murrayb.com",\n      "jobTitle": "Software Engineer",\n      "sameAs": [\n        "https://www.linkedin.com/in/murray-buchanan-33519220a/",\n        "https://github.com/MurrayBuchanan"\n      ]\n    }\n    <\/script>\n\n    <!-- SvelteKit Head -->\n    ' + head + '\n  </head>\n  <body data-sveltekit-preload-data="hover">\n    <div style="display: contents">' + body + "</div>\n  </body>\n</html>",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -189,7 +189,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "5ddr9y"
+  version_hash: "1az8vww"
 };
 async function get_hooks() {
   let handle;

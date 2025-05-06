@@ -31,19 +31,19 @@ export default {
       },
       colors: {
         primary: {
-          light: '#ffffff',          // White for light mode
-          DEFAULT: '#ffffff',        // White for default
+          light: '#FFFFFF',          // White for light mode
+          DEFAULT: '#FFFFFF',        // White for default
           dark: '#161616',           // Black for dark mode
         },
         secondary: {
           light: '#191919',          // Off-white light
           DEFAULT: '#191919',        // Off-white
-          dark: '#FEF7EA',           // Darker gray
+          dark: '#FAFAFA',           // Darker gray
         },
         tertiary: {
-          light: '#777',          // Light gray
-          DEFAULT: '#777',        // Neutral gray
-          dark: '#66625E',           // Darker gray
+          light: '#777777',          // Light gray
+          DEFAULT: '#777777',        // Neutral gray
+          dark: '#999',           // Darker gray
         },
         orange: {
           light: '#FF9F00',          // Light orange

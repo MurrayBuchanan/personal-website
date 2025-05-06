@@ -1,86 +1,114 @@
-import { c as create_ssr_component, d as add_attribute, e as escape, v as validate_component, f as each } from "../../chunks/ssr.js";
-import { C as Container, F as Footer } from "../../chunks/container.js";
-const Title = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<main class="h-lvh flex flex-col items-center justify-center text-center"><div> <h2 class="text-base uppercase font-normal text-gray-900 dark:text-gray-400"></h2> <h1 class="text-5xl font-semibold my-4 text-gray-900 dark:text-white" data-svelte-h="svelte-azed2m">Murray Buchanan</h1> <ul class="flex space-x-6 justify-center" data-svelte-h="svelte-1o1vazz"><li class="px-2"><a href="mailto:contact@murrayb.com"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" class="stroke-2 stroke-gray-500 dark:stroke-gray-400 hover: duration-150 hover:stroke-gray-900 hover:dark:stroke-white"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a></li> <li class="px-2"><a href="https://www.linkedin.com/in/murray-buchanan-33519220a/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" class="stroke-2 stroke-gray-500 dark:stroke-gray-400 hover: duration-150 hover:stroke-gray-900 hover:dark:stroke-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></li> <li class="px-2"><a href="https://github.com/MurrayBuchanan" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-2 stroke-gray-500 hover: duration-150 dark:stroke-gray-400 hover:stroke-gray-900 hover:dark:stroke-white"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li> <li class="px-2"><a href="https://www.instagram.com/murray.c.buchanan/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-2 stroke-gray-500 dark:stroke-gray-400 hover: duration-150 hover:stroke-gray-900 hover:dark:stroke-white"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></li></ul> ${``}</div></main>`;
-});
-const css = {
-  code: ".image.svelte-1o4u6z.svelte-1o4u6z{opacity:0;transform:scale(0.5);transition:opacity 0.3s ease, transform 0.3s ease}.text.svelte-1o4u6z.svelte-1o4u6z{transform:translateX(-5rem);transition:opacity 0.3s ease, transform 0.3s ease}main.svelte-1o4u6z:hover .image.svelte-1o4u6z,main.svelte-1o4u6z:hover .text.svelte-1o4u6z{opacity:1;transform:translateX(0)}",
-  map: `{"version":3,"file":"section-subTitle.svelte","sources":["section-subTitle.svelte"],"sourcesContent":["<script>\\n  export let image = '';\\n  export let title = '';\\n  export let desc = '';\\n  export let subDesc = '';\\n  export let link = '';\\n<\/script>\\n\\n<main class=\\"px-4 py-3 rounded-3xl hover:bg-secondary-light hover:dark:bg-primary-dark hover:bg-gray-200 transition-transform transform hover:-translate-y-1 cursor-pointer\\">\\n<a href={link}> \\n  <!-- If link exists -->\\n  <div class=\\"flex items-center\\">\\n      {#if image}\\n        <!-- svelte-ignore a11y-img-redundant-alt -->\\n        <img src={image} alt=\\"Profile Image\\" class=\\"w-12 h-auto mr-4 my-2 image\\" />\\n      {/if}\\n    \\n    <div class=\\"flex flex-col justify-center\\">\\n      {#if title}\\n        <h2 class=\\"text-xl text-gray-900 dark:text-gray-200 text\\">{title}</h2>\\n      {/if}\\n      {#if desc}\\n        <h3 class=\\"text-sm text-gray-900 dark:text-gray-200 text\\">{desc}</h3>\\n      {/if}\\n      {#if subDesc}\\n        <h3 class=\\"text-sm text-gray-500 dark:text-gray-400 text\\">{subDesc}</h3>\\n      {/if}\\n    </div>\\n  </div>\\n</a>\\n</main>\\n\\n<style>\\n  .image {\\n    opacity:0;\\n    transform: scale(0.5);\\n    transition: opacity 0.3s ease, transform 0.3s ease;\\n  }\\n\\n  .text {\\n    transform: translateX(-5rem);\\n    transition: opacity 0.3s ease, transform 0.3s ease;\\n  }\\n\\n  main:hover .image,\\n  main:hover .text {\\n    opacity: 1;\\n    transform: translateX(0);\\n  }\\n</style>"],"names":[],"mappings":"AAiCE,kCAAO,CACL,QAAQ,CAAC,CACT,SAAS,CAAE,MAAM,GAAG,CAAC,CACrB,UAAU,CAAE,OAAO,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,SAAS,CAAC,IAAI,CAAC,IAChD,CAEA,iCAAM,CACJ,SAAS,CAAE,WAAW,KAAK,CAAC,CAC5B,UAAU,CAAE,OAAO,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,SAAS,CAAC,IAAI,CAAC,IAChD,CAEA,kBAAI,MAAM,CAAC,oBAAM,CACjB,kBAAI,MAAM,CAAC,mBAAM,CACf,OAAO,CAAE,CAAC,CACV,SAAS,CAAE,WAAW,CAAC,CACzB"}`
-};
-const Section_subTitle = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { image = "" } = $$props;
+import { c as create_ssr_component, b as add_attribute, e as escape, v as validate_component, d as each } from "../../chunks/ssr.js";
+import { C as Container, S as Section_heading, F as Footer } from "../../chunks/section-heading.js";
+const Section_subheading = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { icon = "" } = $$props;
   let { title = "" } = $$props;
   let { desc = "" } = $$props;
   let { subDesc = "" } = $$props;
-  let { link = "" } = $$props;
-  if ($$props.image === void 0 && $$bindings.image && image !== void 0) $$bindings.image(image);
+  let { url = "" } = $$props;
+  const favourite = false;
+  if ($$props.icon === void 0 && $$bindings.icon && icon !== void 0) $$bindings.icon(icon);
   if ($$props.title === void 0 && $$bindings.title && title !== void 0) $$bindings.title(title);
   if ($$props.desc === void 0 && $$bindings.desc && desc !== void 0) $$bindings.desc(desc);
   if ($$props.subDesc === void 0 && $$bindings.subDesc && subDesc !== void 0) $$bindings.subDesc(subDesc);
-  if ($$props.link === void 0 && $$bindings.link && link !== void 0) $$bindings.link(link);
-  $$result.css.add(css);
-  return `<main class="px-4 py-3 rounded-3xl hover:bg-secondary-light hover:dark:bg-primary-dark hover:bg-gray-200 transition-transform transform hover:-translate-y-1 cursor-pointer svelte-1o4u6z"><a${add_attribute("href", link, 0)}> <div class="flex items-center">${image ? ` <img${add_attribute("src", image, 0)} alt="Profile Image" class="w-12 h-auto mr-4 my-2 image svelte-1o4u6z">` : ``} <div class="flex flex-col justify-center">${title ? `<h2 class="text-xl text-gray-900 dark:text-gray-200 text svelte-1o4u6z">${escape(title)}</h2>` : ``} ${desc ? `<h3 class="text-sm text-gray-900 dark:text-gray-200 text svelte-1o4u6z">${escape(desc)}</h3>` : ``} ${subDesc ? `<h3 class="text-sm text-gray-500 dark:text-gray-400 text svelte-1o4u6z">${escape(subDesc)}</h3>` : ``}</div></div></a> </main>`;
+  if ($$props.url === void 0 && $$bindings.url && url !== void 0) $$bindings.url(url);
+  if ($$props.favourite === void 0 && $$bindings.favourite && favourite !== void 0) $$bindings.favourite(favourite);
+  return `  <main class="relative flex items-center border border-primary-light dark:border-primary-dark overflow-hidden hover:border-tertiary-light hover:dark:border-tertiary-dark px-4 py-2 rounded-2xl hover:bg-primary-light dark:hover:bg-primary-dark cursor-pointer transition-transform duration-300 hover:scale-105 ease-out"><a${add_attribute("href", url, 0)} class="relative block w-full"> <div class="flex items-center">${icon ? `<img${add_attribute("src", icon, 0)} alt="${"Thumbnail of " + escape(title, true)}" style="stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;" class="w-8 h-8 object-contain mr-4 my-2 dark:invert dark:brightness-100">` : ``} <div class="flex flex-col justify-center">${title ? `<h2 class="text-base font-normal text-secondary-light dark:text-secondary-dark">${escape(title)}</h2>` : ``} ${desc ? `<h3 class="text-xs font-normal text-tertiary-light dark:text-tertiary-dark">${escape(desc)}</h3>` : ``} ${subDesc ? `<h3 class="text-xs font-normal text-tertiary-light dark:text-tertiary-dark">${escape(subDesc)}</h3>` : ``}</div></div></a></main>`;
 });
+const css = {
+  code: ".project.svelte-ghm1b0{margin-bottom:1rem}",
+  map: `{"version":3,"file":"+page.svelte","sources":["+page.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { onMount } from \\"svelte\\";\\nimport { useAnimate } from \\"./animation/animation\\";\\nimport Container from \\"./components/container.svelte\\";\\nimport SectionHeading from \\"./components/section-heading.svelte\\";\\nimport SectionSubheading from \\"./components/section-subheading.svelte\\";\\nimport Footer from \\"./components/footer.svelte\\";\\nimport { slide, fade } from \\"svelte/transition\\";\\nlet showAll = false;\\nlet projects = [\\n  {\\n    title: \\"JPMorganChase\\",\\n    subDesc: \\"2024-Now \\\\xB7 Fintech, Insight, Summer Analyst\\",\\n    icon: \\"assets/icons/JPMorganChase.svg\\",\\n    url: \\"/JPMorganChase\\",\\n    favourite: true\\n  },\\n  {\\n    title: \\"Set Piece\\",\\n    subDesc: \\"2024-2025 \\\\xB7 Team Training, App Dev, Data Analysis\\",\\n    icon: \\"assets/icons/SetPiece.svg\\",\\n    url: \\"/SetPiece\\",\\n    favourite: true\\n  },\\n  {\\n    title: \\"Camp Lindenmere\\",\\n    subDesc: \\"2024 \\\\xB7 Academia, Teaching, Counsellor\\",\\n    icon: \\"assets/icons/CampLindenmere.svg\\",\\n    url: \\"/CampLindenmere\\",\\n    favourite: true\\n  },\\n  {\\n    title: \\"University of Strathclyde\\",\\n    subDesc: \\"2022-Now \\\\xB7 Education, Undergraduate, Computer Science\\",\\n    icon: \\"assets/icons/UniversityOfStrathclyde.svg\\",\\n    url: \\"/UniversityOfStrathclyde\\",\\n    favourite: true\\n  },\\n  {\\n    title: \\"Direct Distribution\\",\\n    subDesc: \\"2022-2024 \\\\xB7 Events, Marketing, Distribution\\",\\n    icon: \\"assets/icons/DirectDistribution.svg\\",\\n    url: \\"/DirectDistribution\\"\\n  },\\n  {\\n    title: \\"Chibb\\",\\n    subDesc: \\"2021-2023 \\\\xB7 Game Design, Procedural Generation, iOS Dev\\",\\n    icon: \\"assets/icons/Chibb.svg\\",\\n    url: \\"/Chibb\\",\\n    favourite: true\\n  },\\n  {\\n    title: \\"Minecraft\\",\\n    subDesc: \\"2017-2019 \\\\xB7 Community Building, Server Hosting, Plugin Dev\\",\\n    icon: \\"assets/icons/Minecraft.svg\\",\\n    url: \\"/Minecraft\\"\\n  },\\n  {\\n    title: \\"Jordanhill School\\",\\n    subDesc: \\"2009-2022 \\\\xB7 Education, Computer Science, Volunteering\\",\\n    icon: \\"assets/icons/JordanhillSchool.svg\\",\\n    url: \\"/JordanhillSchool\\"\\n  },\\n  {\\n    title: \\"Honourable Mentions\\",\\n    subDesc: \\"Additional archived or scrapped projects\\",\\n    icon: \\"assets/icons/HonourableMentions.svg\\",\\n    url: \\"/HonourableMentions\\"\\n  }\\n];\\n$: favourites = projects.filter((project) => project.favourite);\\nfunction toggleShowAll() {\\n  showAll = !showAll;\\n  setTimeout(() => {\\n    const elements = document.body.querySelectorAll(\\".project\\");\\n    elements.forEach((element) => {\\n      useAnimate(element, 0.1);\\n    });\\n  }, 0);\\n}\\n<\/script>\\n\\n<style>\\n    .project {\\n        margin-bottom: 1rem;\\n    }\\n</style>\\n\\n<body class=\\"mx10 bg-primary-light dark:bg-primary-dark\\" use:useAnimate={0.1}>\\n    <Container>\\n        <SectionHeading\\n            title=\\"Murray Buchanan\\"\\n            desc=\\"Developer\\"\\n            links={[\\n                { url: \\"/About\\", newPage: false, title: \\"About\\" },\\n                { url: \\"mailto:hello@murrayb.com\\", newPage: false, title: \\"Contact\\" }\\n            ]}>\\n        </SectionHeading>\\n\\n        <div class=\\"body\\">\\n            <!-- Animate items and include transition -->\\n            {#each (showAll ? projects : favourites) as { title, subDesc, icon, url } (title)}\\n            \\n                <div class=\\"project\\" transition:slide|fade={{ duration: 300 }}>\\n                    <div class=\\"animate\\">\\n                    <SectionSubheading {title} {subDesc} {icon} {url} />\\n                </div>\\n                </div>\\n            {/each}\\n\\n            <button on:click={toggleShowAll} class=\\"animate px-4 py-1 my-4 inline-flex items-center bg-primary-light dark:bg-primary-dark hover:bg-primary-dark dark:hover:bg-primary-light rounded-lg text-sm font-normal text-secondary-light hover:text-secondary-dark dark:text-secondary-dark hover:dark:text-secondary-light border border-tertiary-light hover:border-tertiary-dark dark:border-tertiary-dark hover:dark:border-tertiary-light transition-transform duration-150 hover:scale-105 ease-out cursor-pointer\\">\\n                {showAll ? 'View Less' : 'View More'}\\n            </button>\\n        </div>\\n        \\n        <Footer />\\n    </Container>\\n</body>"],"names":[],"mappings":"AAkFI,sBAAS,CACL,aAAa,CAAE,IACnB"}`
+};
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let timelines = [
+  let favourites;
+  let projects = [
     {
-      title: "JPMorgan Chase & Co",
-      subDesc: "Now · Work, Analyst, Python",
-      image: "static/assets/experience-icons/jpmc.png",
-      link: "/JPMorganChaseCo"
+      title: "JPMorganChase",
+      subDesc: "2024-Now · Fintech, Insight, Summer Analyst",
+      icon: "assets/icons/JPMorganChase.svg",
+      url: "/JPMorganChase",
+      favourite: true
+    },
+    {
+      title: "Set Piece",
+      subDesc: "2024-2025 · Team Training, App Dev, Data Analysis",
+      icon: "assets/icons/SetPiece.svg",
+      url: "/SetPiece",
+      favourite: true
     },
     {
       title: "Camp Lindenmere",
-      subDesc: "2024 · Academia, Teaching, Java, React, UI, UX",
-      image: "static/assets/experience-icons/lindenmere.png",
-      link: "/CampLindenmere"
-    },
-    {
-      title: "Google Developer Group",
-      subDesc: "2023 · Community, Google, Teaching, Competing",
-      image: "static/assets/experience-icons/google.png",
-      link: "/GoogleDeveloperGroup"
-    },
-    {
-      title: "Direct Distribution",
-      subDesc: "2022 · Marketing, Distribution, Logistics, IT",
-      image: "static/assets/experience-icons/distribution.png",
-      link: "/DirectDistribution"
+      subDesc: "2024 · Academia, Teaching, Counsellor",
+      icon: "assets/icons/CampLindenmere.svg",
+      url: "/CampLindenmere",
+      favourite: true
     },
     {
       title: "University of Strathclyde",
-      // desc: "MEng, Computer Science",
-      subDesc: "2022 · Education, Computer Science, GDG, H&S",
-      image: "static/assets/experience-icons/strathclyde.png",
-      link: "/UniversityOfStrathclyde"
+      subDesc: "2022-Now · Education, Undergraduate, Computer Science",
+      icon: "assets/icons/UniversityOfStrathclyde.svg",
+      url: "/UniversityOfStrathclyde",
+      favourite: true
+    },
+    {
+      title: "Direct Distribution",
+      subDesc: "2022-2024 · Events, Marketing, Distribution",
+      icon: "assets/icons/DirectDistribution.svg",
+      url: "/DirectDistribution"
     },
     {
       title: "Chibb",
-      subDesc: "2020 · Signal processing, ML, UX",
-      image: "static/assets/banners/chibb.png",
-      link: "/Chibb"
+      subDesc: "2021-2023 · Game Design, Procedural Generation, iOS Dev",
+      icon: "assets/icons/Chibb.svg",
+      url: "/Chibb",
+      favourite: true
     },
     {
       title: "Minecraft",
-      subDesc: "2015 · Leadership, Java",
-      image: "static/assets/experience-icons/jordanhill.png",
-      link: "/JordanhillSchool"
+      subDesc: "2017-2019 · Community Building, Server Hosting, Plugin Dev",
+      icon: "assets/icons/Minecraft.svg",
+      url: "/Minecraft"
     },
     {
-      title: "Unlisted Projects",
-      image: "static/assets/experience-icons/jordanhill.png",
-      link: "/JordanhillSchool"
+      title: "Jordanhill School",
+      subDesc: "2009-2022 · Education, Computer Science, Volunteering",
+      icon: "assets/icons/JordanhillSchool.svg",
+      url: "/JordanhillSchool"
+    },
+    {
+      title: "Honourable Mentions",
+      subDesc: "Additional archived or scrapped projects",
+      icon: "assets/icons/HonourableMentions.svg",
+      url: "/HonourableMentions"
     }
   ];
-  return `<body class="mx10 bg-primary-light dark:bg-secondary-dark"> ${validate_component(Title, "Title").$$render($$result, {}, {}, {})}  ${validate_component(Container, "Container").$$render($$result, {}, {}, {
+  $$result.css.add(css);
+  favourites = projects.filter((project) => project.favourite);
+  return `<body class="mx10 bg-primary-light dark:bg-primary-dark">${validate_component(Container, "Container").$$render($$result, {}, {}, {
     default: () => {
-      return `<h2 class="text-3xl py-2 font-semibold text-gray-900 dark:text-white" data-svelte-h="svelte-xz1var">Experience</h2> <span>${each(timelines, ({ title, desc, subDesc, image, link }) => {
-        return `${validate_component(Section_subTitle, "SectionTitle").$$render($$result, { title, desc, subDesc, image, link }, {}, {})}`;
-      })}</span>`;
-    }
-  })}  ${validate_component(Container, "Container").$$render($$result, {}, {}, {
-    default: () => {
-      return `${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}`;
+      return `${validate_component(Section_heading, "SectionHeading").$$render(
+        $$result,
+        {
+          title: "Murray Buchanan",
+          desc: "Developer",
+          links: [
+            {
+              url: "/About",
+              newPage: false,
+              title: "About"
+            },
+            {
+              url: "mailto:hello@murrayb.com",
+              newPage: false,
+              title: "Contact"
+            }
+          ]
+        },
+        {},
+        {}
+      )} <div class="body"> ${each(favourites, ({ title, subDesc, icon, url }) => {
+        return `<div class="project svelte-ghm1b0"><div class="animate">${validate_component(Section_subheading, "SectionSubheading").$$render($$result, { title, subDesc, icon, url }, {}, {})}</div> </div>`;
+      })} <button class="animate px-4 py-1 my-4 inline-flex items-center bg-primary-light dark:bg-primary-dark hover:bg-primary-dark dark:hover:bg-primary-light rounded-lg text-sm font-normal text-secondary-light hover:text-secondary-dark dark:text-secondary-dark hover:dark:text-secondary-light border border-tertiary-light hover:border-tertiary-dark dark:border-tertiary-dark hover:dark:border-tertiary-light transition-transform duration-150 hover:scale-105 ease-out cursor-pointer">${escape("View More")}</button></div> ${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}`;
     }
   })}</body>`;
 });
