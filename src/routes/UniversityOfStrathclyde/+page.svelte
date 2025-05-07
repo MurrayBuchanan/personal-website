@@ -56,8 +56,8 @@
            project: {
              title: 'Wellness App',
              desc: 'The Wellness App aims to support wellbeing by addressing stress and providing clear steps for self-improvement. Inspired by the Five Ways to Wellbeing, it offers engaging challenges encouraging users to connect with others through community features, engage in physical activity, and practice mindfulness. The project focuses on creating an accessible platform that removes barriers and makes improving wellbeing easier through interactive challenges.',
-             code: 'https://github.com/MurrayBuchanan/cs317-wellness',
-            //  url: 'https://youtube.com/shorts/raIrvk-FHRY?feature=share'
+            //  code: 'https://github.com/MurrayBuchanan/cs317-wellness',
+             url: 'https://youtube.com/shorts/raIrvk-FHRY?feature=share'
            }
         },
     ];
@@ -84,8 +84,8 @@
            project: {
              title: 'ScotBank',
              desc: 'ScotBank is a fictional bank that was developed as part of the Agile Software Development in Practice module. The project involved creating a web application that simulates banking operations, allowing users to manage their accounts, view transactions, and perform various banking tasks. The project was developed using Agile methodologies, focusing on iterative development and collaboration within a team.',
-             code: 'https://github.com/MurrayBuchanan/cs217-scotbank',
-            //  url: 'https://youtu.be/qYNSiujtFbM'
+            //  code: 'https://github.com/MurrayBuchanan/cs217-scotbank',
+             url: 'https://youtu.be/qYNSiujtFbM'
            }
         },
         { moduleName: 'Quantitative Methods for Computer Science'},
