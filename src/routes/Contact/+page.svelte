@@ -12,7 +12,7 @@
         <SectionHeading title="Contact" />
 
         <Text paragraphs={["Hey this is some placeholder text to say hello."]}/>
-        <Input placeholder="Hello" altPlaceholder="Hello" />
+        <Input placeholder="Hello" />
 
 
         <!-- <h2>Stay notified</h2>

@@ -24,6 +24,5 @@
         <DotLottieSvelte src="/assets/Animation.lottie" loop autoplay />
 
         <Footer />
-
     </Container>
 </body>

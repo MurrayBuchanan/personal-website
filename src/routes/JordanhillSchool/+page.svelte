@@ -22,7 +22,7 @@
 
         <Paragraph
             title="Computer Science Teaching Assistant"
-            desc="Supported National 5 Computer Science students, providing practical programming assistance in JavaScript and Python. This foundational teaching experience directly led to subsequent tutoring roles throughout university and a Computer Science Instructor position in Pennsylvania."
+            desc="Supported National 5 Computer Science students, providing practical programming assistance in JavaScript and Python. This foundational teaching experience directly led to subsequent tutoring roles throughout university and a Computer Science teaching position in Pennsylvania, US."
         />
 
         <Paragraph

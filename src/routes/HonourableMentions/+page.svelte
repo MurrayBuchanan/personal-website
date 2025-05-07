@@ -10,13 +10,13 @@
     <Container>
         <Heading
             title="Honourable Mentions"
-            desc="Additional archived or scrapped projects"
+            desc="Additional archived, scrapped or future projects"
             newPage={true}
         />
 
-        <Paragraph title="This Website" desc="I have spent way too long developing this website."/>
+        <Paragraph title="This Website" desc="I’ve spent far too long building this site—it's a personal playground and portfolio. Built with SvelteKit and TypeScript, deployed via Cloudflare. Other tools include Tailwind CSS and GitHub for CI/CD." />
 
-        <Paragraph title="The Conquer Collective" desc="Originally started with my flatmates on High Street in Glasgow City Centre. It began simply as a way for us to get our hands on clothing we actually liked. Later, Jonathan Ewers and I continued to develop it further, challenging ourselves to see how profitable we could make the venture using limited resources."/>
+        <Paragraph title="The Conquer Collective" desc="Originally started with my flatmates on High Street in Glasgow City Centre. It began simply as a way for us to get our hands on clothing we actually liked. Later, my friend and I continued to develop it further, challenging ourselves to see how profitable we could make the venture using limited resources."/>
 
         <Paragraph title="The Tale of Two" desc="Tale of Two was a project developed as a two-player shooter game. It served as a practical way for us to learn more about the complexities of developing 3D games. In the game, users could join randomly and be placed on a procedurally generated map to engage in egg-shooting combat. While we initially envisioned a far more detailed game, we ultimately decided to scale back and scrap the larger project due to its complexity and a desire to focus on other passion projects."/>
 

@@ -1,9 +1,8 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import { useAnimate } from './animation/animation';
     import Container from './components/container.svelte';
-    import SectionHeading from './components/section-heading.svelte';
-    import SectionSubheading from './components/section-subheading.svelte';
+    import Heading from './components/section-heading.svelte';
+    import Project from './components/section-subheading.svelte';
     import Footer from './components/footer.svelte';
     import { slide, fade } from 'svelte/transition';
 
@@ -92,23 +91,22 @@
 
 <body class="mx10 bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
     <Container>
-        <SectionHeading
+        <Heading
             title="Murray Buchanan"
             desc="Developer"
             links={[
                 { url: "/About", newPage: false, title: "About" },
                 { url: "mailto:hello@murrayb.com", newPage: false, title: "Contact" }
-            ]}>
-        </SectionHeading>
+            ]}
+        />
 
         <div class="body">
-            <!-- Animate items and include transition -->
             {#each (showAll ? projects : favourites) as { title, subDesc, icon, url } (title)}
             
                 <div class="project" transition:slide|fade={{ duration: 300 }}>
                     <div class="animate">
-                    <SectionSubheading {title} {subDesc} {icon} {url} />
-                </div>
+                        <Project {title} {subDesc} {icon} {url} />
+                    </div>
                 </div>
             {/each}
 
