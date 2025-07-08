@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/Chibb/+page.svelte";
+export { default as component } from "../../../../src/routes/chibb/+page.svelte";

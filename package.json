@@ -28,6 +28,7 @@
 		"@lottiefiles/dotlottie-svelte": "^0.5.3",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@tailwindcss/typography": "^0.5.15",
+		"flowbite-svelte": "^0.44.20",
 		"svelte-intersection-observer": "^1.0.0"
 	}
 }

@@ -13,60 +13,60 @@
             title: "JPMorganChase",
             subDesc: "2024-Now · Fintech, Insight, Summer Analyst",
             icon: "assets/icons/JPMorganChase.svg",
-            url: "/JPMorganChase",
+            url: "/jpmorganchase",
             favourite: true,
         },
         {
             title: "Set Piece",
             subDesc: "2024-2025 · Team Training, App Dev, Data Analysis",
             icon: "assets/icons/SetPiece.svg",
-            url: "/SetPiece",
+            url: "/setpiece",
             favourite: true,
         },
         {
             title: "Camp Lindenmere",
             subDesc: "2024 · Academia, Teaching, Counsellor",
             icon: "assets/icons/CampLindenmere.svg",
-            url: "/CampLindenmere",
+            url: "/camp-lindenmere",
             favourite: true,
         },
         {
             title: "University of Strathclyde",
             subDesc: "2022-Now · Education, Undergraduate, Computer Science",
             icon: "assets/icons/UniversityOfStrathclyde.svg",
-            url: "/UniversityOfStrathclyde",
+            url: "/university-of-strathclyde",
             favourite: true,
         },
         {
             title: "Direct Distribution",
             subDesc: "2022-2024 · Events, Marketing, Distribution",
             icon: "assets/icons/DirectDistribution.svg",
-            url: "/DirectDistribution",
+            url: "/direct-distribution",
         },
         {
             title: "Chibb",
             subDesc: "2021-2023 · Game Design, Procedural Generation, iOS Dev",
             icon: "assets/icons/Chibb.svg",
-            url: "/Chibb",
+            url: "/chibb",
             favourite: true,
         },
         {
             title: "Minecraft",
             subDesc: "2017-2019 · Community Building, Server Hosting, Plugin Dev",
             icon: "assets/icons/Minecraft.svg",
-            url: "/Minecraft",
+            url: "/minecraft",
         },
         {
             title: "Jordanhill School",
             subDesc: "2009-2022 · Education, Computer Science, Volunteering",
             icon: "assets/icons/JordanhillSchool.svg",
-            url: "/JordanhillSchool",
+            url: "/jordanhill-school",
         },
         {
             title: "Honourable Mentions",
             subDesc: "Additional archived or scrapped projects",
             icon: "assets/icons/HonourableMentions.svg",
-            url: "/HonourableMentions",
+            url: "/honourable-mentions",
         }
     ];
 
@@ -95,7 +95,7 @@
             title="Murray Buchanan"
             desc="Developer"
             links={[
-                { url: "/About", newPage: false, title: "About" },
+                { url: "/about", newPage: false, title: "About" },
                 { url: "mailto:hello@murrayb.com", newPage: false, title: "Contact" }
             ]}
         />

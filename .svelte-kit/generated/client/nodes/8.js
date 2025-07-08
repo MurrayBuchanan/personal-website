@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/HonourableMentions/+page.svelte";
+export { default as component } from "../../../../src/routes/honourable-mentions/+page.svelte";
