@@ -19,9 +19,9 @@
             ]}
         />
       
-        <Media
+        <!-- <Media
             images={["/assets/banners/jpmorganchase.jpg"]}
-        />
+        /> -->
 
         <Paragraph 
             title="My Journey" 
