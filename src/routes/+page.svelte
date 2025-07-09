@@ -98,6 +98,7 @@
                 { url: "/about", newPage: false, title: "About" },
                 { url: "mailto:hello@murrayb.com", newPage: false, title: "Contact" }
             ]}
+            newPage={false}
         />
 
         
