@@ -1,10 +1,10 @@
 <script lang="ts">
     import { useAnimate } from '../animation/animation';
-    import Container from './../components/container.svelte';
+    import Container from '../components/container.svelte';
     import Media from '../components/section-media.svelte';
     import Paragraphs from '../components/section-para.svelte';
     import Paragraph from '../components/section-text.svelte';
-    import Footer from './../components/footer.svelte';
+    import Footer from '../components/footer.svelte';
     import Heading from '../components/section-heading.svelte';
 </script>
 
@@ -18,7 +18,6 @@
                 { url: "https://www.jpmorganchase.com/", title: "Visit Website" }
             ]}
         />
-
       
         <Media
             images={["/assets/banners/jpmorganchase.jpg"]}
