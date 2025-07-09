@@ -2,6 +2,8 @@
     import { useAnimate } from '../animation/animation';
     import Container from './../components/container.svelte';
     import Media from '../components/section-media.svelte';
+    import Paragraphs from '../components/section-para.svelte';
+    import Paragraph from '../components/section-text.svelte';
     import Footer from './../components/footer.svelte';
     import Heading from '../components/section-heading.svelte';
 </script>
@@ -17,22 +19,16 @@
             ]}
         />
 
+      
         <Media
-            images={["/assets/banners/JPMorganChase.jpg"]}
-
-
+            images={["/assets/banners/jpmorganchase.jpg"]}
         />
-        <div class="grid grid-cols-2 gap-8">
-            <Media 
-                title="Insight Program" 
-                desc="My first experience at JPMorgan Chase was a week long program that includes networking events, workshops, and presentations from current employees." 
-            />
-            
-            <Media
-                title="Summer Analyst"
-                desc="I am happy to announce I have been invited back to JPMorganChase for a 10-week internship as a Summer Analyst, where I will work on various projects and gained experience in the Fintech industry."
-            />
-        </div>
+
+        <Paragraph 
+            title="My Journey" 
+            desc="I first joined JPMC through the Spring into Tech Insight Program - a week-long experience featuring networking events, technical workshops, presentations, and a hackathon, where my team took first place. The following year, I was invited back as a Software Engineering Intern within Research, contributing to a Cloud-focused team." 
+        />
+        
         
         <Footer />
     </Container>

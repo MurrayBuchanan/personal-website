@@ -10,7 +10,7 @@
     export let custom = "text-center";
 </script>
 
-<main class="pt-2 pb-6 animate">
+<main class="pt-2 animate">
     {#if images.length === 1}
         <div class="w-full overflow-hidden pb-6">
             <img src="{images[0]}" alt="Preview of {title}" class="w-full h-auto object-contain rounded-3xl" />

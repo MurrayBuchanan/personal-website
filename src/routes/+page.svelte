@@ -89,7 +89,7 @@
     }
 </style>
 
-<body class="mx10 bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
+<body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
     <Container>
         <Heading
             title="Murray Buchanan"
