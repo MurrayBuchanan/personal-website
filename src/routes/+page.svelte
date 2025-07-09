@@ -100,7 +100,7 @@
             ]}
         />
 
-        <div class="body">
+        
             {#each (showAll ? projects : favourites) as { title, subDesc, icon, url } (title)}
             
                 <div class="project" transition:slide|fade={{ duration: 300 }}>
@@ -113,7 +113,7 @@
             <button on:click={toggleShowAll} class="animate px-4 py-1 my-4 inline-flex items-center bg-primary-light dark:bg-primary-dark hover:bg-primary-dark dark:hover:bg-primary-light rounded-lg text-sm font-normal text-secondary-light hover:text-secondary-dark dark:text-secondary-dark hover:dark:text-secondary-light border border-tertiary-light hover:border-tertiary-dark dark:border-tertiary-dark hover:dark:border-tertiary-light transition-transform duration-150 hover:scale-105 ease-out cursor-pointer">
                 {showAll ? 'View Less' : 'View More'}
             </button>
-        </div>
+        
         
         <Footer />
     </Container>
