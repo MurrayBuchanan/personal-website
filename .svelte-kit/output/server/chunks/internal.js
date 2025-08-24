@@ -2,14 +2,10 @@ import { c as create_ssr_component, a as setContext, v as validate_component, m 
 import { a as afterUpdate } from "./ssr2.js";
 import "./environment.js";
 let public_env = {};
-let safe_public_env = {};
 function set_private_env(environment) {
 }
 function set_public_env(environment) {
   public_env = environment;
-}
-function set_safe_public_env(environment) {
-  safe_public_env = environment;
 }
 let read_implementation = null;
 function set_read_implementation(fn) {
@@ -101,6 +97,7 @@ const options = {
   app_template_contains_nonce: false,
   csp: { "mode": "auto", "directives": { "upgrade-insecure-requests": false, "block-all-mixed-content": false }, "reportOnly": { "upgrade-insecure-requests": false, "block-all-mixed-content": false } },
   csrf_check_origin: true,
+  csrf_trusted_origins: [],
   embedded: false,
   env_public_prefix: "PUBLIC_",
   env_private_prefix: "",
@@ -184,7 +181,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "580uyg"
+  version_hash: "uuqd7i"
 };
 async function get_hooks() {
   let handle;
@@ -205,14 +202,12 @@ async function get_hooks() {
   };
 }
 export {
-  set_private_env as a,
-  set_public_env as b,
-  set_safe_public_env as c,
-  set_read_implementation as d,
-  set_manifest as e,
+  set_public_env as a,
+  set_read_implementation as b,
+  set_manifest as c,
   get_hooks as g,
   options as o,
   public_env as p,
   read_implementation as r,
-  safe_public_env as s
+  set_private_env as s
 };

@@ -10,7 +10,7 @@ return {
 	assets: new Set([".DS_Store","assets/.DS_Store","assets/animations/animation.json","assets/animations/animation.lottie","assets/icons/BuchananBarbers.svg","assets/icons/CampLindenmere.svg","assets/icons/Chibb.svg","assets/icons/Conquer.svg","assets/icons/DirectDistribution.svg","assets/icons/HonourableMentions.svg","assets/icons/JPMorganChase.svg","assets/icons/JordanhillSchool.svg","assets/icons/LittleCheese.svg","assets/icons/Minecraft.svg","assets/icons/Placeholder.svg","assets/icons/SetPiece.svg","assets/icons/UniversityOfStrathclyde.svg","assets/images/jpmorganchase.jpg","assets/videos/chibb.mp4","favicon.png"]),
 	mimeTypes: {".json":"application/json",".svg":"image/svg+xml",".jpg":"image/jpeg",".mp4":"video/mp4",".png":"image/png"},
 	_: {
-		client: {start:"_app/immutable/entry/start.DpPmzUpJ.js",app:"_app/immutable/entry/app.DGHjFsRg.js",imports:["_app/immutable/entry/start.DpPmzUpJ.js","_app/immutable/chunks/CETN8jAc.js","_app/immutable/chunks/BXJymywy.js","_app/immutable/entry/app.DGHjFsRg.js","_app/immutable/chunks/BXJymywy.js","_app/immutable/chunks/IHki7fMi.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.BA5fxVL2.js",app:"_app/immutable/entry/app.Doo_GCpt.js",imports:["_app/immutable/entry/start.BA5fxVL2.js","_app/immutable/chunks/Dq17lXNq.js","_app/immutable/chunks/BagziAXb.js","_app/immutable/entry/app.Doo_GCpt.js","_app/immutable/chunks/BagziAXb.js","_app/immutable/chunks/IHki7fMi.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('../output/server/nodes/0.js')),
 			__memo(() => import('../output/server/nodes/1.js')),
