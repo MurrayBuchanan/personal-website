@@ -112,7 +112,7 @@
             {/each}
 
             <div class="flex justify-center">
-                <button on:click={toggleShowAll} class="animate px-4 py-1 my-4 inline-flex items-center justify-center bg-primary-light dark:bg-primary-dark rounded-lg text-sm font-normal text-tertiary-light hover:text-secondary-light dark:text-tertiary-dark hover:dark:text-secondary-dark transition-all duration-150 hover:scale-105 ease-out cursor-pointer">
+                <button on:click={toggleShowAll} class="animate px-4 py-1 my-4 inline-flex items-center justify-center rounded-lg text-sm font-normal text-tertiary-light hover:text-secondary-light dark:text-tertiary-dark hover:dark:text-secondary-dark transition-all duration-150 hover:scale-105 ease-out cursor-pointer">
                     <svg 
                         class="w-4 h-4 transition-transform duration-300 {showAll ? 'rotate-180' : 'rotate-0'}" 
                         fill="none" 
