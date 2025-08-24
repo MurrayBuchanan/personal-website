@@ -1,19 +1,6 @@
 import { c as create_ssr_component, a as setContext, v as validate_component, m as missing_component } from "./ssr.js";
 import { a as afterUpdate } from "./ssr2.js";
-let base = "";
-let assets = base;
-const initial = { base, assets };
-function override(paths) {
-  base = paths.base;
-  assets = paths.assets;
-}
-function reset() {
-  base = initial.base;
-  assets = initial.assets;
-}
-function set_assets(path) {
-  assets = initial.assets = path;
-}
+import "./environment.js";
 let public_env = {};
 let safe_public_env = {};
 function set_private_env(environment) {
@@ -29,12 +16,6 @@ function set_read_implementation(fn) {
   read_implementation = fn;
 }
 function set_manifest(_) {
-}
-let prerendering = false;
-function set_building() {
-}
-function set_prerendering() {
-  prerendering = true;
 }
 const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { stores } = $$props;
@@ -66,7 +47,11 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     }
     $$rendered = `  ${constructors[1] ? `${validate_component(constructors[0] || missing_component, "svelte:component").$$render(
       $$result,
-      { data: data_0, this: components[0] },
+      {
+        data: data_0,
+        params: page.params,
+        this: components[0]
+      },
       {
         this: ($$value) => {
           components[0] = $$value;
@@ -77,7 +62,12 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         default: () => {
           return `${validate_component(constructors[1] || missing_component, "svelte:component").$$render(
             $$result,
-            { data: data_1, form, this: components[1] },
+            {
+              data: data_1,
+              form,
+              params: page.params,
+              this: components[1]
+            },
             {
               this: ($$value) => {
                 components[1] = $$value;
@@ -90,7 +80,12 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       }
     )}` : `${validate_component(constructors[0] || missing_component, "svelte:component").$$render(
       $$result,
-      { data: data_0, form, this: components[0] },
+      {
+        data: data_0,
+        form,
+        params: page.params,
+        this: components[0]
+      },
       {
         this: ($$value) => {
           components[0] = $$value;
@@ -103,7 +98,6 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return $$rendered;
 });
 const options = {
-  app_dir: "_app",
   app_template_contains_nonce: false,
   csp: { "mode": "auto", "directives": { "upgrade-insecure-requests": false, "block-all-mixed-content": false }, "reportOnly": { "upgrade-insecure-requests": false, "block-all-mixed-content": false } },
   csrf_check_origin: true,
@@ -116,8 +110,9 @@ const options = {
   preload_strategy: "modulepreload",
   root: Root,
   service_worker: false,
+  service_worker_options: void 0,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<html lang="en">\n  <head>\n    <meta charset="utf-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <meta http-equiv="X-UA-Compatible" content="IE=edge" />\n    <title>Murray Buchanan</title>\n\n    <!-- SEO -->\n    <meta name="description" content="Portfolio of Murray Buchanan – Developer" />\n    <meta name="author" content="Murray Buchanan" />\n    <meta name="robots" content="index, follow" />\n    <link rel="canonical" href="https://murrayb.com/" />\n\n    <!-- Icons -->\n    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />\n    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />\n    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />\n    <meta name="theme-color" content="#ffffff" />\n    <meta name="msapplication-TileColor" content="#ffffff" />\n    <meta name="msapplication-TileImage" content="/favicon.png" />\n\n    <!-- Social: Open Graph -->\n    <meta property="og:type" content="website" />\n    <meta property="og:url" content="https://murrayb.com/" />\n    <meta property="og:title" content="Murray Buchanan | Developer" />\n    <meta property="og:description" content="Explore the projects and experience of Murray Buchanan, specializing in full-stack development." />\n    <meta property="og:image" content="https://murrayb.com/favicon.png" />\n\n    <!-- Social: Twitter -->\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="Murray Buchanan | Developer" />\n    <meta name="twitter:description" content="Explore the projects and experience of Murray Buchanan, specializing in full-stack development." />\n    <meta name="twitter:image" content="https://murrayb.com/favicon.png" />\n\n    <!-- Referrer Policy -->\n    <meta name="referrer" content="no-referrer-when-downgrade" />\n\n    <!-- Schema.org -->\n    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "Person",\n      "name": "Murray Buchanan",\n      "url": "https://murrayb.com",\n      "jobTitle": "Software Engineer",\n      "sameAs": [\n        "https://www.linkedin.com/in/murray-buchanan-33519220a/",\n        "https://github.com/MurrayBuchanan"\n      ]\n    }\n    <\/script>\n\n    <!-- SvelteKit Head -->\n    ' + head + '\n  </head>\n  <body data-sveltekit-preload-data="hover">\n    <div style="display: contents">' + body + "</div>\n  </body>\n</html>",
+    app: ({ head, body, assets, nonce, env }) => '<html lang="en">\n  <head>\n    <meta charset="utf-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <meta http-equiv="X-UA-Compatible" content="IE=edge" />\n    <title>Murray Buchanan</title>\n\n    <!-- SEO -->\n    <meta name="description" content="Portfolio of Murray Buchanan – Developer" />\n    <meta name="author" content="Murray Buchanan" />\n    <meta name="robots" content="index, follow" />\n    <link rel="canonical" href="https://murrayb.com/" />\n\n    <!-- Icons -->\n    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" alt="Image of Murray Buchanan" />\n    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" alt="Image of Murray Buchanan" />\n    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" alt="Image of Murray Buchanan" />\n    <meta name="theme-color" content="#ffffff" />\n    <meta name="msapplication-TileColor" content="#ffffff" />\n    <meta name="msapplication-TileImage" content="/favicon.png" alt="Image of Murray Buchanan" />\n\n    <!-- Social: Open Graph -->\n    <meta property="og:type" content="website" />\n    <meta property="og:url" content="https://murrayb.com/" />\n    <meta property="og:title" content="Murray Buchanan | Developer" />\n    <meta property="og:description" content="Explore the projects and experience of Murray Buchanan, specializing in full-stack development." />\n    <meta property="og:image" content="https://murrayb.com/favicon.png" />\n\n    <!-- Social: Twitter -->\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="Murray Buchanan | Developer" />\n    <meta name="twitter:description" content="Explore the projects and experience of Murray Buchanan, specializing in full-stack development." />\n    <meta name="twitter:image" content="https://murrayb.com/favicon.png" />\n\n    <!-- Referrer Policy -->\n    <meta name="referrer" content="no-referrer-when-downgrade" />\n\n    <!-- Schema.org -->\n    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "Person",\n      "name": "Murray Buchanan",\n      "url": "https://murrayb.com",\n      "jobTitle": "Software Engineer",\n      "sameAs": [\n        "https://www.linkedin.com/in/murray-buchanan-33519220a/",\n        "https://github.com/MurrayBuchanan"\n      ]\n    }\n    <\/script>\n\n    <!-- SvelteKit Head -->\n    ' + head + '\n  </head>\n  <body data-sveltekit-preload-data="hover">\n    <div style="display: contents">' + body + "</div>\n  </body>\n</html>",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -189,12 +184,13 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1az8vww"
+  version_hash: "580uyg"
 };
 async function get_hooks() {
   let handle;
   let handleFetch;
   let handleError;
+  let handleValidationError;
   let init;
   let reroute;
   let transport;
@@ -202,28 +198,21 @@ async function get_hooks() {
     handle,
     handleFetch,
     handleError,
+    handleValidationError,
     init,
     reroute,
     transport
   };
 }
 export {
-  assets as a,
-  base as b,
-  read_implementation as c,
-  options as d,
-  set_private_env as e,
-  prerendering as f,
-  set_public_env as g,
-  get_hooks as h,
-  set_safe_public_env as i,
-  set_read_implementation as j,
-  set_assets as k,
-  set_building as l,
-  set_manifest as m,
-  set_prerendering as n,
-  override as o,
+  set_private_env as a,
+  set_public_env as b,
+  set_safe_public_env as c,
+  set_read_implementation as d,
+  set_manifest as e,
+  get_hooks as g,
+  options as o,
   public_env as p,
-  reset as r,
+  read_implementation as r,
   safe_public_env as s
 };

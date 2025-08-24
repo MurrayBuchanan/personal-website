@@ -21,17 +21,17 @@ export const server_loads = [];
 
 export const dictionary = {
 		"/": [2],
-		"/About": [3],
-		"/CampLindenmere": [4],
-		"/Chibb": [5],
-		"/Contact": [6],
-		"/DirectDistribution": [7],
-		"/HonourableMentions": [8],
-		"/JPMorganChase": [9],
-		"/JordanhillSchool": [10],
-		"/Minecraft": [11],
-		"/SetPiece": [12],
-		"/UniversityOfStrathclyde": [13]
+		"/about": [3],
+		"/camp-lindenmere": [4],
+		"/chibb": [5],
+		"/direct-distribution": [6],
+		"/honourable-mentions": [7],
+		"/jordanhill-school": [8],
+		"/jpmorganchase": [9],
+		"/linkedin": [10],
+		"/minecraft": [11],
+		"/setpiece": [12],
+		"/university-of-strathclyde": [13]
 	};
 
 export const hooks = {

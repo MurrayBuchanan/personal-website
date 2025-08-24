@@ -14,8 +14,7 @@ export const nodes = [
 	() => import('./nodes/10'),
 	() => import('./nodes/11'),
 	() => import('./nodes/12'),
-	() => import('./nodes/13'),
-	() => import('./nodes/14')
+	() => import('./nodes/13')
 ];
 
 export const server_loads = [];
@@ -25,15 +24,14 @@ export const dictionary = {
 		"/about": [3],
 		"/camp-lindenmere": [4],
 		"/chibb": [5],
-		"/contact": [6],
-		"/direct-distribution": [7],
-		"/honourable-mentions": [8],
-		"/jordanhill-school": [9],
-		"/jpmorganchase": [10],
-		"/linkedin": [11],
-		"/minecraft": [12],
-		"/setpiece": [13],
-		"/university-of-strathclyde": [14]
+		"/direct-distribution": [6],
+		"/honourable-mentions": [7],
+		"/jordanhill-school": [8],
+		"/jpmorganchase": [9],
+		"/linkedin": [10],
+		"/minecraft": [11],
+		"/setpiece": [12],
+		"/university-of-strathclyde": [13]
 	};
 
 export const hooks = {

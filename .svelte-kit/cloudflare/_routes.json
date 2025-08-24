@@ -5,14 +5,12 @@
 		"/*"
 	],
 	"exclude": [
-		"/_app/*",
+		"/_app/immutable/*",
+		"/_app/version.json",
 		"/.DS_Store",
 		"/assets/.DS_Store",
-		"/assets/Animation.json",
-		"/assets/Animation.lottie",
-		"/assets/banners/CampLindenmere.jpg",
-		"/assets/banners/GoogleDeveloperGroup.jpg",
-		"/assets/banners/JPMorganChase.jpg",
+		"/assets/animations/animation.json",
+		"/assets/animations/animation.lottie",
 		"/assets/icons/BuchananBarbers.svg",
 		"/assets/icons/CampLindenmere.svg",
 		"/assets/icons/Chibb.svg",
@@ -26,6 +24,8 @@
 		"/assets/icons/Placeholder.svg",
 		"/assets/icons/SetPiece.svg",
 		"/assets/icons/UniversityOfStrathclyde.svg",
+		"/assets/images/jpmorganchase.jpg",
+		"/assets/videos/chibb.mp4",
 		"/favicon.png"
 	]
 }

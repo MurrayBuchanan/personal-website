@@ -5,8 +5,30 @@
     "src": ".svelte-kit/generated/server/internal.js",
     "isEntry": true,
     "imports": [
-      "_internal.js"
+      "_internal.js",
+      "_environment.js"
     ]
+  },
+  "_Heading.js": {
+    "file": "chunks/Heading.js",
+    "name": "Heading",
+    "imports": [
+      "_ssr.js",
+      "_exports.js",
+      "_utils.js",
+      "_ssr2.js"
+    ]
+  },
+  "_Text.js": {
+    "file": "chunks/Text.js",
+    "name": "Text",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_environment.js": {
+    "file": "chunks/environment.js",
+    "name": "environment"
   },
   "_exports.js": {
     "file": "chunks/exports.js",
@@ -17,34 +39,15 @@
     "name": "internal",
     "imports": [
       "_ssr.js",
-      "_ssr2.js"
+      "_ssr2.js",
+      "_environment.js"
     ]
   },
-  "_section-heading.js": {
-    "file": "chunks/section-heading.js",
-    "name": "section-heading",
+  "_shared.js": {
+    "file": "chunks/shared.js",
+    "name": "shared",
     "imports": [
-      "_ssr.js",
-      "_exports.js",
-      "_ssr2.js"
-    ]
-  },
-  "_section-media.svelte_svelte_type_style_lang.js": {
-    "file": "_app/immutable/assets/section-media.BzMAWlP3.css",
-    "src": "_section-media.svelte_svelte_type_style_lang.js"
-  },
-  "_section-para.js": {
-    "file": "chunks/section-para.js",
-    "name": "section-para",
-    "imports": [
-      "_ssr.js"
-    ]
-  },
-  "_section-text.js": {
-    "file": "chunks/section-text.js",
-    "name": "section-text",
-    "imports": [
-      "_ssr.js"
+      "_utils.js"
     ]
   },
   "_ssr.js": {
@@ -55,15 +58,32 @@
     "file": "chunks/ssr2.js",
     "name": "ssr"
   },
+  "_utils.js": {
+    "file": "chunks/utils.js",
+    "name": "utils"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
+    "file": "remote-entry.js",
+    "name": "remote-entry",
+    "src": "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js",
+    "isEntry": true,
+    "imports": [
+      "_shared.js",
+      "_environment.js"
+    ]
+  },
   "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
     "file": "index.js",
     "name": "index",
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
-      "_internal.js",
+      "_shared.js",
+      "_environment.js",
       "_exports.js",
-      "_ssr.js"
+      "_utils.js",
+      "_ssr.js",
+      "_internal.js"
     ]
   },
   "src/routes/+error.svelte": {
@@ -73,7 +93,7 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js"
+      "_Heading.js"
     ],
     "css": [
       "_app/immutable/assets/_error.BSLP_Qkw.css"
@@ -88,7 +108,7 @@
       "_ssr.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DWWXRzYI.css"
+      "_app/immutable/assets/_layout.B1_3nzts.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -98,144 +118,129 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js"
+      "_Heading.js"
     ],
     "css": [
       "_app/immutable/assets/_page.DyQNKheD.css"
     ]
   },
-  "src/routes/About/+page.svelte": {
-    "file": "entries/pages/About/_page.svelte.js",
-    "name": "entries/pages/About/_page.svelte",
-    "src": "src/routes/About/+page.svelte",
+  "src/routes/about/+page.svelte": {
+    "file": "entries/pages/about/_page.svelte.js",
+    "name": "entries/pages/about/_page.svelte",
+    "src": "src/routes/about/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-para.js"
-    ],
-    "css": [
-      "_app/immutable/assets/section-media.BzMAWlP3.css"
+      "_Heading.js",
+      "_Text.js"
     ]
   },
-  "src/routes/CampLindenmere/+page.svelte": {
-    "file": "entries/pages/CampLindenmere/_page.svelte.js",
-    "name": "entries/pages/CampLindenmere/_page.svelte",
-    "src": "src/routes/CampLindenmere/+page.svelte",
+  "src/routes/camp-lindenmere/+page.svelte": {
+    "file": "entries/pages/camp-lindenmere/_page.svelte.js",
+    "name": "entries/pages/camp-lindenmere/_page.svelte",
+    "src": "src/routes/camp-lindenmere/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-text.js",
-      "_section-para.js"
+      "_Heading.js",
+      "_Text.js"
     ]
   },
-  "src/routes/Chibb/+page.svelte": {
-    "file": "entries/pages/Chibb/_page.svelte.js",
-    "name": "entries/pages/Chibb/_page.svelte",
-    "src": "src/routes/Chibb/+page.svelte",
+  "src/routes/chibb/+page.svelte": {
+    "file": "entries/pages/chibb/_page.svelte.js",
+    "name": "entries/pages/chibb/_page.svelte",
+    "src": "src/routes/chibb/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-para.js"
+      "_Heading.js",
+      "_Text.js"
     ]
   },
-  "src/routes/Contact/+page.svelte": {
-    "file": "entries/pages/Contact/_page.svelte.js",
-    "name": "entries/pages/Contact/_page.svelte",
-    "src": "src/routes/Contact/+page.svelte",
+  "src/routes/direct-distribution/+page.svelte": {
+    "file": "entries/pages/direct-distribution/_page.svelte.js",
+    "name": "entries/pages/direct-distribution/_page.svelte",
+    "src": "src/routes/direct-distribution/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-para.js"
+      "_Heading.js",
+      "_Text.js"
     ]
   },
-  "src/routes/DirectDistribution/+page.svelte": {
-    "file": "entries/pages/DirectDistribution/_page.svelte.js",
-    "name": "entries/pages/DirectDistribution/_page.svelte",
-    "src": "src/routes/DirectDistribution/+page.svelte",
+  "src/routes/honourable-mentions/+page.svelte": {
+    "file": "entries/pages/honourable-mentions/_page.svelte.js",
+    "name": "entries/pages/honourable-mentions/_page.svelte",
+    "src": "src/routes/honourable-mentions/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-para.js"
-    ],
-    "css": [
-      "_app/immutable/assets/section-media.BzMAWlP3.css"
+      "_Heading.js",
+      "_Text.js"
     ]
   },
-  "src/routes/HonourableMentions/+page.svelte": {
-    "file": "entries/pages/HonourableMentions/_page.svelte.js",
-    "name": "entries/pages/HonourableMentions/_page.svelte",
-    "src": "src/routes/HonourableMentions/+page.svelte",
+  "src/routes/jordanhill-school/+page.svelte": {
+    "file": "entries/pages/jordanhill-school/_page.svelte.js",
+    "name": "entries/pages/jordanhill-school/_page.svelte",
+    "src": "src/routes/jordanhill-school/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-text.js"
+      "_Heading.js",
+      "_Text.js"
     ]
   },
-  "src/routes/JPMorganChase/+page.svelte": {
-    "file": "entries/pages/JPMorganChase/_page.svelte.js",
-    "name": "entries/pages/JPMorganChase/_page.svelte",
-    "src": "src/routes/JPMorganChase/+page.svelte",
+  "src/routes/jpmorganchase/+page.svelte": {
+    "file": "entries/pages/jpmorganchase/_page.svelte.js",
+    "name": "entries/pages/jpmorganchase/_page.svelte",
+    "src": "src/routes/jpmorganchase/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-text.js"
-    ],
-    "css": [
-      "_app/immutable/assets/section-media.BzMAWlP3.css"
+      "_Heading.js",
+      "_Text.js"
     ]
   },
-  "src/routes/JordanhillSchool/+page.svelte": {
-    "file": "entries/pages/JordanhillSchool/_page.svelte.js",
-    "name": "entries/pages/JordanhillSchool/_page.svelte",
-    "src": "src/routes/JordanhillSchool/+page.svelte",
+  "src/routes/linkedin/+page.svelte": {
+    "file": "entries/pages/linkedin/_page.svelte.js",
+    "name": "entries/pages/linkedin/_page.svelte",
+    "src": "src/routes/linkedin/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
-      "_section-heading.js",
-      "_section-text.js"
+      "_ssr.js"
     ]
   },
-  "src/routes/Minecraft/+page.svelte": {
-    "file": "entries/pages/Minecraft/_page.svelte.js",
-    "name": "entries/pages/Minecraft/_page.svelte",
-    "src": "src/routes/Minecraft/+page.svelte",
+  "src/routes/minecraft/+page.svelte": {
+    "file": "entries/pages/minecraft/_page.svelte.js",
+    "name": "entries/pages/minecraft/_page.svelte",
+    "src": "src/routes/minecraft/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-para.js"
+      "_Heading.js",
+      "_Text.js"
     ]
   },
-  "src/routes/SetPiece/+page.svelte": {
-    "file": "entries/pages/SetPiece/_page.svelte.js",
-    "name": "entries/pages/SetPiece/_page.svelte",
-    "src": "src/routes/SetPiece/+page.svelte",
+  "src/routes/setpiece/+page.svelte": {
+    "file": "entries/pages/setpiece/_page.svelte.js",
+    "name": "entries/pages/setpiece/_page.svelte",
+    "src": "src/routes/setpiece/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-para.js"
-    ],
-    "css": [
-      "_app/immutable/assets/section-media.BzMAWlP3.css"
+      "_Heading.js",
+      "_Text.js"
     ]
   },
-  "src/routes/UniversityOfStrathclyde/+page.svelte": {
-    "file": "entries/pages/UniversityOfStrathclyde/_page.svelte.js",
-    "name": "entries/pages/UniversityOfStrathclyde/_page.svelte",
-    "src": "src/routes/UniversityOfStrathclyde/+page.svelte",
+  "src/routes/university-of-strathclyde/+page.svelte": {
+    "file": "entries/pages/university-of-strathclyde/_page.svelte.js",
+    "name": "entries/pages/university-of-strathclyde/_page.svelte",
+    "src": "src/routes/university-of-strathclyde/+page.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_section-heading.js",
-      "_section-text.js"
+      "_Heading.js",
+      "_Text.js"
     ]
   }
 }
