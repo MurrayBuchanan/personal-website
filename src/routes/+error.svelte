@@ -1,8 +1,8 @@
 <script lang="ts">
     import { useAnimate } from './animation/animation';
-    import Container from './components/container.svelte';
-    import Footer from './components/footer.svelte';
-    import Heading from './components/section-heading.svelte';
+    import Container from '../lib/components/layout/Container.svelte';
+    import Footer from '../lib/components/layout/Footer.svelte';
+    import Heading from '../lib/components/sections/Heading.svelte';
     import { DotLottieSvelte } from '@lottiefiles/dotlottie-svelte';
 
     export let error;
@@ -21,7 +21,7 @@
             desc="The page you’re looking for doesn’t exist." 
         />       
 
-        <DotLottieSvelte src="/assets/Animation.lottie" loop autoplay />
+        <DotLottieSvelte src="/assets/animations/animation.lottie" loop autoplay />
 
         <Footer />
     </Container>

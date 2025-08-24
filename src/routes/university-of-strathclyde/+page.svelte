@@ -1,10 +1,10 @@
 <script lang="ts">
     import { useAnimate } from '../animation/animation';
-    import Container from '../components/container.svelte';
-    import Heading from '../components/section-heading.svelte';
-    import Expandable from '../components/section-expandable.svelte';
-    import Paragraph from '../components/section-text.svelte';
-    import Footer from '../components/footer.svelte';
+    import Container from '../../lib/components/layout/Container.svelte';
+    import Heading from '../../lib/components/sections/Heading.svelte';
+    import Expandable from '../../lib/components/sections/DropDownMenu.svelte';
+    import Text from '../../lib/components/ui/Text.svelte';
+    import Footer from '../../lib/components/layout/Footer.svelte';
   
     const year4 = [
         { moduleName: 'Dissertation'},
@@ -112,8 +112,8 @@
             links={[{ url: "https://www.strath.ac.uk/", newPage: true, title: "Visit Website" }]}
         />
 
-        <Paragraph title="Overview" desc="I am currently in the undergraduate program for Computer Science at the University of Strathclyde. Alongside my studies, I was on the Committee for the Google Developer Group during my second and third year, and have been an active member of the Snow Sports, Volleyball and Badminton societies." />
-        <Paragraph title="Modules" desc="Completed and current university modules, including associated projects." />
+        <Text content={[{ title: "Overview", desc: "I am currently in the undergraduate program for Computer Science at the University of Strathclyde. Alongside my studies, I was on the Committee for the Google Developer Group during my second and third year, and have been an active member of the Snow Sports, Volleyball and Badminton societies." }]} />
+        <Text content={[{ title: "Modules", desc: "Completed and current university modules, including associated projects." }]} />
 
         <Expandable title="Year 4" classes={year4} />
         <Expandable title="Year 3" classes={year3} />

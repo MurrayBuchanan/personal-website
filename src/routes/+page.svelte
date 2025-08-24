@@ -1,17 +1,17 @@
 <script lang="ts">
     import { useAnimate } from './animation/animation';
-    import Container from './components/container.svelte';
-    import Heading from './components/section-heading.svelte';
-    import Project from './components/section-subheading.svelte';
-    import Footer from './components/footer.svelte';
+    import Container from '../lib/components/layout/Container.svelte';
+    import Heading from '../lib/components/sections/Heading.svelte';
+    import Project from '../lib/components/sections/ListItem.svelte';
+    import Footer from '../lib/components/layout/Footer.svelte';
     import { slide, fade } from 'svelte/transition';
 
     let showAll = false;
 
     let projects = [
         {
-            title: "JPMorganChase",
-            subDesc: "2024-Now · Fintech, Insight, Summer Analyst",
+            title: "J.P. Morgan Chase",
+            subDesc: "2024-Now · Software Engineer, Full-Stack, Global Research",
             icon: "assets/icons/JPMorganChase.svg",
             url: "/jpmorganchase",
             favourite: true,
@@ -25,7 +25,7 @@
         },
         {
             title: "Camp Lindenmere",
-            subDesc: "2024 · Academia, Teaching, Counsellor",
+            subDesc: "2024 · Teaching, Counsellor, Spirit Leader",
             icon: "assets/icons/CampLindenmere.svg",
             url: "/camp-lindenmere",
             favourite: true,
@@ -111,9 +111,19 @@
                 </div>
             {/each}
 
-            <button on:click={toggleShowAll} class="animate px-4 py-1 my-4 inline-flex items-center bg-primary-light dark:bg-primary-dark hover:bg-primary-dark dark:hover:bg-primary-light rounded-lg text-sm font-normal text-secondary-light hover:text-secondary-dark dark:text-secondary-dark hover:dark:text-secondary-light border border-tertiary-light hover:border-tertiary-dark dark:border-tertiary-dark hover:dark:border-tertiary-light transition-transform duration-150 hover:scale-105 ease-out cursor-pointer">
-                {showAll ? 'View Less' : 'View More'}
-            </button>
+            <div class="flex justify-center">
+                <button on:click={toggleShowAll} class="animate px-4 py-1 my-4 inline-flex items-center justify-center bg-primary-light dark:bg-primary-dark hover:bg-primary-dark dark:hover:bg-primary-light rounded-lg text-sm font-normal text-secondary-light hover:text-secondary-dark dark:text-secondary-dark hover:dark:text-secondary-light transition-all duration-150 hover:scale-105 ease-out cursor-pointer">
+                    <svg 
+                        class="w-4 h-4 transition-transform duration-300 {showAll ? 'rotate-180' : 'rotate-0'}" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
         
         
         <Footer />

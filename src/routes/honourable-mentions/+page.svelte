@@ -1,9 +1,9 @@
 <script lang="ts">
     import { useAnimate } from '../animation/animation';
-    import Container from '../components/container.svelte';
-    import Heading from '../components/section-heading.svelte';
-    import Paragraph from '../components/section-text.svelte';
-    import Footer from '../components/footer.svelte';
+    import Container from '../../lib/components/layout/Container.svelte';
+    import Heading from '../../lib/components/sections/Heading.svelte';
+    import Text from '../../lib/components/ui/Text.svelte';
+    import Footer from '../../lib/components/layout/Footer.svelte';
 </script>
 
 <body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
@@ -14,17 +14,47 @@
             newPage={true}
         />
 
-        <Paragraph title="This Website" desc="I’ve spent far too long building this site—it's a personal playground and portfolio. Built with SvelteKit and TypeScript, deployed via Cloudflare. Other tools include Tailwind CSS and GitHub for CI/CD." />
+        <Text
+            content={[
+                { title: "This Website" },
+                { desc: "I’ve spent far too long building this site—it's a personal playground and portfolio. Built with SvelteKit and TypeScript, deployed via Cloudflare. Other tools include Tailwind CSS and GitHub for CI/CD." }
+            ]}
+        />
 
-        <Paragraph title="The Conquer Collective" desc="Originally started with my flatmates on High Street in Glasgow City Centre. It began simply as a way for us to get our hands on clothing we actually liked. Later, my friend and I continued to develop it further, challenging ourselves to see how profitable we could make the venture using limited resources."/>
+        <Text
+            content={[
+                { title: "The Conquer Collective" },
+                { desc: "Originally started with my flatmates on High Street in Glasgow City Centre. It began simply as a way for us to get our hands on clothing we actually liked. Later, my friend and I continued to develop it further, challenging ourselves to see how profitable we could make the venture using limited resources." }
+            ]}
+        />
 
-        <Paragraph title="The Tale of Two" desc="Tale of Two was a project developed as a two-player shooter game. It served as a practical way for us to learn more about the complexities of developing 3D games. In the game, users could join randomly and be placed on a procedurally generated map to engage in egg-shooting combat. While we initially envisioned a far more detailed game, we ultimately decided to scale back and scrap the larger project due to its complexity and a desire to focus on other passion projects."/>
+        <Text
+            content={[
+                { title: "The Tale of Two" },
+                { desc: "Tale of Two was a project developed as a two-player shooter game. It served as a practical way for us to learn more about the complexities of developing 3D games. In the game, users could join randomly and be placed on a procedurally generated map to engage in egg-shooting combat. While we initially envisioned a far more detailed game, we ultimately decided to scale back and scrap the larger project due to its complexity and a desire to focus on other passion projects." }
+            ]}
+        />
 
-        <Paragraph title="Task Manager" desc="This project, the Task Manager app, was created with the primary goal of experimenting with a new art style. Functionally, it served as a to-do list integrated directly into a calendar interface. Developed using Flutter, the app became impressively complete for what was initially conceived as purely experimental, incorporating various APIs. The art style used during this project was later applied to 'Set Piece'." />
+        <Text
+            content={[
+                { title: "Task Manager" },
+                { desc: "This project, the Task Manager app, was created with the primary goal of experimenting with a new art style. Functionally, it served as a to-do list integrated directly into a calendar interface. Developed using Flutter, the app became impressively complete for what was initially conceived as purely experimental, incorporating various APIs. The art style used during this project was later applied to 'Set Piece'." }
+            ]}
+        />
 
-        <Paragraph title="Drone Controller" desc="As an experimental project, I built the underlying system to allow an iOS device to interface with and control a Raspberry Pi. This undertaking was key to exploring the capabilities of the Raspberry Pi and enhancing my programming skills in Swift. - Scrapped"/>
+        <Text
+            content={[
+                { title: "Drone Controller" },
+                { desc: "As an experimental project, I built the underlying system to allow an iOS device to interface with and control a Raspberry Pi. This undertaking was key to exploring the capabilities of the Raspberry Pi and enhancing my programming skills in Swift. - Scrapped" }
+            ]}
+        />
 
-        <Paragraph title="Dringo" desc="In project queue"/>
+        <Text
+            content={[
+                { title: "Dringo" },
+                { desc: "In project queue" }
+            ]}
+        />
 
         <Footer />
     </Container>

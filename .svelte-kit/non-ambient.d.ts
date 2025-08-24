@@ -23,3 +23,32 @@ declare module "svelte/elements" {
 }
 
 export {};
+
+
+declare module "$app/types" {
+	export interface AppTypes {
+		RouteId(): "/" | "/about" | "/animation" | "/camp-lindenmere" | "/chibb" | "/contact" | "/direct-distribution" | "/honourable-mentions" | "/jordanhill-school" | "/jpmorganchase" | "/linkedin" | "/minecraft" | "/setpiece" | "/university-of-strathclyde";
+		RouteParams(): {
+			
+		};
+		LayoutParams(): {
+			"/": Record<string, never>;
+			"/about": Record<string, never>;
+			"/animation": Record<string, never>;
+			"/camp-lindenmere": Record<string, never>;
+			"/chibb": Record<string, never>;
+			"/contact": Record<string, never>;
+			"/direct-distribution": Record<string, never>;
+			"/honourable-mentions": Record<string, never>;
+			"/jordanhill-school": Record<string, never>;
+			"/jpmorganchase": Record<string, never>;
+			"/linkedin": Record<string, never>;
+			"/minecraft": Record<string, never>;
+			"/setpiece": Record<string, never>;
+			"/university-of-strathclyde": Record<string, never>
+		};
+		Pathname(): "/" | "/about" | "/animation" | "/camp-lindenmere" | "/chibb" | "/contact" | "/direct-distribution" | "/honourable-mentions" | "/jordanhill-school" | "/jpmorganchase" | "/linkedin" | "/minecraft" | "/setpiece" | "/university-of-strathclyde";
+		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
+		Asset(): "/.DS_Store" | "/assets/.DS_Store" | "/assets/animations/animation.json" | "/assets/animations/animation.lottie" | "/assets/icons/BuchananBarbers.svg" | "/assets/icons/CampLindenmere.svg" | "/assets/icons/Chibb.svg" | "/assets/icons/Conquer.svg" | "/assets/icons/DirectDistribution.svg" | "/assets/icons/HonourableMentions.svg" | "/assets/icons/JPMorganChase.svg" | "/assets/icons/JordanhillSchool.svg" | "/assets/icons/LittleCheese.svg" | "/assets/icons/Minecraft.svg" | "/assets/icons/Placeholder.svg" | "/assets/icons/SetPiece.svg" | "/assets/icons/UniversityOfStrathclyde.svg" | "/assets/images/CampLindenmere.jpg" | "/assets/images/GoogleDeveloperGroup.jpg" | "/assets/images/jpmorganchase.jpg" | "/assets/videos/chibb.mp4" | "/favicon.png";
+	}
+}

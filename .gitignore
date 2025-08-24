@@ -46,3 +46,100 @@ pnpm-debug.log*
 # package-lock.json
 # yarn.lock
 # pnpm-lock.yaml
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.#*
+
+# OS generated files
+Icon?
+ehthumbs.db
+Desktop.ini
+*.lnk
+
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.out/
+.vercel/
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output/
+
+# Backup files
+*.bak
+*.backup
+*.orig
+*.rej
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Compiled binary addons
+build/Release/
+
+# Dependency directories for other languages
+vendor/
+composer.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# ESLint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port

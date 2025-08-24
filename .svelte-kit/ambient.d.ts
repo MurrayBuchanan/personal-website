@@ -21,7 +21,7 @@
  * 
  * You can override `.env` values from the command line like so:
  * 
- * ```bash
+ * ```sh
  * MY_FEATURE_FLAG="enabled" npm run dev
  * ```
  */
@@ -41,7 +41,6 @@ declare module '$env/static/private' {
 	export const CONDA_PROMPT_MODIFIER: string;
 	export const GSETTINGS_SCHEMA_DIR_CONDA_BACKUP: string;
 	export const ZDOTDIR: string;
-	export const CURSOR_TRACE_ID: string;
 	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const MallocNanoZone: string;
 	export const COLOR: string;
@@ -53,6 +52,7 @@ declare module '$env/static/private' {
 	export const npm_config_globalconfig: string;
 	export const CONDA_EXE: string;
 	export const SSH_AUTH_SOCK: string;
+	export const VSCODE_PROFILE_INITIALIZED: string;
 	export const __CF_USER_TEXT_ENCODING: string;
 	export const npm_execpath: string;
 	export const _CE_CONDA: string;
@@ -126,7 +126,7 @@ declare module '$env/static/public' {
  * console.log(env.DEPLOYMENT_SPECIFIC_VARIABLE);
  * ```
  * 
- * > In `dev`, `$env/dynamic` always includes environment variables from `.env`. In `prod`, this behavior will depend on your adapter.
+ * > [!NOTE] In `dev`, `$env/dynamic` always includes environment variables from `.env`. In `prod`, this behavior will depend on your adapter.
  */
 declare module '$env/dynamic/private' {
 	export const env: {
@@ -145,7 +145,6 @@ declare module '$env/dynamic/private' {
 		CONDA_PROMPT_MODIFIER: string;
 		GSETTINGS_SCHEMA_DIR_CONDA_BACKUP: string;
 		ZDOTDIR: string;
-		CURSOR_TRACE_ID: string;
 		ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		MallocNanoZone: string;
 		COLOR: string;
@@ -157,6 +156,7 @@ declare module '$env/dynamic/private' {
 		npm_config_globalconfig: string;
 		CONDA_EXE: string;
 		SSH_AUTH_SOCK: string;
+		VSCODE_PROFILE_INITIALIZED: string;
 		__CF_USER_TEXT_ENCODING: string;
 		npm_execpath: string;
 		_CE_CONDA: string;
