@@ -3,7 +3,7 @@
 </script>
   
 <main
-    class="flex min-h-svh w-full flex-col items-center px-3 pb-[max(0px,env(safe-area-inset-bottom))] sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32"
+    class="flex min-h-svh w-full flex-col items-center px-3 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32"
 >
     <div
         class="mb-6 flex min-h-0 w-full max-w-xl flex-1 flex-col rounded-3xl px-4 pt-4 {custom}"

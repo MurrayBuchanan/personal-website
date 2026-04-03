@@ -35,37 +35,39 @@
         'group inline-flex text-secondary-light opacity-[0.62] transition-[color,opacity] duration-100 ease-out hover:text-neutral-950 hover:opacity-100 dark:text-secondary-dark dark:opacity-[0.55] dark:hover:text-white dark:hover:opacity-100';
     const homeIconSvg =
         'h-6 w-6 stroke-current stroke-[1.65] transition-[stroke-width] duration-100 ease-out group-hover:stroke-[2] [vector-effect:non-scaling-stroke]';
+
+    /** Same block as banner mask so `<h2>` starts on the same baseline as the launch screen. */
+    const heroSlot =
+        'mb-2.5 w-full min-h-[5.5rem] sm:mb-3 sm:min-h-[6.75rem] md:min-h-[7.75rem] lg:min-h-[8.5rem]';
 </script>
 
-<!-- Return to home -->
-<main
-    class="animate {isHomepage
-        ? 'mt-0 pt-[max(0.25rem,env(safe-area-inset-top))]'
-        : 'mt-16 sm:mt-20 lg:mt-32'}"
->
+<!-- Same top safe-area + rhythm as launch; subpages add home link below. -->
+<main class="animate mt-0 pt-[max(0.25rem,env(safe-area-inset-top))]">
     {#if !isHomepage}
-        <a href="../" class="{homeIconWrap} mb-5" aria-label="Home">
-            <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                class="{homeIconSvg}"
-                fill="none"
-                aria-hidden="true"
-            >
-                <path
-                    d="M9 22V12H15V22M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="fill-primary-light dark:fill-primary-dark"
-                />
-            </svg>
-        </a>
+        <div class="animate flex flex-col justify-end {heroSlot}">
+            <a href="../" class="{homeIconWrap}" aria-label="Home">
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="{homeIconSvg}"
+                    fill="none"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M9 22V12H15V22M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="fill-primary-light dark:fill-primary-dark"
+                    />
+                </svg>
+            </a>
+        </div>
     {/if}
 
   {#if isHomepage && graphic}
-    <div class="animate mb-2.5 w-full sm:mb-3">
+    <div class="animate flex flex-col justify-end {heroSlot}">
       <div
           class="h-[5.5rem] w-full bg-neutral-600 dark:bg-neutral-300 sm:h-[6.75rem] md:h-[7.75rem] lg:h-[8.5rem]"
           style="-webkit-mask-image: url({JSON.stringify(graphic)}); -webkit-mask-size: cover; -webkit-mask-position: 50% 32%; -webkit-mask-repeat: no-repeat; mask-image: url({JSON.stringify(graphic)}); mask-size: cover; mask-position: 50% 32%; mask-repeat: no-repeat;"
@@ -77,17 +79,15 @@
   {/if}
 
   <h2
-    class="animate tracking-[-0.02em] text-secondary-light dark:text-secondary-dark {isHomepage
-      ? 'text-[1.375rem] font-semibold leading-tight sm:text-[1.625rem]'
-      : 'text-xl font-normal sm:text-2xl'} {!desc ? 'mb-6' : ''}"
+      class="animate text-[1.375rem] font-semibold leading-tight tracking-[-0.02em] text-secondary-light dark:text-secondary-dark sm:text-[1.625rem] {!desc
+          ? 'mb-6'
+          : ''}"
   >
     {title}
   </h2>
   {#if desc}
     <p
-        class="animate max-w-prose font-sans font-normal leading-snug tracking-normal {isHomepage
-        ? 'pb-1 pt-1 text-sm text-secondary-light dark:text-secondary-dark sm:text-[0.9375rem]'
-        : 'pb-2 pt-2 text-sm text-neutral-600 dark:text-neutral-300 sm:text-base'}"
+        class="animate max-w-prose pb-1 pt-1 font-sans text-sm font-normal leading-snug tracking-normal text-secondary-light dark:text-secondary-dark sm:text-[0.9375rem]"
     >
       {desc}
     </p>

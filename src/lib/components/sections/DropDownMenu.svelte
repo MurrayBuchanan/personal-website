@@ -45,11 +45,11 @@
 
                     {#if klass.project}
 
-                            <h5 class="mb-2 text-xs font-normal tracking-normal text-tertiary-light dark:text-tertiary-dark sm:text-sm">Project: {klass.project.title}</h5>
+                            <h5 class="mb-2 text-xs font-normal tracking-normal text-secondary-light dark:text-secondary-dark sm:text-sm">Project: {klass.project.title}</h5>
 
 
                             {#if klass.project.desc}
-                                <p class="font-serif mb-3 text-sm leading-[1.65] tracking-normal text-tertiary-light dark:text-tertiary-dark sm:text-[0.9375rem]">{klass.project.desc}</p>
+                                <p class="font-serif mb-3 text-sm leading-[1.65] tracking-normal text-secondary-light dark:text-secondary-dark sm:text-[0.9375rem]">{klass.project.desc}</p>
                             {/if}
 
                             {#if klass.project.code}

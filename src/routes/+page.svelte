@@ -40,6 +40,9 @@
 
     let showAll = false;
 
+    /** Bump on collapse so `useAnimate` replays the footer slide-up (same DOM node; see `footerReplay`). */
+    let footerCollapseAnimKey = 0;
+
     let projects: ProjectEntry[] = [
         {
             title: 'J.P. Morgan Chase',
@@ -177,6 +180,9 @@
     async function toggleProjectList() {
         const wasExpanded = showAll;
         showAll = !showAll;
+        if (wasExpanded) {
+            footerCollapseAnimKey += 1;
+        }
         if (!wasExpanded) return;
         await tick();
         scrollPageToTop();
@@ -185,7 +191,11 @@
 
 <div
     class="min-h-svh bg-primary-light dark:bg-primary-dark"
-    use:useAnimate={{ delayIncrement: 0.1, observeMutations: true }}
+    use:useAnimate={{
+        delayIncrement: 0.1,
+        observeMutations: true,
+        footerReplay: footerCollapseAnimKey,
+    }}
 >
     <Container custom="!pt-2 sm:!pt-3">
         <Heading
