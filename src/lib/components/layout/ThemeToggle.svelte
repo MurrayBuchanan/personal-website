@@ -6,6 +6,12 @@
 
   let prefersDarkScheme: MediaQueryList;
 
+  const segment =
+    'min-w-0 flex-1 cursor-pointer py-0.5 text-center text-xs tracking-normal transition-colors duration-100 ease-out sm:text-[0.8125rem]';
+  const inactive =
+    'text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white';
+  const active = 'font-medium text-neutral-950 dark:text-white';
+
   onMount(() => {
     prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     const savedTheme = (localStorage.getItem('theme') as Theme) || 'auto';
@@ -19,7 +25,6 @@
       applySystemTheme();
     }
 
-    // Add event listener only after mount
     prefersDarkScheme.addEventListener('change', applySystemTheme);
   });
 
@@ -49,22 +54,30 @@
 </script>
 
 <main>
-  <!-- Hover -> Selected -> Default -->
-  <div class="w-36 h-6 relative flex items-center space-between cursor-pointer">
+  <div class="font-sans flex w-[9.25rem] items-stretch gap-1" role="group" aria-label="Theme">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class={`hover:bg-primary-light dark:hover:bg-primary-dark h-6 px-0.5 flex-1 flex items-center justify-center cursor-pointer rounded-lg transition-transform duration-150 ease-out ${theme === 'light' ? 'text-secondary-light dark:text-secondary-dark' : 'text-tertiary-light dark:text-tertiary-dark'} hover:text-secondary-light dark:hover:text-secondary-dark`} on:click={() => setTheme('light')}>
-      <p class="text-sm font-normal">Light</p>
+    <div
+      class="{segment} {theme === 'light' ? active : inactive}"
+      on:click={() => setTheme('light')}
+    >
+      Light
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class={`hover:bg-primary-light dark:hover:bg-primary-dark h-6 px-0.5 flex-1 flex items-center justify-center cursor-pointer rounded-lg transition-transform duration-150 ease-out ${theme === 'dark' ? 'text-secondary-light dark:text-secondary-dark' : 'text-tertiary-light dark:text-tertiary-dark'} hover:text-secondary-light dark:hover:text-secondary-dark`} on:click={() => setTheme('dark')}>
-      <p class="text-sm font-normal">Dark</p>
+    <div
+      class="{segment} {theme === 'dark' ? active : inactive}"
+      on:click={() => setTheme('dark')}
+    >
+      Dark
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class={`hover:bg-primary-light dark:hover:bg-primary-dark h-6 px-0.5 flex-1 flex items-center justify-center cursor-pointer rounded-lg transition-transform duration-150 ease-out ${theme === 'auto' ? 'text-secondary-light dark:text-secondary-dark' : 'text-tertiary-light dark:text-tertiary-dark'} hover:text-secondary-light dark:hover:text-secondary-dark`} on:click={() => setTheme('auto')}>
-      <p class="text-sm font-normal">Auto</p>
+    <div
+      class="{segment} {theme === 'auto' ? active : inactive}"
+      on:click={() => setTheme('auto')}
+    >
+      Auto
     </div>
   </div>
 </main>

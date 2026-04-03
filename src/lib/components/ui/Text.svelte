@@ -13,20 +13,20 @@
   {#each content as item}
     <!-- Title -->
     {#if item.title}
-      <p class="animate text-base font-normal text-secondary-light dark:text-secondary-dark {custom}">{item.title}</p>
+      <p class="font-sans animate text-base font-normal leading-snug tracking-[-0.02em] text-secondary-light dark:text-secondary-dark sm:text-lg {custom}">{item.title}</p>
     {/if}
     
     <!-- Description(s) -->
     {#if typeof item.desc === 'string'}
       <!-- Single description -->
       {#if item.desc}
-        <p class="animate pb-6 text-base font-normal text-tertiary-light dark:text-tertiary-dark {custom}">{item.desc}</p>
+        <p class="animate pb-6 text-sm font-normal leading-[1.65] tracking-normal text-tertiary-light dark:text-tertiary-dark sm:text-[0.9375rem] {custom}">{item.desc}</p>
       {/if}
     {:else if Array.isArray(item.desc)}
       <!-- Multiple paragraphs -->
       {#each item.desc as paragraph}
         {#if paragraph}
-          <p class="animate pb-6 text-base font-normal text-tertiary-light dark:text-tertiary-dark {custom}">{paragraph}</p>
+          <p class="animate pb-6 text-sm font-normal leading-[1.65] tracking-normal text-tertiary-light dark:text-tertiary-dark sm:text-[0.9375rem] {custom}">{paragraph}</p>
         {/if}
       {/each}
     {/if}

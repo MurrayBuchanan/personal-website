@@ -19,31 +19,47 @@ export default {
       animation: {
         'fade-zoom-in': 'fade-zoom-in 0.7s ease-out',
       },
-      colors: {
-        customGreen: '#32a852', // Add custom colors
-        customDark: '#0d0d0d',
-      },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // Add custom fonts
+        sans: ['"Akkurat"', 'system-ui', 'sans-serif'],
+        serif: ['"Akkurat"', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        editorial: ['1.0625rem', { lineHeight: '1.7' }],
       },
       spacing: {
         '128': '32rem', // Add custom spacing
       },
       colors: {
+        /** Lineto.com / Akkurat page palette: canvas #f5f5f5, ink #000 / #141414, UI gray #B1B1B1 */
+        customGreen: '#32a852',
+        customDark: '#0d0d0d',
+        neutral: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#ebebeb',
+          300: '#d6d6d6',
+          400: '#b1b1b1',
+          500: '#8a8a8a',
+          600: '#6b6b6b',
+          700: '#4a4a4a',
+          800: '#2a2a2a',
+          900: '#1a1a1a',
+          950: '#141414',
+        },
         primary: {
-          light: '#FFFFFF',          // White for light mode
-          DEFAULT: '#FFFFFF',        // White for default
-          dark: '#161616',           // Black for dark mode
+          light: '#f5f5f5',
+          DEFAULT: '#f5f5f5',
+          dark: '#141414',
         },
         secondary: {
-          light: '#191919',          // Off-white light
-          DEFAULT: '#191919',        // Off-white
-          dark: '#FAFAFA',           // Darker gray
+          light: '#000000',
+          DEFAULT: '#000000',
+          dark: '#f5f5f5',
         },
         tertiary: {
-          light: '#777777',          // Light gray
-          DEFAULT: '#777777',        // Neutral gray
-          dark: '#999',           // Darker gray
+          light: '#b1b1b1',
+          DEFAULT: '#b1b1b1',
+          dark: '#b1b1b1',
         },
         orange: {
           light: '#FF9F00',          // Light orange

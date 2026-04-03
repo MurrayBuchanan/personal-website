@@ -7,11 +7,11 @@
 
     export let error;
 </script>
-  
+
 <svelte:head>
     <title>Murray Buchanan | Not Found</title>
 </svelte:head>
-  
+
 
 
 <body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>

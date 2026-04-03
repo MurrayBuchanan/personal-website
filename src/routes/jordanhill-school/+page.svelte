@@ -10,7 +10,7 @@
     <Container>
         <Heading
             title="Jordanhill School"
-            desc="2009-2022 · Education, Computer Science, Volunteering"
+            desc="Education • Computer Science • Volunteering"
             newPage={true}
             links={[{ url: "https://www.jordanhill.glasgow.sch.uk/", newPage: true, title: "Visit Website" }]}
         />

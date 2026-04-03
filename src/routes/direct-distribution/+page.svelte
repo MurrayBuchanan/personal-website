@@ -10,7 +10,7 @@
     <Container>
         <Heading
             title="Direct Distribution"
-            desc="2022-2024 · Events, Marketing, Distribution"
+            desc="Events • Marketing • Distribution"
             newPage={true}
             links={[
                 { url: "https://www.directdistribution.co.uk/", title: "Visit Website" }

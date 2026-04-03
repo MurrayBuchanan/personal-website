@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { slide, fade } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
+    import { collapseFly } from '$lib/collapseFly';
 
     interface ModuleItem {
         moduleName: string;
@@ -31,34 +32,34 @@
             tabindex="0"
             aria-expanded={isExpanded}
         >
-            <h3 class="text-base font-normal">{title}</h3>
-            <svg class="w-5 h-5 transform transition-transform duration-300" class:rotate-180={isExpanded} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <h3 class="text-base font-normal leading-snug tracking-[-0.02em] sm:text-lg">{title}</h3>
+            <svg class="w-5 h-5 transform transition-transform duration-100 ease-out" class:rotate-180={isExpanded} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </div>
     {/if}
 
     {#if isExpanded && classes.length > 0}
-        <div class="px-4 py-3" transition:slide|fade={{ duration: 300 }}>
+        <div class="px-4 py-3" in:fly={collapseFly} out:fly={collapseFly}>
             {#each classes as klass (klass.moduleName)}
                 <div class="mb-3 pb-3 border-b border-tertiary-light dark:border-tertiary-dark last:border-b-0 last:mb-0 last:pb-0">
-                    <h4 class="text-base font-normal text-secondary-light dark:text-secondary-dark">{klass.moduleName}</h4>
+                    <h4 class="text-sm font-normal leading-snug tracking-normal text-secondary-light dark:text-secondary-dark sm:text-base">{klass.moduleName}</h4>
 
                     {#if klass.project}
 
-                            <h5 class="mb-2 text-base font-normal text-tertiary-light dark:text-tertiary-dark">Project: {klass.project.title}</h5>
+                            <h5 class="mb-2 text-xs font-normal tracking-normal text-tertiary-light dark:text-tertiary-dark sm:text-sm">Project: {klass.project.title}</h5>
 
 
                             {#if klass.project.desc}
-                                <p class="mb-2 text-base text-tertiary-light dark:text-tertiary-dark">{klass.project.desc}</p>
+                                <p class="font-serif mb-3 text-sm leading-[1.65] tracking-normal text-tertiary-light dark:text-tertiary-dark sm:text-[0.9375rem]">{klass.project.desc}</p>
                             {/if}
 
                             {#if klass.project.code}
-                                <a href={klass.project.code} target="_blank" rel="noopener noreferrer" class="mr-4 text-base font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-transform duration-150 ease-out cursor-pointer">
+                                <a href={klass.project.code} target="_blank" rel="noopener noreferrer" class="font-sans mr-4 text-xs font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-colors duration-100 ease-out sm:text-sm cursor-pointer">
                                     Repository
                                 </a>
                             {/if}
 
                             {#if klass.project.url}
-                                <a href={klass.project.url} target="_blank" rel="noopener noreferrer" class="mr-4 text-base font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-transform duration-150 ease-out cursor-pointer">
+                                <a href={klass.project.url} target="_blank" rel="noopener noreferrer" class="font-sans mr-4 text-xs font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-colors duration-100 ease-out sm:text-sm cursor-pointer">
                                     Preview
                                 </a>
                             {/if}

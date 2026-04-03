@@ -108,7 +108,7 @@
       "_ssr.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.CDpMiRdx.css"
+      "_app/immutable/assets/_layout.CuS7eumg.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -119,9 +119,6 @@
     "imports": [
       "_ssr.js",
       "_Heading.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page.DyQNKheD.css"
     ]
   },
   "src/routes/about/+page.svelte": {

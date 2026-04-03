@@ -5,15 +5,15 @@
     import Expandable from '../../lib/components/sections/DropDownMenu.svelte';
     import Text from '../../lib/components/ui/Text.svelte';
     import Footer from '../../lib/components/layout/Footer.svelte';
-  
+
     const year4 = [
         { moduleName: 'Dissertation'},
         { moduleName: 'Computer Security'},
         { moduleName: 'Software Architecture And Design', },
         { moduleName: 'Information Access And Mining', },
-        { moduleName: 'Project Management', },
+        { moduleName: 'Human-Centered Security', },
     ];
-
+    
     const year3 = [
         { moduleName: 'Building Software Systems',
          //  project: {
@@ -107,12 +107,12 @@
     <Container>
         <Heading
             title="University of Strathclyde"
-            desc="2022-Now · Education, Undergraduate, Computer Science"
+            desc="Education • Undergraduate • Computer Science"
             newPage={true}
             links={[{ url: "https://www.strath.ac.uk/", newPage: true, title: "Visit Website" }]}
         />
 
-        <Text content={[{ title: "Overview", desc: "I am currently in the undergraduate program for Computer Science at the University of Strathclyde. Alongside my studies, I was on the Committee for the Google Developer Group during my second and third year, and have been an active member of the Snow Sports, Volleyball and Badminton societies." }]} />
+        <Text content={[{ title: "Overview", desc: ["I'm currently studying Computer Science at the University of Strathclyde. Outside of my coursework, I got involved with the Google Developer Group, where I served as Competitions Lead in my second, third, and fourth years—helping to run events and encourage students to take part in inter-university competitions. In my final year, I also took on the role of class rep.", "Beyond academics, I've been an active member of the Snow Sports, Volleyball, and Badminton societies, and I've tried to get involved in as many other sports as I could. I really enjoy staying active and meeting new people through these experiences."] }]} /> 
         <Text content={[{ title: "Modules", desc: "Completed and current university modules, including associated projects." }]} />
 
         <Expandable title="Year 4" classes={year4} />

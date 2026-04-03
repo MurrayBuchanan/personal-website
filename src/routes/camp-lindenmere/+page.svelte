@@ -10,7 +10,7 @@
     <Container>
         <Heading
             title="Camp Lindenmere"
-            desc="2024 · Teaching, Counsellor, Spirit Leader"
+            desc="Teaching • Counsellor • Spirit Leader"
             links={[
                 { url: "https://camplindenmere.com/", title: "Visit Website" }
             ]}

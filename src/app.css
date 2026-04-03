@@ -1,32 +1,92 @@
+@font-face {
+    font-family: 'Akkurat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        local('Akkurat'),
+        local('Akkurat Regular'),
+        url('/fonts/Akkurat-Regular.woff2') format('woff2'),
+        url('/fonts/Akkurat-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Akkurat';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        local('Akkurat Bold'),
+        url('/fonts/Akkurat-Bold.woff2') format('woff2'),
+        url('/fonts/Akkurat-Bold.woff') format('woff');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-
-    /* SF Pro */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-    /* Noto Serif */
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
-
-    /* Noto San-Serif */
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
-
-    h1, h2, h3, h4, h5, h6, p, a, li {
-        font-family: "SF Pro", sans-serif;
+@layer base {
+    /* Overscroll / rubber-band shows root canvas — match page tones (Tailwind dark is on <html>). */
+    html {
+        @apply min-h-full bg-primary-light font-sans text-[0.9375rem] antialiased sm:text-base;
         font-optical-sizing: auto;
-        font-variation-settings: "wdth" 100;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
+    html.dark {
+        @apply bg-primary-dark;
+    }
+
+    html::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    body {
+        @apply min-h-full bg-primary-light;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    html.dark body {
+        @apply bg-primary-dark;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-sans;
+    }
+
+    input,
+    button,
+    label,
+    select,
+    textarea {
+        @apply font-sans;
+    }
+}
+@layer components {
+    /* Fade + rise into final position only (no overshoot — avoids a visible “bob” before rest). */
     @keyframes slide-up {
         0% {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translate3d(0, 8px, 0);
         }
         100% {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
         }
     }
     .animate {
@@ -35,6 +95,7 @@
 
     .animated {
         opacity: 0;
-        animation: slide-up 0.5s ease-in-out forwards;
+        animation: slide-up 0.58s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 }
+

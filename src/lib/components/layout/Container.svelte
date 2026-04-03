@@ -2,8 +2,12 @@
     export let custom = '';
 </script>
   
-<main class="flex flex-col justify-center items-center">
-    <div class="mb-2 lg:mb-6 p-4 lg:w-1/2 mx-2 lg:mx-24 rounded-3xl {custom}">
+<main
+    class="flex min-h-screen w-full flex-col items-center px-3 pb-[max(0px,env(safe-area-inset-bottom))] sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32"
+>
+    <div
+        class="mb-6 flex min-h-0 w-full max-w-xl flex-1 flex-col rounded-3xl px-4 pt-4 {custom}"
+    >
         <slot></slot>
     </div>
 </main>

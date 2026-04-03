@@ -10,7 +10,7 @@
     <Container>
         <Heading
             title="Chibb"
-            desc="2021-2023 · Game Design, Procedural Generation, iOS Dev"
+            desc="Game Design • Procedural Generation • iOS Dev"
             newPage={true}
         />
         <Text content={[

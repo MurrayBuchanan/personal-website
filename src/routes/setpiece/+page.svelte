@@ -2,7 +2,6 @@
     import { useAnimate } from '../animation/animation';
     import Container from '../../lib/components/layout/Container.svelte';
     import Heading from '../../lib/components/sections/Heading.svelte';
-    import PhoneContainer from '../../lib/components/ui/Image.svelte';
     import Text from '../../lib/components/ui/Text.svelte';
     import Footer from '../../lib/components/layout/Footer.svelte';
 </script>
@@ -11,11 +10,11 @@
     <Container>
         <Heading
             title="Set Piece"
-            desc="2024-2025 · Team Training, App Dev, Data Analysis"
-            newPage={true}
+            desc="Team Training • App Dev • Data Analysis"
+            links={[{ url: "https://setpiece.dev/", newPage: true, title: "Client Application" },{ url: "https://github.com/SetPiece-App", newPage: true, title: "Demo" }]}
         />
 
-        <!-- <PhoneContainer title="Set Piece" desc="2024-2025 · Team Training, App Dev, Data Analysis" url="assets/videos/chibb.mp4" /> -->
+        <!-- <PhoneContainer title="Set Piece" desc="Team Training • App Dev • Data Analysis" url="assets/videos/chibb.mp4" /> -->
     
         <Text content={[
             { desc: "This project centres on improving communication and clarity in team sports training. I'm developing an app designed to connect coaches and players efficiently. It allows coaches to assign specific training tasks directly to the team." },

@@ -24,8 +24,11 @@
 		"/assets/icons/Placeholder.svg",
 		"/assets/icons/SetPiece.svg",
 		"/assets/icons/UniversityOfStrathclyde.svg",
+		"/assets/images/banner.svg",
 		"/assets/images/jpmorganchase.jpg",
 		"/assets/videos/chibb.mp4",
-		"/favicon.png"
+		"/favicon.png",
+		"/fonts/.gitkeep",
+		"/fonts/Akkurat-Font/Akkurat.ttf"
 	]
 }

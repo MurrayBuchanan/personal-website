@@ -10,7 +10,7 @@
     <Container>
         <Heading
             title="Minecraft"
-            desc="2017-2019 · Community Building, Server Hosting, Plugin Dev"
+            desc="Community Building • Server Hosting • Plugin Dev"
             newPage={true}
         />
 

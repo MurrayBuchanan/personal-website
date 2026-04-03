@@ -10,7 +10,7 @@
     <Container>
         <Heading
             title="Honourable Mentions"
-            desc="Additional archived, scrapped or future projects"
+            desc="Additional archived • scrapped or future projects"
             newPage={true}
         />
 
