@@ -19,7 +19,6 @@ const ListItem = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let featuredProjects;
-  let expandedFlat;
   const sectionOrder = ["work", "education", "projects"];
   let showAll = false;
   let projects = [
@@ -98,7 +97,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     }
   ];
   featuredProjects = projects.filter((p) => p.featured).sort((a, b) => (a.featuredRank ?? 99) - (b.featuredRank ?? 99));
-  expandedFlat = (() => {
+  (() => {
     const out = [];
     for (const cat of sectionOrder) {
       const rows = projects.filter((p) => p.category === cat);
@@ -114,7 +113,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     }
     return out;
   })();
-  expandedFlat.length;
   typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   return `<div class="flex min-h-0 min-w-0 flex-1 flex-col bg-primary-light dark:bg-primary-dark">${validate_component(Container, "Container").$$render($$result, { custom: "!pt-2 sm:!pt-3" }, {}, {
     default: () => {
@@ -130,7 +128,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         },
         {},
         {}
-      )} <div role="list" class="-mt-1 grid w-full grid-cols-1 overflow-x-clip sm:-mt-0">${`<div class="col-start-1 row-start-1 z-[1] flex min-w-0 flex-col gap-0.5 self-start justify-self-stretch"><p class="animate mb-1.5 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400" data-svelte-h="svelte-14g3x16">Featured</p> ${each(featuredProjects, (project) => {
+      )}  <div class="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden"><div class="-mt-1 min-h-0 flex-1 overflow-y-auto overflow-x-clip overscroll-contain sm:-mt-0"><div role="list" class="grid min-w-0 grid-cols-1 overflow-x-clip">${`<div class="col-start-1 row-start-1 z-[1] flex min-h-0 min-w-0 flex-col gap-0.5"><p class="animate mb-1.5 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400" data-svelte-h="svelte-2nbdoa">Featured</p> ${each(featuredProjects, (project) => {
         return `<div class="animate" role="listitem">${validate_component(ListItem, "Project").$$render(
           $$result,
           {
@@ -142,7 +140,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
           {},
           {}
         )} </div>`;
-      })}</div>`}</div> <div class="animate mt-3 w-full sm:mt-4"><div class="flex flex-col items-center gap-0.5"><button type="button" class="font-sans inline-flex cursor-pointer items-center justify-center gap-2 border-0 bg-transparent px-0 py-0.5 text-xs font-normal text-neutral-500 no-underline transition-colors duration-100 ease-out hover:text-neutral-950 sm:text-sm dark:text-neutral-400 dark:hover:text-white"${add_attribute("aria-expanded", showAll, 0)}><span>${escape("Browse everything")}</span> <svg class="${"h-4 w-4 transition-transform duration-200 ease-out " + escape("rotate-0", true)}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></div></div> ${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}`;
+      })}</div>`}</div></div> <div class="animate mt-3 w-full shrink-0 sm:mt-4"><div class="flex flex-col items-center gap-0.5"><button type="button" class="font-sans inline-flex cursor-pointer items-center justify-center gap-2 border-0 bg-transparent px-0 py-0.5 text-xs font-normal text-neutral-500 no-underline transition-colors duration-100 ease-out hover:text-neutral-950 sm:text-sm dark:text-neutral-400 dark:hover:text-white"${add_attribute("aria-expanded", showAll, 0)}><span>${escape("Browse everything")}</span> <svg class="${"h-4 w-4 transition-transform duration-200 ease-out " + escape("rotate-0", true)}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></div></div></div> ${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}`;
     }
   })}</div>`;
 });

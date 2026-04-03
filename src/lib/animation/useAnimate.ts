@@ -7,25 +7,22 @@ import {
 type UseAnimateOptions = {
 	delayIncrement?: number;
 	observeMutations?: boolean;
-	footerReplay?: number;
 };
 
 function normalizeOptions(
 	arg?: number | UseAnimateOptions
-): { delayIncrement: number; observeMutations: boolean; footerReplay?: number } {
+): { delayIncrement: number; observeMutations: boolean } {
 	if (arg === undefined) return { delayIncrement: 0.05, observeMutations: true };
 	if (typeof arg === 'number') return { delayIncrement: arg, observeMutations: true };
 	return {
 		delayIncrement: arg.delayIncrement ?? 0.05,
 		observeMutations: arg.observeMutations !== false,
-		footerReplay: arg.footerReplay,
 	};
 }
 
 export function useAnimate(node: HTMLElement, arg?: number | UseAnimateOptions) {
 	const initial = normalizeOptions(arg);
 	let { delayIncrement, observeMutations } = initial;
-	let lastFooterReplay = initial.footerReplay ?? 0;
 	const seen = new WeakSet<Element>();
 
 	function finishEntrance(el: HTMLElement) {
@@ -74,22 +71,6 @@ export function useAnimate(node: HTMLElement, arg?: number | UseAnimateOptions) 
 		});
 	}
 
-	function replayFooterEntrance() {
-		const run = () => {
-			const footer = node.querySelector('footer');
-			if (!(footer instanceof HTMLElement)) return;
-			seen.delete(footer);
-			finishEntrance(footer);
-			footer.classList.add('animate');
-			scan();
-		};
-		if (typeof requestAnimationFrame !== 'undefined') {
-			requestAnimationFrame(run);
-		} else {
-			run();
-		}
-	}
-
 	scan();
 	if (typeof requestAnimationFrame !== 'undefined') {
 		requestAnimationFrame(() => scan());
@@ -98,14 +79,7 @@ export function useAnimate(node: HTMLElement, arg?: number | UseAnimateOptions) 
 	if (!observeMutations) {
 		return {
 			update(newArg?: number | UseAnimateOptions) {
-				const next = normalizeOptions(newArg);
-				if (
-					next.footerReplay !== undefined &&
-					next.footerReplay !== lastFooterReplay
-				) {
-					lastFooterReplay = next.footerReplay;
-					replayFooterEntrance();
-				}
+				delayIncrement = normalizeOptions(newArg).delayIncrement;
 			},
 			destroy() {},
 		};
@@ -120,13 +94,6 @@ export function useAnimate(node: HTMLElement, arg?: number | UseAnimateOptions) 
 		update(newArg?: number | UseAnimateOptions) {
 			const next = normalizeOptions(newArg);
 			delayIncrement = next.delayIncrement;
-			if (
-				next.footerReplay !== undefined &&
-				next.footerReplay !== lastFooterReplay
-			) {
-				lastFooterReplay = next.footerReplay;
-				replayFooterEntrance();
-			}
 		},
 		destroy() {
 			observer.disconnect();

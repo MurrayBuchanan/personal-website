@@ -1,11 +1,5 @@
 <script lang="ts">
-    import {
-        LIST_ROW_OUT_DURATION_MS,
-        LIST_ROW_OUT_STAGGER_MS,
-        LIST_ROW_OUT_Y_PX,
-        LIST_SWAP_DURATION_MS,
-        LIST_SWAP_Y_PX,
-    } from '$lib/animation/constants';
+    import { LIST_SWAP_DURATION_MS, LIST_SWAP_Y_PX } from '$lib/animation/constants';
     import { useAnimate } from '$lib/animation/useAnimate';
     import Container from '../lib/components/layout/Container.svelte';
     import Heading from '../lib/components/sections/Heading.svelte';
@@ -41,9 +35,6 @@
     };
 
     let showAll = false;
-
-    /** Bump on collapse so `useAnimate` replays the footer slide-up (same DOM node; see `footerReplay`). */
-    let footerCollapseAnimKey = 0;
 
     let projects: ProjectEntry[] = [
         {
@@ -139,8 +130,6 @@
         return out;
     })();
 
-    $: expandedCount = expandedFlat.length;
-
     $: reduceMotion =
         typeof window !== 'undefined' &&
         window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -160,14 +149,6 @@
         easing: quintOut,
     };
 
-    $: rowOutFly = (index: number) => ({
-        duration: reduceMotion ? 0 : LIST_ROW_OUT_DURATION_MS,
-        delay: reduceMotion ? 0 : (expandedCount - 1 - index) * LIST_ROW_OUT_STAGGER_MS,
-        y: reduceMotion ? 0 : -LIST_ROW_OUT_Y_PX,
-        opacity: 0,
-        easing: quintOut,
-    });
-
     function scrollPageToTop() {
         if (typeof window === 'undefined') return;
         if (reduceMotion) {
@@ -182,9 +163,6 @@
     async function toggleProjectList() {
         const wasExpanded = showAll;
         showAll = !showAll;
-        if (wasExpanded) {
-            footerCollapseAnimKey += 1;
-        }
         if (!wasExpanded) return;
         await tick();
         scrollPageToTop();
@@ -193,11 +171,7 @@
 
 <div
     class="flex min-h-0 min-w-0 flex-1 flex-col bg-primary-light dark:bg-primary-dark"
-    use:useAnimate={{
-        delayIncrement: 0.1,
-        observeMutations: true,
-        footerReplay: footerCollapseAnimKey,
-    }}
+    use:useAnimate={{ delayIncrement: 0.1, observeMutations: true }}
 >
     <Container custom="!pt-2 sm:!pt-3">
         <Heading
@@ -209,93 +183,124 @@
             newPage={false}
         />
 
-        <div role="list" class="-mt-1 grid w-full grid-cols-1 overflow-x-clip sm:-mt-0">
-            {#if !showAll}
-                <div
-                    class="col-start-1 row-start-1 z-[1] flex min-w-0 flex-col gap-0.5 self-start justify-self-stretch"
-                    in:fly={listIntroFly}
-                    out:fly={listOutroFly}
-                >
-                    <p
-                        class="animate mb-1.5 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
+        <div class="flex min-h-0 min-w-0 flex-1 flex-col">
+            <div
+                role="list"
+                class="-mt-1 grid min-h-0 min-w-0 flex-1 grid-cols-1 overflow-x-clip sm:-mt-0"
+            >
+                {#if !showAll}
+                    <div
+                        class="col-start-1 row-start-1 z-[1] flex min-h-0 min-w-0 flex-1 flex-col gap-0.5 self-stretch justify-self-stretch"
+                        in:fly={listIntroFly}
+                        out:fly={listOutroFly}
                     >
-                        Featured
-                    </p>
-                    {#each featuredProjects as project (project.title)}
-                        <div class="animate" role="listitem">
-                            <Project
-                                title={project.title}
-                                subDesc={project.subDesc}
-                                icon={project.icon}
-                                url={project.url}
-                            />
-                        </div>
-                    {/each}
-                </div>
-            {:else}
-                <div
-                    class="col-start-1 row-start-1 z-[1] flex min-w-0 flex-col gap-0.5 self-start justify-self-stretch"
-                    in:fly={listIntroFly}
-                    out:fly={listOutroFly}
-                >
-                    {#each expandedFlat as entry, i (entry.key)}
-                        <!-- Single root per row so Svelte runs `out:fly` reliably (no nested #if root). -->
-                        <div
-                            class="min-w-0"
-                            role={entry.kind === 'row' ? 'listitem' : undefined}
-                            out:fly={rowOutFly(i)}
+                        <p
+                            class="animate mb-1.5 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
                         >
-                            {#if entry.kind === 'label'}
-                                <p
-                                    class="animate mb-1.5 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400 {i > 0
-                                        ? 'mt-5 sm:mt-6'
-                                        : ''}"
+                            Featured
+                        </p>
+                        {#each featuredProjects as project (project.title)}
+                            <div class="animate" role="listitem">
+                                <Project
+                                    title={project.title}
+                                    subDesc={project.subDesc}
+                                    icon={project.icon}
+                                    url={project.url}
+                                />
+                            </div>
+                        {/each}
+                        <div class="animate mt-3 w-full sm:mt-4">
+                            <div class="flex flex-col items-center gap-0.5">
+                                <button
+                                    type="button"
+                                    on:click={toggleProjectList}
+                                    class="font-sans inline-flex cursor-pointer items-center justify-center gap-2 border-0 bg-transparent px-0 py-0.5 text-xs font-normal text-neutral-500 no-underline transition-colors duration-100 ease-out hover:text-neutral-950 sm:text-sm dark:text-neutral-400 dark:hover:text-white"
+                                    aria-expanded={showAll}
                                 >
-                                    {sectionLabels[entry.cat]}
-                                </p>
-                            {:else}
-                                <div class="animate">
-                                    <Project
-                                        title={entry.project.title}
-                                        subDesc={entry.project.subDesc}
-                                        icon={entry.project.icon}
-                                        url={entry.project.url}
-                                        subdued={entry.project.subdued === true}
-                                    />
-                                </div>
-                            {/if}
+                                    <span>Browse everything</span>
+                                    <svg
+                                        class="h-4 w-4 transition-transform duration-200 ease-out rotate-0"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
-                    {/each}
-                </div>
-            {/if}
-        </div>
-
-        <div class="animate mt-3 w-full sm:mt-4">
-            <div class="flex flex-col items-center gap-0.5">
-                <button
-                    type="button"
-                    on:click={toggleProjectList}
-                    class="font-sans inline-flex cursor-pointer items-center justify-center gap-2 border-0 bg-transparent px-0 py-0.5 text-xs font-normal text-neutral-500 no-underline transition-colors duration-100 ease-out hover:text-neutral-950 sm:text-sm dark:text-neutral-400 dark:hover:text-white"
-                    aria-expanded={showAll}
-                >
-                    <span
-                        >{showAll
-                            ? 'Show featured only'
-                            : 'Browse everything'}</span
+                        <Footer />
+                    </div>
+                {:else}
+                    <div
+                        class="col-start-1 row-start-1 z-[1] flex min-h-0 min-w-0 flex-1 flex-col gap-0.5 self-stretch justify-self-stretch"
+                        in:fly={listIntroFly}
+                        out:fly={listOutroFly}
                     >
-                    <svg
-                        class="h-4 w-4 transition-transform duration-200 ease-out {showAll ? 'rotate-180' : 'rotate-0'}"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                    >
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
+                        {#each expandedFlat as entry, i (entry.key)}
+                            <div
+                                class="min-w-0"
+                                role={entry.kind === 'row' ? 'listitem' : undefined}
+                            >
+                                {#if entry.kind === 'label'}
+                                    <p
+                                        class="animate mb-1.5 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400 {i > 0
+                                            ? 'mt-5 sm:mt-6'
+                                            : ''}"
+                                    >
+                                        {sectionLabels[entry.cat]}
+                                    </p>
+                                {:else}
+                                    <div class="animate">
+                                        <Project
+                                            title={entry.project.title}
+                                            subDesc={entry.project.subDesc}
+                                            icon={entry.project.icon}
+                                            url={entry.project.url}
+                                            subdued={entry.project.subdued === true}
+                                        />
+                                    </div>
+                                {/if}
+                            </div>
+                        {/each}
+                        <div class="animate mt-3 w-full sm:mt-4">
+                            <div class="flex flex-col items-center gap-0.5">
+                                <button
+                                    type="button"
+                                    on:click={toggleProjectList}
+                                    class="font-sans inline-flex cursor-pointer items-center justify-center gap-2 border-0 bg-transparent px-0 py-0.5 text-xs font-normal text-neutral-500 no-underline transition-colors duration-100 ease-out hover:text-neutral-950 sm:text-sm dark:text-neutral-400 dark:hover:text-white"
+                                    aria-expanded={showAll}
+                                >
+                                    <span>Show featured only</span>
+                                    <svg
+                                        class="h-4 w-4 rotate-180 transition-transform duration-200 ease-out"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <Footer />
+                    </div>
+                {/if}
             </div>
         </div>
-        <Footer />
     </Container>
 </div>
