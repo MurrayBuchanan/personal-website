@@ -28,7 +28,7 @@
     }
 
     const navLinkBase =
-        'font-sans text-[0.8125rem] font-normal no-underline transition-colors duration-100 ease-out sm:text-sm py-0.5';
+        'font-sans text-xs font-normal no-underline transition-colors duration-100 ease-out sm:text-sm py-0.5';
 
     /** Match `Footer` contact/social links: opacity + color + stroke, no scale. */
     const homeIconWrap =
@@ -79,7 +79,7 @@
   {/if}
 
   <h2
-      class="animate text-[1.375rem] font-semibold leading-tight tracking-[-0.02em] text-secondary-light dark:text-secondary-dark sm:text-[1.625rem] {!desc
+      class="animate text-xl font-semibold leading-tight tracking-tight text-secondary-light dark:text-secondary-dark sm:text-2xl {!desc
           ? 'mb-6'
           : ''}"
   >
@@ -87,7 +87,7 @@
   </h2>
   {#if desc}
     <p
-        class="animate max-w-prose pb-1 pt-1 font-sans text-sm font-normal leading-snug tracking-normal text-secondary-light dark:text-secondary-dark sm:text-[0.9375rem]"
+        class="animate max-w-prose pb-1 pt-1 font-sans text-sm font-normal leading-snug tracking-normal text-secondary-light dark:text-secondary-dark"
     >
       {desc}
     </p>
@@ -114,7 +114,7 @@
   {/if}
   {#if intro}
     <p
-        class="animate max-w-prose pb-3 pt-0 font-sans text-[0.8125rem] font-normal leading-snug tracking-normal text-neutral-600 dark:text-neutral-400 sm:text-sm sm:pb-4"
+        class="animate max-w-prose pb-3 pt-0 font-sans text-xs font-normal leading-snug tracking-normal text-neutral-600 dark:text-neutral-400 sm:text-sm sm:pb-4"
     >
       {intro}
     </p>

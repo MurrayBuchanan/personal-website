@@ -7,7 +7,7 @@
 </script>
 
 <!-- This page will redirect to LinkedIn -->
-<div class="flex min-h-svh items-center justify-center bg-primary-light dark:bg-primary-dark">
+<div class="flex min-h-0 min-w-0 flex-1 flex-col items-center justify-center bg-primary-light dark:bg-primary-dark">
     <div class="text-center">
         <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">Redirecting to LinkedIn...</p>
         <a href="https://www.linkedin.com/in/murraycbuchanan/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">

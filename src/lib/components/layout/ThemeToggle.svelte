@@ -7,7 +7,7 @@
   let prefersDarkScheme: MediaQueryList;
 
   const segment =
-    'min-w-0 flex-1 cursor-pointer py-0.5 text-center text-xs tracking-normal transition-colors duration-100 ease-out sm:text-[0.8125rem]';
+    'min-w-0 flex-1 cursor-pointer py-0.5 text-center text-xs tracking-normal transition-colors duration-100 ease-out sm:text-sm';
   const inactive =
     'text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white';
   const active = 'font-medium text-neutral-950 dark:text-white';

@@ -12,7 +12,7 @@
     class="mt-auto w-full animate pt-12 sm:pt-16 pb-[max(0.25rem,env(safe-area-inset-bottom))] {custom}"
 >
     <p
-        class="mb-2 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400"
+        class="mb-2 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
     >
         Contact
     </p>

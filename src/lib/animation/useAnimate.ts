@@ -6,12 +6,7 @@ import {
 
 type UseAnimateOptions = {
 	delayIncrement?: number;
-	/** When false, only the first scan runs. Home list toggle uses `true` so new rows get the same stagger as initial load. */
 	observeMutations?: boolean;
-	/**
-	 * Bump this (e.g. on home list collapse) to run slide-up on `<footer>` again without remounting
-	 * (remounting breaks stagger timing and resets nested UI like the theme toggle).
-	 */
 	footerReplay?: number;
 };
 

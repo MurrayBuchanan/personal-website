@@ -31,7 +31,9 @@
         /* 100vh jumps on mobile when browser chrome shows/hides; svh stays stable so flex footers don’t shift */
         min-height: 100vh;
         min-height: 100svh;
-        @apply bg-primary-light font-sans text-[0.9375rem] antialiased sm:text-base;
+        /* Avoid rubber-band / scroll-end repaints flashing mismatched canvas at the bottom on iOS */
+        overscroll-behavior-y: none;
+        @apply bg-primary-light font-sans text-sm antialiased sm:text-base;
         font-optical-sizing: auto;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -50,6 +52,10 @@
     body {
         min-height: 100vh;
         min-height: 100svh;
+        /* One flex column: children use flex-1 + min-h-0 so we don’t stack competing min-h-svh wrappers */
+        display: flex;
+        flex-direction: column;
+        overscroll-behavior-y: none;
         @apply bg-primary-light;
         scrollbar-width: none;
         -ms-overflow-style: none;

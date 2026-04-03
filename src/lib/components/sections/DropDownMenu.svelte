@@ -40,7 +40,7 @@
             tabindex="0"
             aria-expanded={isExpanded}
         >
-            <h3 class="text-base font-normal leading-snug tracking-[-0.02em] sm:text-lg">{title}</h3>
+            <h3 class="text-base font-normal leading-snug tracking-tight sm:text-lg">{title}</h3>
             <svg class="w-5 h-5 transform transition-transform duration-100 ease-out" class:rotate-180={isExpanded} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </div>
     {/if}
@@ -57,7 +57,7 @@
 
 
                             {#if klass.project.desc}
-                                <p class="font-serif mb-3 text-sm leading-[1.65] tracking-normal text-secondary-light dark:text-secondary-dark sm:text-[0.9375rem]">{klass.project.desc}</p>
+                                <p class="font-serif mb-3 text-sm leading-relaxed tracking-normal text-secondary-light dark:text-secondary-dark">{klass.project.desc}</p>
                             {/if}
 
                             {#if klass.project.code}

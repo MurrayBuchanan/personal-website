@@ -192,7 +192,7 @@
 </script>
 
 <div
-    class="min-h-svh bg-primary-light dark:bg-primary-dark"
+    class="flex min-h-0 min-w-0 flex-1 flex-col bg-primary-light dark:bg-primary-dark"
     use:useAnimate={{
         delayIncrement: 0.1,
         observeMutations: true,
@@ -217,7 +217,7 @@
                     out:fly={listOutroFly}
                 >
                     <p
-                        class="animate mb-1.5 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400"
+                        class="animate mb-1.5 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
                     >
                         Featured
                     </p>
@@ -247,7 +247,7 @@
                         >
                             {#if entry.kind === 'label'}
                                 <p
-                                    class="animate mb-1.5 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400 {i > 0
+                                    class="animate mb-1.5 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400 {i > 0
                                         ? 'mt-5 sm:mt-6'
                                         : ''}"
                                 >

@@ -42,20 +42,20 @@
 
       <div class="flex min-w-0 flex-col gap-0.5 sm:gap-0.5">
         {#if title}
-          <h2 class="text-base font-medium leading-snug tracking-[-0.02em] text-secondary-light dark:text-secondary-dark sm:text-lg">
+          <h2 class="text-base font-medium leading-snug tracking-tight text-secondary-light dark:text-secondary-dark sm:text-lg">
             {title}
           </h2>
         {/if}
         {#if desc}
           <p
-              class="font-sans text-[0.8125rem] font-normal leading-snug tracking-normal text-neutral-600 transition-colors duration-100 ease-out group-hover:text-neutral-950 dark:text-neutral-300 dark:group-hover:text-white sm:text-sm"
+              class="font-sans text-xs font-normal leading-snug tracking-normal text-neutral-600 transition-colors duration-100 ease-out group-hover:text-neutral-950 dark:text-neutral-300 dark:group-hover:text-white sm:text-sm"
           >
             {desc}
           </p>
         {/if}
         {#if subDesc}
           <p
-              class="font-sans text-[0.8125rem] font-normal leading-snug tracking-normal text-neutral-600 transition-colors duration-100 ease-out group-hover:text-neutral-950 dark:text-neutral-300 dark:group-hover:text-white sm:text-sm"
+              class="font-sans text-xs font-normal leading-snug tracking-normal text-neutral-600 transition-colors duration-100 ease-out group-hover:text-neutral-950 dark:text-neutral-300 dark:group-hover:text-white sm:text-sm"
           >
             {subDesc}
           </p>
