@@ -22,15 +22,17 @@
 
     export let title: string;
     export let classes: ModuleItem[] = [];
+    /** Open by default so module lists are visible without an extra click. */
+    export let defaultOpen = true;
 
-    let isExpanded = false;
+    let isExpanded = defaultOpen;
 
     function toggleExpand() {
         isExpanded = !isExpanded;
     }
 </script>
 
-<div class="border border-tertiary-light dark:border-tertiary-dark rounded-xl mb-4 overflow-hidden animate">
+<div class="border border-tertiary-light dark:border-tertiary-dark mb-4 overflow-hidden rounded-xl">
     {#if title}
         <div
             class="px-4 py-3 text-secondary-light dark:text-secondary-dark cursor-pointer flex justify-between items-center"
@@ -47,33 +49,56 @@
 
     {#if isExpanded && classes.length > 0}
         <div class="px-4 py-3" in:fly={panelFly} out:fly={panelFly}>
-            {#each classes as klass (klass.moduleName)}
-                <div class="mb-3 pb-3 border-b border-tertiary-light dark:border-tertiary-dark last:border-b-0 last:mb-0 last:pb-0">
-                    <h4 class="text-sm font-normal leading-snug tracking-normal text-secondary-light dark:text-secondary-dark sm:text-base">{klass.moduleName}</h4>
+            <ul
+                class="grid list-none grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-2.5 lg:grid-cols-3"
+                role="list"
+            >
+                {#each classes as klass (klass.moduleName)}
+                    <li
+                        class="min-w-0 rounded-lg border border-tertiary-light bg-primary-light/40 px-3 py-2.5 dark:border-tertiary-dark dark:bg-primary-dark/40 {klass.project
+                            ? 'col-span-full sm:col-span-2 lg:col-span-3'
+                            : ''}"
+                    >
+                        <h4 class="text-sm font-normal leading-snug tracking-normal text-secondary-light dark:text-secondary-dark sm:text-base">
+                            {klass.moduleName}
+                        </h4>
 
-                    {#if klass.project}
-
-                            <h5 class="mb-2 text-xs font-normal tracking-normal text-secondary-light dark:text-secondary-dark sm:text-sm">Project: {klass.project.title}</h5>
-
+                        {#if klass.project}
+                            <h5 class="mb-2 mt-2 text-xs font-normal tracking-normal text-secondary-light dark:text-secondary-dark sm:text-sm">
+                                Project: {klass.project.title}
+                            </h5>
 
                             {#if klass.project.desc}
-                                <p class="font-serif mb-3 text-sm leading-relaxed tracking-normal text-secondary-light dark:text-secondary-dark">{klass.project.desc}</p>
+                                <p class="font-serif mb-3 text-sm leading-relaxed tracking-normal text-secondary-light dark:text-secondary-dark">
+                                    {klass.project.desc}
+                                </p>
                             {/if}
 
                             {#if klass.project.code}
-                                <a href={klass.project.code} target="_blank" rel="noopener noreferrer" class="font-sans mr-4 text-xs font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-colors duration-100 ease-out sm:text-sm cursor-pointer">
+                                <a
+                                    href={klass.project.code}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="font-sans mr-4 cursor-pointer text-xs font-normal text-secondary-light transition-colors duration-100 ease-out hover:underline dark:text-secondary-dark sm:text-sm underline-offset-2"
+                                >
                                     Repository
                                 </a>
                             {/if}
 
                             {#if klass.project.url}
-                                <a href={klass.project.url} target="_blank" rel="noopener noreferrer" class="font-sans mr-4 text-xs font-normal text-secondary-light dark:text-secondary-dark hover:underline underline-offset-2 transition-colors duration-100 ease-out sm:text-sm cursor-pointer">
+                                <a
+                                    href={klass.project.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="font-sans mr-4 cursor-pointer text-xs font-normal text-secondary-light transition-colors duration-100 ease-out hover:underline dark:text-secondary-dark sm:text-sm underline-offset-2"
+                                >
                                     Preview
                                 </a>
                             {/if}
-                    {/if}
-                </div>
-            {/each}
+                        {/if}
+                    </li>
+                {/each}
+            </ul>
         </div>
     {/if}
 </div>

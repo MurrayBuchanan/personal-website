@@ -1,6 +1,8 @@
 <script>
     import Toggle from './ThemeToggle.svelte';
     export let custom = '';
+    /** Homepage: more bottom padding when the full project list is open (long scroll). */
+    export let extraScrollPadding = false;
 
     const iconWrap =
         'group inline-flex text-secondary-light opacity-[0.62] transition-[color,opacity] duration-100 ease-out hover:text-neutral-950 hover:opacity-100 dark:text-secondary-dark dark:opacity-[0.55] dark:hover:text-white dark:hover:opacity-100';
@@ -9,7 +11,9 @@
 </script>
 
 <footer
-    class="mt-auto w-full animate pt-12 sm:pt-16 pb-[max(0.25rem,env(safe-area-inset-bottom))] {custom}"
+    class="mt-auto w-full animate pt-12 sm:pt-16 {extraScrollPadding
+        ? 'pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:pb-[max(2rem,env(safe-area-inset-bottom))]'
+        : 'pb-[max(0.25rem,env(safe-area-inset-bottom))]'} {custom}"
 >
     <p
         class="mb-2 font-sans text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400"

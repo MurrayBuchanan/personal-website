@@ -297,7 +297,7 @@
                                 </button>
                             </div>
                         </div>
-                        <Footer />
+                        <Footer extraScrollPadding />
                     </div>
                 {/if}
             </div>
