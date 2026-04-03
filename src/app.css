@@ -28,7 +28,10 @@
 @layer base {
     /* Overscroll / rubber-band shows root canvas — match page tones (Tailwind dark is on <html>). */
     html {
-        @apply min-h-full bg-primary-light font-sans text-[0.9375rem] antialiased sm:text-base;
+        /* 100vh jumps on mobile when browser chrome shows/hides; svh stays stable so flex footers don’t shift */
+        min-height: 100vh;
+        min-height: 100svh;
+        @apply bg-primary-light font-sans text-[0.9375rem] antialiased sm:text-base;
         font-optical-sizing: auto;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -45,7 +48,9 @@
     }
 
     body {
-        @apply min-h-full bg-primary-light;
+        min-height: 100vh;
+        min-height: 100svh;
+        @apply bg-primary-light;
         scrollbar-width: none;
         -ms-overflow-style: none;
     }

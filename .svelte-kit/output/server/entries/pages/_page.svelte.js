@@ -116,7 +116,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   })();
   expandedFlat.length;
   typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-  return `<div class="min-h-screen bg-primary-light dark:bg-primary-dark">${validate_component(Container, "Container").$$render($$result, { custom: "!pt-2 sm:!pt-3" }, {}, {
+  return `<div class="min-h-svh bg-primary-light dark:bg-primary-dark">${validate_component(Container, "Container").$$render($$result, { custom: "!pt-2 sm:!pt-3" }, {}, {
     default: () => {
       return `${validate_component(Heading, "Heading").$$render(
         $$result,

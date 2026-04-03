@@ -184,7 +184,7 @@
 </script>
 
 <div
-    class="min-h-screen bg-primary-light dark:bg-primary-dark"
+    class="min-h-svh bg-primary-light dark:bg-primary-dark"
     use:useAnimate={{ delayIncrement: 0.1, observeMutations: true }}
 >
     <Container custom="!pt-2 sm:!pt-3">
