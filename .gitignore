@@ -42,10 +42,9 @@ pnpm-debug.log*
 .firebaserc
 .firebase-debug.log
 
-# Optional: lock files (if you're not committing them)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # Temporary files
 *.tmp

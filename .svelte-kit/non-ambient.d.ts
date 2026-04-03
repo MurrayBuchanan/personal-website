@@ -27,14 +27,13 @@ export {};
 
 declare module "$app/types" {
 	export interface AppTypes {
-		RouteId(): "/" | "/about" | "/animation" | "/camp-lindenmere" | "/chibb" | "/direct-distribution" | "/honourable-mentions" | "/jordanhill-school" | "/jpmorganchase" | "/linkedin" | "/minecraft" | "/setpiece" | "/university-of-strathclyde";
+		RouteId(): "/" | "/about" | "/camp-lindenmere" | "/chibb" | "/direct-distribution" | "/honourable-mentions" | "/jordanhill-school" | "/jpmorganchase" | "/linkedin" | "/minecraft" | "/setpiece" | "/university-of-strathclyde";
 		RouteParams(): {
 			
 		};
 		LayoutParams(): {
 			"/": Record<string, never>;
 			"/about": Record<string, never>;
-			"/animation": Record<string, never>;
 			"/camp-lindenmere": Record<string, never>;
 			"/chibb": Record<string, never>;
 			"/direct-distribution": Record<string, never>;
@@ -46,8 +45,8 @@ declare module "$app/types" {
 			"/setpiece": Record<string, never>;
 			"/university-of-strathclyde": Record<string, never>
 		};
-		Pathname(): "/" | "/about" | "/about/" | "/animation" | "/animation/" | "/camp-lindenmere" | "/camp-lindenmere/" | "/chibb" | "/chibb/" | "/direct-distribution" | "/direct-distribution/" | "/honourable-mentions" | "/honourable-mentions/" | "/jordanhill-school" | "/jordanhill-school/" | "/jpmorganchase" | "/jpmorganchase/" | "/linkedin" | "/linkedin/" | "/minecraft" | "/minecraft/" | "/setpiece" | "/setpiece/" | "/university-of-strathclyde" | "/university-of-strathclyde/";
+		Pathname(): "/" | "/about" | "/about/" | "/camp-lindenmere" | "/camp-lindenmere/" | "/chibb" | "/chibb/" | "/direct-distribution" | "/direct-distribution/" | "/honourable-mentions" | "/honourable-mentions/" | "/jordanhill-school" | "/jordanhill-school/" | "/jpmorganchase" | "/jpmorganchase/" | "/linkedin" | "/linkedin/" | "/minecraft" | "/minecraft/" | "/setpiece" | "/setpiece/" | "/university-of-strathclyde" | "/university-of-strathclyde/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/.DS_Store" | "/assets/.DS_Store" | "/assets/animations/animation.json" | "/assets/animations/animation.lottie" | "/assets/icons/BuchananBarbers.svg" | "/assets/icons/CampLindenmere.svg" | "/assets/icons/Chibb.svg" | "/assets/icons/Conquer.svg" | "/assets/icons/DirectDistribution.svg" | "/assets/icons/HonourableMentions.svg" | "/assets/icons/JPMorganChase.svg" | "/assets/icons/JordanhillSchool.svg" | "/assets/icons/LittleCheese.svg" | "/assets/icons/Minecraft.svg" | "/assets/icons/Placeholder.svg" | "/assets/icons/SetPiece.svg" | "/assets/icons/UniversityOfStrathclyde.svg" | "/assets/images/banner.svg" | "/assets/images/jpmorganchase.jpg" | "/assets/videos/chibb.mp4" | "/favicon.png" | "/fonts/.gitkeep" | "/fonts/Akkurat-Font/Akkurat.ttf" | string & {};
+		Asset(): "/.DS_Store" | "/assets/.DS_Store" | "/assets/animations/animation.json" | "/assets/animations/animation.lottie" | "/assets/icons/BuchananBarbers.svg" | "/assets/icons/CampLindenmere.svg" | "/assets/icons/Chibb.svg" | "/assets/icons/Conquer.svg" | "/assets/icons/DirectDistribution.svg" | "/assets/icons/HonourableMentions.svg" | "/assets/icons/JPMorganChase.svg" | "/assets/icons/JordanhillSchool.svg" | "/assets/icons/LittleCheese.svg" | "/assets/icons/Minecraft.svg" | "/assets/icons/Placeholder.svg" | "/assets/icons/SetPiece.svg" | "/assets/icons/UniversityOfStrathclyde.svg" | "/assets/images/banner.svg" | "/assets/videos/chibb.mp4" | "/favicon.png" | "/fonts/Akkurat-Font/Akkurat.ttf" | string & {};
 	}
 }

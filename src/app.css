@@ -98,9 +98,10 @@
         opacity: 0;
     }
 
+    /* SLIDE_UP_* in src/lib/animation/constants.ts */
     .animated {
         opacity: 0;
-        animation: slide-up 0.58s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        animation: slide-up 580ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 }
 

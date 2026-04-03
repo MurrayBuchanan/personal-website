@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { useAnimate } from '../animation/animation';
+    import { useAnimate } from '$lib/animation/useAnimate';
     import Container from '../../lib/components/layout/Container.svelte';
     import Heading from '../../lib/components/sections/Heading.svelte';
     import Text from '../../lib/components/ui/Text.svelte';

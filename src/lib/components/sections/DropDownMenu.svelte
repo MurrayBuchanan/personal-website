@@ -1,6 +1,14 @@
 <script lang="ts">
+    import { SLIDE_UP_DURATION_MS } from '$lib/animation/constants';
+    import { quintOut } from 'svelte/easing';
     import { fly } from 'svelte/transition';
-    import { collapseFly } from '$lib/collapseFly';
+
+    /** Opacity only — avoids layout/hit-test issues with vertical motion inside the accordion. */
+    const panelFly = {
+        duration: SLIDE_UP_DURATION_MS,
+        easing: quintOut,
+        opacity: 0,
+    };
 
     interface ModuleItem {
         moduleName: string;
@@ -38,7 +46,7 @@
     {/if}
 
     {#if isExpanded && classes.length > 0}
-        <div class="px-4 py-3" in:fly={collapseFly} out:fly={collapseFly}>
+        <div class="px-4 py-3" in:fly={panelFly} out:fly={panelFly}>
             {#each classes as klass (klass.moduleName)}
                 <div class="mb-3 pb-3 border-b border-tertiary-light dark:border-tertiary-dark last:border-b-0 last:mb-0 last:pb-0">
                     <h4 class="text-sm font-normal leading-snug tracking-normal text-secondary-light dark:text-secondary-dark sm:text-base">{klass.moduleName}</h4>

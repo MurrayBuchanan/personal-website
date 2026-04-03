@@ -1,5 +1,12 @@
 <script lang="ts">
-    import { useAnimate } from './animation/animation';
+    import {
+        LIST_ROW_OUT_DURATION_MS,
+        LIST_ROW_OUT_STAGGER_MS,
+        LIST_ROW_OUT_Y_PX,
+        LIST_SWAP_DURATION_MS,
+        LIST_SWAP_Y_PX,
+    } from '$lib/animation/constants';
+    import { useAnimate } from '$lib/animation/useAnimate';
     import Container from '../lib/components/layout/Container.svelte';
     import Heading from '../lib/components/sections/Heading.svelte';
     import Project from '../lib/components/sections/ListItem.svelte';
@@ -7,11 +14,6 @@
     import { tick } from 'svelte';
     import { fly } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
-
-    const listSwapDurationMs = 520;
-    const listSwapY = 14;
-    const collapseStaggerMs = 70;
-    const collapseDurationMs = 360;
 
     type Category = 'work' | 'education' | 'projects';
 
@@ -145,23 +147,23 @@
 
     /** `quintOut` avoids `backOut`-style overshoot so the block doesn’t sit a few px high then settle. */
     $: listIntroFly = {
-        duration: reduceMotion ? 0 : listSwapDurationMs,
-        y: reduceMotion ? 0 : listSwapY,
+        duration: reduceMotion ? 0 : LIST_SWAP_DURATION_MS,
+        y: reduceMotion ? 0 : LIST_SWAP_Y_PX,
         opacity: 0,
         easing: quintOut,
     };
 
     $: listOutroFly = {
-        duration: reduceMotion ? 0 : listSwapDurationMs,
-        y: reduceMotion ? 0 : -listSwapY,
+        duration: reduceMotion ? 0 : LIST_SWAP_DURATION_MS,
+        y: reduceMotion ? 0 : -LIST_SWAP_Y_PX,
         opacity: 0,
         easing: quintOut,
     };
 
     $: rowOutFly = (index: number) => ({
-        duration: reduceMotion ? 0 : collapseDurationMs,
-        delay: reduceMotion ? 0 : (expandedCount - 1 - index) * collapseStaggerMs,
-        y: reduceMotion ? 0 : -10,
+        duration: reduceMotion ? 0 : LIST_ROW_OUT_DURATION_MS,
+        delay: reduceMotion ? 0 : (expandedCount - 1 - index) * LIST_ROW_OUT_STAGGER_MS,
+        y: reduceMotion ? 0 : -LIST_ROW_OUT_Y_PX,
         opacity: 0,
         easing: quintOut,
     });
