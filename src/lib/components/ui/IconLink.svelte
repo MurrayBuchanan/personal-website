@@ -9,7 +9,7 @@
     export let size: 'sm' | 'md' | 'lg' = 'md';
 
     const wrapClass =
-        'group inline-flex text-secondary-light opacity-[0.62] transition-[color,opacity] duration-100 ease-out hover:text-neutral-950 hover:opacity-100 dark:text-secondary-dark dark:opacity-[0.55] dark:hover:text-white dark:hover:opacity-100';
+        'group inline-flex w-fit shrink-0 text-secondary-light opacity-[0.62] transition-[color,opacity] duration-100 ease-out hover:text-neutral-950 hover:opacity-100 dark:text-secondary-dark dark:opacity-[0.55] dark:hover:text-white dark:hover:opacity-100';
     const iconClass = 'group-hover:[stroke-width:1.75]';
 
     $: external = isExternalUrl(href);

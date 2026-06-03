@@ -5,6 +5,7 @@
 <ContentPage
     title="Honourable Mentions"
     desc="Additional archived • scrapped or future projects"
+    textColumns
     content={[
         {
             title: 'This Website',

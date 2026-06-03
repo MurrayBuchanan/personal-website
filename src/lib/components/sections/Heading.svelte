@@ -17,7 +17,7 @@
 </script>
 
 <main class="animate mt-0 pt-[env(safe-area-inset-top,0px)]">
-    <div class="animate flex flex-col justify-end {heroSlot}">
+    <div class="animate flex flex-col items-start justify-end {heroSlot}">
         {#if !isHomepage}
             <IconLink href="../" label="Home" name="home" size="lg" />
         {/if}

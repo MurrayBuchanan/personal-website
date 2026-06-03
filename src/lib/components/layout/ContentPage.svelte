@@ -11,15 +11,17 @@
     export let links: PageLink[] = [];
     export let content: ContentItem[] | undefined = undefined;
     export let textCustom = '';
+    export let textColumns = false;
     export let extraScrollPadding = false;
-    export let dividerColumns = false;
 </script>
 
 <PageLayout {extraScrollPadding}>
     <Heading {title} {desc} {intro} {links} />
-    <Divider columns={dividerColumns} />
     {#if content}
-        <Text {content} custom={textCustom} />
+        {#if textColumns}
+            <Divider columns />
+        {/if}
+        <Text {content} custom={textCustom} columns={textColumns} />
     {/if}
     <slot />
 </PageLayout>
