@@ -16,11 +16,14 @@
 
 {#if columns}
     <div
-        class="animate m-0 w-full {listGrid} {spacingClass[spacing]}"
+        class="animate m-0 w-full {spacingClass[spacing]}"
         aria-hidden="true"
     >
-        <div class="col-span-1 m-0 w-full {lineClass}" role="presentation" />
-        <div class="col-span-2 m-0 w-full {lineClass}" role="presentation" />
+        <div class="m-0 w-full sm:hidden {lineClass}" role="presentation" />
+        <div class="m-0 hidden w-full sm:grid {listGrid}">
+            <div class="col-span-1 m-0 w-full {lineClass}" role="presentation" />
+            <div class="col-span-2 m-0 w-full {lineClass}" role="presentation" />
+        </div>
     </div>
 {:else}
     <div

@@ -87,7 +87,7 @@ export const experienceEntries: ExperienceEntry[] = [
         company: 'University of Strathclyde',
         location: 'Glasgow, United Kingdom',
         date: '2022',
-        badges: ['First-Class', 'Honours'],
+        badges: ['First-Class'],
         url: '/university-of-strathclyde',
         category: 'education',
     },
