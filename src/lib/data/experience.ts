@@ -108,7 +108,7 @@ export const experienceEntries: ExperienceEntry[] = [
         category: 'community',
     },
     {
-        company: 'See archive and scrapped projects',
+        company: 'See archive and scrapped',
         date: '—',
         url: '/honourable-mentions',
         category: 'projects',

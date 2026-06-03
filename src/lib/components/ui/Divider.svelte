@@ -8,7 +8,7 @@
 
     const spacingClass: Record<typeof spacing, string> = {
         default: 'mt-1 mb-4 sm:mb-5',
-        footer: 'mt-0 mb-4 sm:mb-5',
+        footer: 'mt-8 mb-4 sm:mt-10 sm:mb-5',
         section: 'mt-5 sm:mt-6 mb-0',
         none: 'my-0',
     };

@@ -1,32 +1,29 @@
 <script lang="ts">
     import ThemeToggle from '$lib/components/layout/ThemeToggle.svelte';
     import Divider from '$lib/components/ui/Divider.svelte';
-    import IconLink from '$lib/components/ui/IconLink.svelte';
-    import type { IconName } from '$lib/types';
+    import InlineLink from '$lib/components/ui/InlineLink.svelte';
 
     export let custom = '';
     export let extraScrollPadding = false;
 
-    type SocialLink = {
+    type FooterLink = {
         href: string;
         label: string;
-        icon: IconName;
+        newTab?: boolean;
     };
 
     const year = new Date().getFullYear();
 
-    const socialLinks: SocialLink[] = [
-        { href: 'mailto:contact@murrayb.com', label: 'Email', icon: 'mail' },
+    const contactLinks: FooterLink[] = [
+        { href: 'mailto:contact@murrayb.com', label: 'Email', newTab: false },
         {
             href: 'https://www.linkedin.com/in/murraycbuchanan/',
             label: 'LinkedIn',
-            icon: 'linkedin',
         },
-        { href: 'https://github.com/MurrayBuchanan', label: 'GitHub', icon: 'github' },
+        { href: 'https://github.com/MurrayBuchanan', label: 'GitHub' },
         {
             href: 'https://www.instagram.com/murray.c.buchanan/',
             label: 'Instagram',
-            icon: 'instagram',
         },
     ];
 </script>
@@ -36,35 +33,32 @@
         ? 'pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:pb-[max(2rem,env(safe-area-inset-bottom))]'
         : 'pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:pb-[max(1rem,env(safe-area-inset-bottom))]'} {custom}"
 >
-    <Divider spacing="footer" />
+    <Divider spacing="footer" columns />
 
-    <div class="flex flex-col gap-5 sm:gap-6">
+    <div class="flex w-full min-w-0 flex-col gap-4 sm:gap-5">
         <div
-            class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8"
+            class="flex w-full min-w-0 flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
         >
-            <div class="min-w-0 flex flex-col gap-2">
-                <p class="type-section">Contact</p>
-                <nav aria-label="Social">
-                    <ul class="flex flex-wrap items-center gap-x-5 gap-y-2">
-                        {#each socialLinks as link (link.href)}
-                            <li>
-                                <IconLink
-                                    href={link.href}
-                                    label={link.label}
-                                    name={link.icon}
-                                />
-                            </li>
-                        {/each}
-                    </ul>
-                </nav>
+            <div class="flex min-w-0 flex-col gap-1 text-left">
+                <p class="type-lead !max-w-none">Murray Buchanan</p>
+                <p class="type-meta !max-w-none">© {year}</p>
             </div>
 
-            <div class="flex shrink-0 flex-col gap-2">
-                <p class="type-section">Theme</p>
-                <ThemeToggle />
-            </div>
+            <ThemeToggle />
         </div>
 
-        <p class="type-meta">© {year} Murray Buchanan</p>
+        <nav aria-label="Contact" class="w-full min-w-0">
+            <ul class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                {#each contactLinks as link (link.href)}
+                    <li class="min-w-0">
+                        <InlineLink
+                            href={link.href}
+                            label={link.label}
+                            newTab={link.newTab ?? true}
+                        />
+                    </li>
+                {/each}
+            </ul>
+        </nav>
     </div>
 </footer>
