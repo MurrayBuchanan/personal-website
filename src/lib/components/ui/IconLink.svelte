@@ -1,0 +1,26 @@
+<script lang="ts">
+    import type { IconName } from '$lib/types';
+    import { isExternalUrl } from '$lib/utils/url';
+    import Icon from './Icon.svelte';
+
+    export let href: string;
+    export let label: string;
+    export let name: IconName;
+    export let size: 'sm' | 'md' | 'lg' = 'md';
+
+    const wrapClass =
+        'group inline-flex text-secondary-light opacity-[0.62] transition-[color,opacity] duration-100 ease-out hover:text-neutral-950 hover:opacity-100 dark:text-secondary-dark dark:opacity-[0.55] dark:hover:text-white dark:hover:opacity-100';
+    const iconClass = 'group-hover:[stroke-width:1.75]';
+
+    $: external = isExternalUrl(href);
+</script>
+
+<a
+    {href}
+    class={wrapClass}
+    aria-label={label}
+    target={external ? '_blank' : undefined}
+    rel={external ? 'noopener noreferrer' : undefined}
+>
+    <Icon {name} {size} className={iconClass} />
+</a>

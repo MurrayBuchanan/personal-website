@@ -1,34 +1,34 @@
 <script lang="ts">
-  
-  interface ContentItem {
-    title?: string;
-    desc?: string | string[];
-  }
-  
-  export let content: ContentItem[] = [];
-  export let custom: string = "";
+    import type { ContentItem } from '$lib/types';
+
+    export let content: ContentItem[] = [];
+    export let custom = '';
 </script>
 
-<main>
-  {#each content as item}
-    <!-- Title -->
-    {#if item.title}
-      <p class="font-sans animate text-base font-normal leading-snug tracking-tight text-secondary-light dark:text-secondary-dark sm:text-lg {custom}">{item.title}</p>
-    {/if}
-    
-    <!-- Description(s) -->
-    {#if typeof item.desc === 'string'}
-      <!-- Single description -->
-      {#if item.desc}
-        <p class="animate pb-6 text-sm font-normal leading-relaxed tracking-normal text-secondary-light dark:text-secondary-dark {custom}">{item.desc}</p>
-      {/if}
-    {:else if Array.isArray(item.desc)}
-      <!-- Multiple paragraphs -->
-      {#each item.desc as paragraph}
-        {#if paragraph}
-          <p class="animate pb-6 text-sm font-normal leading-relaxed tracking-normal text-secondary-light dark:text-secondary-dark {custom}">{paragraph}</p>
-        {/if}
-      {/each}
-    {/if}
-  {/each}
-</main>
+<div class="flex flex-col gap-7 sm:gap-9 {custom}">
+    {#each content as item, index (index)}
+        <section class="animate flex flex-col gap-3 sm:gap-3.5">
+            {#if item.title}
+                <h3 class="type-section">
+                    {item.title}
+                </h3>
+            {/if}
+
+            {#if typeof item.desc === 'string' && item.desc}
+                <p class="type-body">
+                    {item.desc}
+                </p>
+            {:else if Array.isArray(item.desc)}
+                <div class="flex max-w-prose flex-col gap-3.5 sm:gap-4">
+                    {#each item.desc as paragraph, index (index)}
+                        {#if paragraph}
+                            <p class="type-body">
+                                {paragraph}
+                            </p>
+                        {/if}
+                    {/each}
+                </div>
+            {/if}
+        </section>
+    {/each}
+</div>

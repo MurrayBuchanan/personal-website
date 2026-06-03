@@ -1,40 +1,19 @@
-@font-face {
-    font-family: 'Akkurat';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        local('Akkurat'),
-        local('Akkurat Regular'),
-        url('/fonts/Akkurat-Regular.woff2') format('woff2'),
-        url('/fonts/Akkurat-Regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Akkurat';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src:
-        local('Akkurat Bold'),
-        url('/fonts/Akkurat-Bold.woff2') format('woff2'),
-        url('/fonts/Akkurat-Bold.woff') format('woff');
-}
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    /* Overscroll / rubber-band shows root canvas — match page tones (Tailwind dark is on <html>). */
     html {
-        /* 100vh jumps on mobile when browser chrome shows/hides; svh stays stable so flex footers don’t shift */
         min-height: 100vh;
         min-height: 100svh;
-        /* Avoid rubber-band / scroll-end repaints flashing mismatched canvas at the bottom on iOS */
         overscroll-behavior-y: none;
-        @apply bg-primary-light font-sans text-sm antialiased sm:text-base;
-        font-optical-sizing: auto;
+        @apply bg-primary-light font-sans text-body text-neutral-600 antialiased dark:text-neutral-400;
+        font-feature-settings: 'cv02' 1, 'cv03' 1, 'cv04' 1;
+        text-rendering: optimizeLegibility;
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
@@ -52,7 +31,6 @@
     body {
         min-height: 100vh;
         min-height: 100svh;
-        /* One flex column: children use flex-1 + min-h-0 so we don’t stack competing min-h-svh wrappers */
         display: flex;
         flex-direction: column;
         overscroll-behavior-y: none;
@@ -88,26 +66,46 @@
         @apply font-sans;
     }
 }
+
 @layer components {
-    /* Fade + rise into final position only (no overshoot — avoids a visible “bob” before rest). */
-    @keyframes slide-up {
-        0% {
-            opacity: 0;
-            transform: translate3d(0, 8px, 0);
-        }
-        100% {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
-    }
-    .animate {
-        opacity: 0;
+    .type-display {
+        @apply font-sans text-display font-medium tracking-tight text-secondary-light dark:text-secondary-dark sm:text-display-lg;
     }
 
-    /* SLIDE_UP_* in src/lib/animation/constants.ts */
-    .animated {
-        opacity: 0;
-        animation: slide-up 580ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    .type-lead {
+        @apply max-w-prose font-sans text-body font-normal text-secondary-light dark:text-secondary-dark;
+    }
+
+    .type-intro {
+        @apply max-w-prose font-sans text-body font-normal leading-[1.6] text-neutral-500 dark:text-neutral-400;
+    }
+
+    .type-section {
+        @apply font-sans text-section font-medium text-neutral-500 dark:text-neutral-400;
+    }
+
+    .type-body {
+        @apply max-w-prose font-sans text-body font-normal text-neutral-600 dark:text-neutral-400;
+    }
+
+    .type-meta {
+        @apply font-sans text-meta font-normal text-neutral-500 dark:text-neutral-400;
+    }
+
+    .type-link {
+        @apply font-sans text-body font-normal text-secondary-light no-underline transition-colors duration-100 ease-out dark:text-secondary-dark;
+    }
+
+    .type-link-text {
+        @apply relative inline-block max-w-full truncate pb-[0.2em];
+    }
+
+    .type-link-text::after {
+        content: '';
+        @apply pointer-events-none absolute inset-x-0 bottom-0 h-[1.5px] rounded-full bg-neutral-300 transition-colors duration-100 ease-out dark:bg-neutral-700;
+    }
+
+    .type-link:hover .type-link-text::after {
+        @apply bg-neutral-400 dark:bg-neutral-600;
     }
 }
-

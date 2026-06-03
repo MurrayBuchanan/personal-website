@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
-  darkMode: 'class', // Enable dark mode via 'dark' class
+  darkMode: 'class',
   theme: {
     extend: {
       keyframes: {
@@ -20,17 +20,21 @@ export default {
         'fade-zoom-in': 'fade-zoom-in 0.7s ease-out',
       },
       fontFamily: {
-        sans: ['"Akkurat"', 'system-ui', 'sans-serif'],
-        serif: ['"Akkurat"', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
+        display: ['1.5rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+        'display-lg': ['1.75rem', { lineHeight: '1.15', letterSpacing: '-0.025em' }],
+        section: ['0.9375rem', { lineHeight: '1.35', letterSpacing: '-0.01em' }],
+        body: ['0.9375rem', { lineHeight: '1.65' }],
+        meta: ['0.8125rem', { lineHeight: '1.45', letterSpacing: '0.01em' }],
         editorial: ['1.0625rem', { lineHeight: '1.7' }],
       },
       spacing: {
-        '128': '32rem', // Add custom spacing
+        '128': '32rem',
       },
       colors: {
-        /** Lineto.com / Akkurat page palette: canvas #f5f5f5, ink #000 / #141414, UI gray #B1B1B1 */
         customGreen: '#32a852',
         customDark: '#0d0d0d',
         neutral: {
@@ -100,6 +104,6 @@ export default {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'), // Example plugin
+    require('@tailwindcss/typography'),
   ],
 };

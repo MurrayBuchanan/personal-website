@@ -1,8 +1,5 @@
 <script lang="ts">
-    import { useAnimate } from '$lib/animation/useAnimate';
-    import Container from '../lib/components/layout/Container.svelte';
-    import Footer from '../lib/components/layout/Footer.svelte';
-    import Heading from '../lib/components/sections/Heading.svelte';
+    import ContentPage from '$lib/components/layout/ContentPage.svelte';
     import { DotLottieSvelte } from '@lottiefiles/dotlottie-svelte';
 
     export let error;
@@ -12,17 +9,11 @@
     <title>Murray Buchanan | Not Found</title>
 </svelte:head>
 
-
-
-<body class="bg-primary-light dark:bg-primary-dark" use:useAnimate={0.1}>
-    <Container>
-        <Heading
-            title="{error?.message || 'Page not found'}"
-            desc="The page you’re looking for doesn’t exist." 
-        />       
-
+<ContentPage
+    title={error?.message || 'Page not found'}
+    desc="The page you're looking for doesn't exist."
+>
+    <div class="animate flex justify-center py-4 sm:py-6">
         <DotLottieSvelte src="/assets/animations/animation.lottie" loop autoplay />
-
-        <Footer />
-    </Container>
-</body>
+    </div>
+</ContentPage>

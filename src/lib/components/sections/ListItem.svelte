@@ -1,66 +1,52 @@
-<script>
-  export let icon = '';
-  export let title = '';
-  export let desc = '';
-  export let subDesc = '';
-  export let url = '';
-  export const favourite = false;
-  /** Softer presentation when expanded list includes older/auxiliary entries */
-  export let subdued = false;
+<script lang="ts">
+    import Badge from '$lib/components/ui/Badge.svelte';
+    import InlineLink from '$lib/components/ui/InlineLink.svelte';
+    import { isExternalUrl } from '$lib/utils/url';
+
+    export let date = '';
+    export let badges: string[] = [];
+    export let role: string | null | undefined = '';
+    export let company = '';
+    export let location: string | null | undefined = '';
+    export let url = '';
+    export let externalUrl = '';
+    export let subdued = false;
+
+    $: linkHref = externalUrl || url;
+    $: openInNewTab = isExternalUrl(linkHref);
 </script>
-<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-<!-- Object growth should not affect other components -->
 
-<div
-    class="relative flex items-start overflow-hidden rounded-2xl px-4 py-3 sm:px-5 sm:py-3.5 {subdued
-        ? 'opacity-[0.78] dark:opacity-[0.82]'
-        : ''}"
->
-  <a
-      href={url}
-      class="group relative block w-full cursor-pointer touch-manipulation outline-none transition-colors duration-100 ease-out focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-secondary-light/30 dark:focus-visible:ring-secondary-dark/40 rounded-xl"
-  >
-    <div
-        class="grid min-w-0 grid-cols-[2rem_1fr] items-center gap-x-3 sm:grid-cols-[2.25rem_1fr] sm:gap-x-3.5"
-    >
-        {#if icon}
-        <div
-            class="flex w-full items-center justify-center"
-            aria-hidden="true"
-        >
-            <img
-                src={icon}
-                alt=""
-                style='stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"'
-                class="h-6 w-6 object-contain opacity-[0.68] transition-opacity duration-100 ease-out group-hover:opacity-100 dark:opacity-[0.55] dark:invert dark:brightness-100 dark:group-hover:opacity-100 sm:h-7 sm:w-7"
-                on:error="{() => icon = 'assets/icons/Placeholder.svg'}"
-            />
+<article class={subdued ? 'opacity-[0.78] dark:opacity-[0.82]' : ''}>
+    <div class="grid min-w-0 grid-cols-3 items-start gap-x-6 sm:gap-x-8">
+        <div class="col-span-1 flex min-w-0 flex-wrap items-center gap-2 text-left">
+            {#if date}
+                <time class="type-meta shrink-0 tabular-nums">
+                    {date}
+                </time>
+            {/if}
+            {#if badges.length > 0}
+                <div class="flex min-w-0 flex-wrap items-center gap-1.5">
+                    {#each badges as badge (badge)}
+                        <Badge text={badge} />
+                    {/each}
+                </div>
+            {/if}
         </div>
-        {:else}
-        <div class="min-w-0"></div>
-        {/if}
 
-      <div class="flex min-w-0 flex-col gap-0.5 sm:gap-0.5">
-        {#if title}
-          <h2 class="text-base font-medium leading-snug tracking-tight text-secondary-light dark:text-secondary-dark sm:text-lg">
-            {title}
-          </h2>
-        {/if}
-        {#if desc}
-          <p
-              class="font-sans text-xs font-normal leading-snug tracking-normal text-neutral-600 transition-colors duration-100 ease-out group-hover:text-neutral-950 dark:text-neutral-300 dark:group-hover:text-white sm:text-sm"
-          >
-            {desc}
-          </p>
-        {/if}
-        {#if subDesc}
-          <p
-              class="font-sans text-xs font-normal leading-snug tracking-normal text-neutral-600 transition-colors duration-100 ease-out group-hover:text-neutral-950 dark:text-neutral-300 dark:group-hover:text-white sm:text-sm"
-          >
-            {subDesc}
-          </p>
-        {/if}
-      </div>
+        <div class="col-span-2 flex min-w-0 flex-col gap-1 text-left">
+            {#if role}
+                <p class="type-lead !max-w-none">
+                    {role}
+                </p>
+            {/if}
+            {#if company}
+                <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
+            {/if}
+            {#if location}
+                <p class="type-meta !max-w-none">
+                    {location}
+                </p>
+            {/if}
+        </div>
     </div>
-  </a>
-</div>
+</article>
