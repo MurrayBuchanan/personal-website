@@ -34,7 +34,7 @@ export const experienceEntries: ExperienceEntry[] = [
         category: 'projects',
     },
     {
-        role: 'Creator & Developer',
+        role: 'Researcher & Developer',
         company: 'Verba',
         location: 'Glasgow, United Kingdom',
         date: '2026',
