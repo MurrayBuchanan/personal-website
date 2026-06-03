@@ -1,1 +1,0 @@
-export { default as component } from "../../../../src/routes/university-of-strathclyde/+page.svelte";
