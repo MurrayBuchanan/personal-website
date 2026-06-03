@@ -37,7 +37,7 @@ export const experienceEntries: ExperienceEntry[] = [
         role: 'Computer Science Course Lead & Instructor',
         company: 'Camp Lindenmere',
         location: 'Pennsylvania, US',
-        date: '2014',
+        date: '2024',
         url: '/camp-lindenmere',
         category: 'work',
     },
