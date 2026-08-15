@@ -94,14 +94,7 @@
                                 {/each}
                             </div>
                             {#if position.location}
-                                <p
-                                    class="type-meta !max-w-none {position.location === positions[i - 1]?.location
-                                        ? 'invisible'
-                                        : ''}"
-                                    aria-hidden={position.location === positions[i - 1]?.location
-                                        ? 'true'
-                                        : undefined}
-                                >
+                                <p class="type-meta !max-w-none">
                                     {position.location}
                                 </p>
                             {/if}
