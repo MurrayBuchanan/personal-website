@@ -10,6 +10,13 @@ export type PageLink = {
 
 export type ExperienceCategory = 'work' | 'education' | 'projects' | 'community';
 
+export type ExperiencePosition = {
+    role: string;
+    date: string;
+    location?: string | null;
+    badges?: string[];
+};
+
 export type ExperienceEntry = {
     role?: string | null;
     company: string;
@@ -20,6 +27,7 @@ export type ExperienceEntry = {
     externalUrl?: string;
     category: ExperienceCategory;
     subdued?: boolean;
+    positions?: ExperiencePosition[];
 };
 
 export type IconName =
@@ -33,4 +41,5 @@ export type IconName =
     | 'monitor'
     | 'external'
     | 'arrow-up-right'
+    | 'arrow-right'
     | 'chevron-down';

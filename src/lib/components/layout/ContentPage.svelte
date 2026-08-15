@@ -19,7 +19,7 @@
     <Heading {title} {desc} {intro} {links} />
     {#if content}
         {#if textColumns}
-            <Divider columns />
+            <Divider />
         {/if}
         <Text {content} custom={textCustom} columns={textColumns} />
     {/if}

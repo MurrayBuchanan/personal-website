@@ -17,7 +17,7 @@
         intro="I build full-stack products across research, apps, and community platforms."
     />
 
-    <Divider columns />
+    <Divider />
 
     <div class="flex min-w-0 flex-1 flex-col">
         <ExperienceList

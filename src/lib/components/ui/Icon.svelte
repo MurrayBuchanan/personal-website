@@ -66,6 +66,9 @@
     {:else if name === 'arrow-up-right'}
         <path d="M7 17 17 7" />
         <path d="M7 7h10v10" />
+    {:else if name === 'arrow-right'}
+        <path d="M5 12h14" />
+        <path d="m13 6 6 6-6 6" />
     {:else if name === 'chevron-down'}
         <path d="m6 9 6 6 6-6" />
     {/if}

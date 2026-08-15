@@ -67,12 +67,23 @@ export const experienceEntries: ExperienceEntry[] = [
         category: 'work',
     },
     {
-        role: 'Computer Science Course Creator & Instructor',
         company: 'Open Mind Projects',
-        location: 'Nong Khai, Thailand',
         date: '2026',
         url: '/openmindprojects',
-        category: 'community',
+        category: 'work',
+        positions: [
+            {
+                role: 'Member of the Board of Advisors',
+                date: '2026',
+                location: 'South Asia',
+                badges: ['Present'],
+            },
+            {
+                role: 'Computer Science Course Creator & Instructor',
+                date: '2026',
+                location: 'Nong Khai, Thailand',
+            },
+        ],
     },
     {
         role: 'IT, Marketing, Distribution & Events Support',

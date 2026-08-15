@@ -33,7 +33,7 @@
         ? 'pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:pb-[max(2rem,env(safe-area-inset-bottom))]'
         : 'pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:pb-[max(1rem,env(safe-area-inset-bottom))]'} {custom}"
 >
-    <Divider spacing="footer" columns />
+    <Divider spacing="footer" />
 
     <div class="flex w-full min-w-0 flex-col gap-4 sm:gap-5">
         <div

@@ -43,6 +43,7 @@
                                 url={entry.url}
                                 externalUrl={entry.externalUrl ?? ''}
                                 subdued={entry.subdued === true}
+                                positions={entry.positions ?? []}
                             />
                         </li>
                     {/each}
