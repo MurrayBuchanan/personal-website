@@ -16,12 +16,40 @@ export const experienceSectionLabels: Record<ExperienceCategory, string> = {
 
 export const experienceEntries: ExperienceEntry[] = [
     {
-        role: 'Software Engineer',
         company: 'J.P. Morgan Chase & Co.',
-        location: 'Glasgow, United Kingdom',
-        date: '2024–Current',
+        date: '2023–Current',
         url: '/jpmorganchase',
         category: 'work',
+        positions: [
+            {
+                role: 'Software Engineer',
+                date: '2024–Current',
+                location: 'Glasgow, United Kingdom',
+            },
+            {
+                role: 'Software Engineer Intern',
+                date: '2023',
+                location: 'Glasgow, United Kingdom',
+            },
+        ],
+    },
+    {
+        company: 'OpenmindProjects Foundation',
+        date: '2026–Current',
+        url: '/openmindprojects',
+        category: 'work',
+        positions: [
+            {
+                role: 'Member of the Board of Advisors',
+                date: '2026–Current',
+                location: 'South Asia',
+            },
+            {
+                role: 'Computer Science Course Creator & Instructor',
+                date: '2026',
+                location: 'Nong Khai, Thailand',
+            },
+        ],
     },
     {
         role: 'Founder',
@@ -33,7 +61,7 @@ export const experienceEntries: ExperienceEntry[] = [
     },
     {
         role: 'Researcher & Developer',
-        company: 'Verba',
+        company: 'Dementia Linguistic Anomaly Detection',
         location: 'Glasgow, United Kingdom',
         date: '2026',
         badges: ['Open source'],
@@ -65,24 +93,6 @@ export const experienceEntries: ExperienceEntry[] = [
         category: 'work',
     },
     {
-        company: 'Open Mind Projects',
-        date: '2026–Current',
-        url: '/openmindprojects',
-        category: 'work',
-        positions: [
-            {
-                role: 'Member of the Board of Advisors',
-                date: '2026–Current',
-                location: 'South Asia',
-            },
-            {
-                role: 'Computer Science Course Creator & Instructor',
-                date: '2026',
-                location: 'Nong Khai, Thailand',
-            },
-        ],
-    },
-    {
         role: 'IT, Marketing, Distribution & Events Support',
         company: 'Direct Distribution',
         location: 'Scotland Area, United Kingdom',
@@ -105,6 +115,67 @@ export const experienceEntries: ExperienceEntry[] = [
         date: '2009-2022',
         url: '/jordanhill-school',
         category: 'education',
+    },
+    {
+        role: 'Computer Science and Mathematics Tutor',
+        company: 'Freelance',
+        location: 'Scotland, United Kingdom',
+        date: '2024–Current',
+        url: '/private-tutor',
+        category: 'community',
+    },
+    {
+        company: 'GDSC Glasgow & Strathclyde',
+        date: '2023–2026',
+        url: '/gdsc-glasgow-strathclyde',
+        category: 'community',
+        positions: [
+            {
+                role: 'Competition Lead',
+                date: '2024-2026',
+                location: 'Glasgow, United Kingdom',
+            },
+            {
+                role: 'Treasurer',
+                date: '2023-2024',
+                location: 'Glasgow, United Kingdom',
+            },
+        ],
+    },
+    {
+        company: 'Charity Work',
+        date: '2019–2024',
+        url: '/charity-work',
+        category: 'community',
+        positions: [
+            {
+                role: 'Many roles — OpenmindProjects Foundation',
+                date: '2024',
+                location: 'South Asia',
+            },
+            {
+                role: 'Software Engineer — CodeForGood Hackathon',
+                date: '2024',
+                location: 'Glasgow, United Kingdom',
+                badges: ['1st Place'],
+            },
+            {
+                role: 'Fundraising Coordinator — Refuweegee',
+                date: '2021-2022',
+                location: 'Glasgow, United Kingdom',
+                badges: ['£10,000+ raised'],
+            },
+            {
+                role: 'Foodbank Volunteer — Guri Nanak Sikh Temple',
+                date: '2020',
+                location: 'Glasgow, United Kingdom',
+            },
+            {
+                role: 'Support Worker — Barnardos',
+                date: '2019',
+                location: 'Glasgow, United Kingdom',
+            },
+        ],
     },
     {
         role: 'Server Hosting & Plugin Development',

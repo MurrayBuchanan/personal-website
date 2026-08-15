@@ -16,31 +16,24 @@
 
     $: linkHref = externalUrl || url;
     $: openInNewTab = isExternalUrl(linkHref);
+
+    const dateColGrid =
+        'grid-cols-[6.5rem_minmax(0,1fr)] sm:grid-cols-[11rem_minmax(0,1fr)]';
 </script>
 
 <article class={subdued ? 'opacity-[0.78] dark:opacity-[0.82]' : ''}>
-    <div class="grid min-w-0 grid-cols-[11rem_1fr] items-start gap-x-6 sm:gap-x-8">
+    <div class="grid min-w-0 {dateColGrid} items-start gap-x-6 sm:gap-x-8">
         <div
             class="flex min-w-0 flex-col items-start gap-2 text-left sm:flex-row sm:flex-wrap sm:items-center"
         >
             {#if date}
-                <time class="type-meta shrink-0 tabular-nums">
+                <time class="type-meta shrink-0 whitespace-nowrap tabular-nums">
                     {date}
                 </time>
             {/if}
         </div>
 
         <div class="flex min-w-0 flex-col gap-1 text-left">
-            {#if role}
-                <div class="flex flex-wrap items-center gap-2">
-                    <p class="type-lead !max-w-none">
-                        {role}
-                    </p>
-                    {#each badges as badge (badge)}
-                        <Badge text={badge} />
-                    {/each}
-                </div>
-            {/if}
             {#if company}
                 {#if role}
                     <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
@@ -53,6 +46,16 @@
                     </div>
                 {/if}
             {/if}
+            {#if role}
+                <div class="flex flex-wrap items-center gap-2">
+                    <p class="type-lead !max-w-none">
+                        {role}
+                    </p>
+                    {#each badges as badge (badge)}
+                        <Badge text={badge} />
+                    {/each}
+                </div>
+            {/if}
             {#if location}
                 <p class="type-meta !max-w-none">
                     {location}
@@ -64,7 +67,7 @@
     {#if positions.length > 0}
         <ul class="mt-3 flex min-w-0 flex-col">
             {#each positions as position, i (position.role)}
-                <li class="grid min-w-0 grid-cols-[11rem_1fr] items-start gap-x-6 list-none sm:gap-x-8">
+                <li class="grid min-w-0 {dateColGrid} items-start gap-x-6 list-none sm:gap-x-8">
                     <div class=""></div>
 
                     <div class="flex min-w-0 gap-3 pb-4 last:pb-0">
@@ -91,7 +94,14 @@
                                 {/each}
                             </div>
                             {#if position.location}
-                                <p class="type-meta !max-w-none">
+                                <p
+                                    class="type-meta !max-w-none {position.location === positions[i - 1]?.location
+                                        ? 'invisible'
+                                        : ''}"
+                                    aria-hidden={position.location === positions[i - 1]?.location
+                                        ? 'true'
+                                        : undefined}
+                                >
                                     {position.location}
                                 </p>
                             {/if}
