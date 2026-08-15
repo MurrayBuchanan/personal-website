@@ -4,7 +4,7 @@
 
     const lineClass =
         'h-px shrink-0 rounded-full bg-neutral-900/[0.06] dark:bg-white/[0.08]';
-    const listGrid = 'grid min-w-0 grid-cols-3 gap-x-6 sm:gap-x-8';
+    const listGrid = 'grid min-w-0 grid-cols-[11rem_1fr] gap-x-6 sm:gap-x-8';
 
     const spacingClass: Record<typeof spacing, string> = {
         default: 'mt-1 mb-4 sm:mb-5',
@@ -21,8 +21,8 @@
     >
         <div class="m-0 w-full sm:hidden {lineClass}" role="presentation" />
         <div class="m-0 hidden w-full sm:grid {listGrid}">
-            <div class="col-span-1 m-0 w-full {lineClass}" role="presentation" />
-            <div class="col-span-2 m-0 w-full {lineClass}" role="presentation" />
+            <div class="m-0 w-full {lineClass}" role="presentation" />
+            <div class="m-0 w-full {lineClass}" role="presentation" />
         </div>
     </div>
 {:else}
