@@ -122,6 +122,7 @@
                     src={item.video}
                     poster={item.videoPoster}
                     title={item.videoTitle ?? item.title ?? 'Video'}
+                    caption={item.videoCaption ?? ''}
                 />
             {/if}
 

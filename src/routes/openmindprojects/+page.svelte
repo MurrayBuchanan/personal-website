@@ -1,6 +1,5 @@
 <script lang="ts">
     import ContentPage from '$lib/components/layout/ContentPage.svelte';
-    import volunteerVideo from './omp_volunteer_video.mp4?url';
     import volunteerPoster from './omp_volunteer_poster.jpg?url';
 </script>
 
@@ -16,9 +15,10 @@
         {
             desc: 'The OpenmindProjects Foundation trains disadvantaged young people in English, technology, and job skills, connecting international volunteers with local students. Based in Nong Khai, that meant looking at programmes for local students and the volunteers who work alongside them, and at how technology supports teaching and operations. The aim is programmes that work for the people they’re meant to serve, not ones that look good on paper.',
             split: false,
-            video: volunteerVideo,
+            video: 'https://www.youtube.com/watch?v=8rw7RpxMILE',
             videoPoster: volunteerPoster,
-            videoTitle: 'OpenmindProjects volunteer video',
+            videoTitle: 'The Openmind Projects Story',
+            videoCaption: 'Our Story · 2015',
         },
         {
             title: 'What did I do?',

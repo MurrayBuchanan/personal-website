@@ -12,6 +12,7 @@ export type ContentItem = {
     split?: boolean;
     video?: string;
     videoTitle?: string;
+    videoCaption?: string;
     videoPoster?: string;
     images?: ContentImage[];
     imagesTitle?: string;

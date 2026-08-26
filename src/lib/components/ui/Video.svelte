@@ -5,6 +5,48 @@
     export let src: string;
     export let title = 'Video';
     export let poster = '';
+    export let caption = '';
+
+    let youtubePlaying = false;
+    let previousSrc = '';
+
+    function getYouTubeId(url: string): string | null {
+        try {
+            const parsed = new URL(url);
+            const host = parsed.hostname.replace(/^www\./, '');
+            if (host === 'youtu.be') {
+                return parsed.pathname.split('/').filter(Boolean)[0] ?? null;
+            }
+            if (
+                host === 'youtube.com' ||
+                host === 'm.youtube.com' ||
+                host === 'music.youtube.com' ||
+                host === 'youtube-nocookie.com'
+            ) {
+                if (parsed.pathname.startsWith('/embed/')) {
+                    return parsed.pathname.split('/')[2] ?? null;
+                }
+                if (parsed.pathname.startsWith('/shorts/') || parsed.pathname.startsWith('/live/')) {
+                    return parsed.pathname.split('/')[2] ?? null;
+                }
+                return parsed.searchParams.get('v');
+            }
+        } catch {
+            return null;
+        }
+        return null;
+    }
+
+    $: youtubeId = getYouTubeId(src);
+    $: youtubePoster =
+        poster || (youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg` : '');
+    $: youtubeEmbed = youtubeId
+        ? `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`
+        : '';
+    $: if (src !== previousSrc) {
+        previousSrc = src;
+        youtubePlaying = false;
+    }
 
     let playerEl: HTMLDivElement;
     let videoEl: HTMLVideoElement;
@@ -367,6 +409,60 @@
         'inline-flex h-8 shrink-0 items-center justify-center rounded-lg px-3 text-white transition-[background-color,backdrop-filter,box-shadow] duration-150 ease-out hover:bg-white/[0.16] hover:backdrop-blur-[8px] focus-visible:bg-white/[0.16] focus-visible:backdrop-blur-[8px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40';
 </script>
 
+{#if youtubeId}
+    <div
+        class="player animate relative w-full overflow-hidden rounded-2xl bg-neutral-950 ring-1 ring-neutral-900/[0.06] dark:ring-white/[0.08]"
+        role="region"
+        aria-label={title}
+    >
+        <div class="player-frame relative aspect-video w-full overflow-hidden bg-black">
+            {#if youtubePlaying}
+                <iframe
+                    class="absolute inset-0 h-full w-full border-0"
+                    src={youtubeEmbed}
+                    {title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                />
+            {:else}
+                <button
+                    type="button"
+                    class="yt-facade"
+                    aria-label="Play {title}"
+                    on:click={() => (youtubePlaying = true)}
+                >
+                    <img
+                        class="yt-thumb"
+                        src={youtubePoster}
+                        alt=""
+                        draggable="false"
+                    />
+                    <span class="yt-play-layer">
+                        <span class="yt-play">
+                            <svg viewBox="0 0 68 48" width="54" height="38" aria-hidden="true">
+                                <path
+                                    d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"
+                                    fill="#EA4335"
+                                />
+                                <path d="M45 24 27 14v20" fill="#fff" />
+                            </svg>
+                        </span>
+                    </span>
+                    {#if title || caption}
+                        <span class="yt-info">
+                            {#if title}
+                                <span class="yt-info-title">{title}</span>
+                            {/if}
+                            {#if caption}
+                                <span class="yt-info-meta">{caption}</span>
+                            {/if}
+                        </span>
+                    {/if}
+                </button>
+            {/if}
+        </div>
+    </div>
+{:else}
 <!-- svelte-ignore a11y-no-noninteractive-tabindex a11y-no-noninteractive-element-interactions -->
 <div
     bind:this={playerEl}
@@ -593,6 +689,7 @@
         {/if}
     </div>
 </div>
+{/if}
 
 <style>
     video::-webkit-media-controls-enclosure,
@@ -643,6 +740,123 @@
         width: 36px;
         height: 36px;
         margin-left: 3px;
+    }
+
+    .yt-facade {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border: none;
+        overflow: hidden;
+        background: #0f172a;
+        cursor: pointer;
+        appearance: none;
+        text-align: inherit;
+    }
+
+    .yt-thumb {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.92;
+        transition:
+            transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1),
+            opacity 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .yt-facade:hover .yt-thumb,
+    .yt-facade:focus-visible .yt-thumb {
+        transform: scale(1.012);
+        opacity: 1;
+    }
+
+    .yt-play-layer {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(15, 23, 42, 0.18);
+        pointer-events: none;
+    }
+
+    .yt-play {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+        opacity: 0.9;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+        transition:
+            opacity 160ms cubic-bezier(0.22, 0.61, 0.36, 1),
+            transform 160ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .yt-play svg {
+        display: block;
+    }
+
+    .yt-facade:hover .yt-play,
+    .yt-facade:focus-visible .yt-play {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+
+    .yt-facade:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.7);
+        outline-offset: -4px;
+    }
+
+    .yt-info {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: 16px 24px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+        text-align: left;
+        pointer-events: none;
+    }
+
+    .yt-info-title {
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    .yt-info-meta {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.78rem;
+        line-height: 1.3;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .yt-thumb,
+        .yt-play {
+            transition: none;
+        }
+
+        .yt-facade:hover .yt-thumb,
+        .yt-facade:focus-visible .yt-thumb {
+            transform: none;
+        }
+
+        .yt-facade:hover .yt-play,
+        .yt-facade:focus-visible .yt-play {
+            transform: none;
+        }
     }
 
     @media (prefers-reduced-motion: reduce) {
