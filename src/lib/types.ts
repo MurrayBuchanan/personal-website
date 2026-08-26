@@ -1,3 +1,9 @@
+export type ContentImage = {
+    src: string;
+    alt: string;
+    objectPosition?: string;
+};
+
 export type ContentItem = {
     title?: string;
     heading?: string;
@@ -7,6 +13,9 @@ export type ContentItem = {
     video?: string;
     videoTitle?: string;
     videoPoster?: string;
+    images?: ContentImage[];
+    imagesTitle?: string;
+    imagesEmphasis?: number;
 };
 
 export type PageLink = {
@@ -29,7 +38,7 @@ export type ExperienceEntry = {
     location?: string | null;
     date: string;
     badges?: string[];
-    url: string;
+    url?: string;
     externalUrl?: string;
     category: ExperienceCategory;
     subdued?: boolean;

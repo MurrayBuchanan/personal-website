@@ -4,20 +4,28 @@
 
 <ContentPage
     title="Jordanhill School"
-    desc="Education • Computer Science • Volunteering"
+    desc="School Captain • Academic Honours • Computer Science"
     links={[{ url: 'https://www.jordanhill.glasgow.sch.uk/', title: 'Visit Website' }]}
+    textSplit
     content={[
         {
-            title: 'School Captain, Prefect and Charity Committee Lead',
-            desc: 'Elected by the student body, staff, and administration in my final year, these significant leadership roles involved leading key initiatives, successfully hosting events, and developing public speaking skills through frequent presentations to large groups. As Charity Committee Lead, I led fundraising efforts that raised over £10,000 for ‘Refuweegee’. My contributions were recognised with the Schools Leadership Award.',
+            desc: 'I was at Jordanhill from 2009 to 2022, leaving with academic honours. The later years were as much about leading, teaching, and building things as they were about the coursework.',
+            split: false,
         },
         {
-            title: 'Computer Science Teaching Assistant',
-            desc: 'Supported National 5 Computer Science students, providing practical programming assistance in JavaScript and Python. This foundational teaching experience directly led to subsequent tutoring roles throughout university and a Computer Science teaching position in Pennsylvania, US.',
+            title: 'My involvement',
+            desc: [
+                'In my final year I was elected School Captain and Prefect by the student body, staff, and administration. The role meant running events, speaking to large groups, and getting involved in how the school actually operated.',
+                'As Charity Committee Lead I coordinated fundraising for Refuweegee, raising over £10,000 — recognised with the Schools Leadership Prize and a SCQF qualification in Leadership.',
+            ],
         },
         {
-            title: 'Buchanan Barbers',
-            desc: "Developed as my Advanced Higher Computer Science project, 'Buchanan Barbers' is a haircut booking website. The concept was born from learning to cut hair during the 2020 pandemic, a skill I've taken around the world. The project focused on creating a practical and efficient online booking system.",
+            title: 'Teaching Assistant',
+            desc: 'I supported National 5 Computer Science students with practical programming in JavaScript and Python. That was the start of teaching for me — it led to tutoring through university, and later to teaching in the US and around Asia.',
+        },
+        {
+            title: 'Final Project',
+            desc: "Buchanan Barbers was my Advanced Higher Computer Science project: a haircut booking website. The idea came from learning to cut hair during the 2020 pandemic — a skill I've taken around the world. The project was about making a booking system that was actually usable.",
         },
     ]}
 />

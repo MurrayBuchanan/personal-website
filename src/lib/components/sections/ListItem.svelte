@@ -9,6 +9,7 @@
     export let role: string | null | undefined = '';
     export let company = '';
     export let location: string | null | undefined = '';
+    export let desc = '';
     export let url = '';
     export let externalUrl = '';
     export let subdued = false;
@@ -33,13 +34,25 @@
             {/if}
         </div>
 
-        <div class="flex min-w-0 flex-col gap-1 text-left">
+        <div class="flex min-w-0 flex-col {desc ? 'gap-2' : 'gap-1'} text-left">
             {#if company}
                 {#if role}
-                    <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
+                    {#if linkHref}
+                        <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
+                    {:else}
+                        <p class="type-lead !max-w-none">
+                            {company}
+                        </p>
+                    {/if}
                 {:else}
                     <div class="flex flex-wrap items-center gap-2">
-                        <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
+                        {#if linkHref}
+                            <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
+                        {:else}
+                            <p class="type-lead !max-w-none">
+                                {company}
+                            </p>
+                        {/if}
                         {#each badges as badge (badge)}
                             <Badge text={badge} />
                         {/each}
@@ -59,6 +72,11 @@
             {#if location}
                 <p class="type-meta !max-w-none">
                     {location}
+                </p>
+            {/if}
+            {#if desc}
+                <p class="type-body !max-w-none">
+                    {desc}
                 </p>
             {/if}
         </div>

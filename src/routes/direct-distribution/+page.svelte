@@ -5,13 +5,16 @@
 <ContentPage
     title="Direct Distribution"
     desc="Events • Marketing • Distribution"
-    links={[{ url: 'https://www.directdistribution.co.uk/', title: 'Visit Website' }]}
+    links={[{ url: 'https://www.directdistribution.co.uk/', title: 'directdistribution.co.uk' }]}
     content={[
         {
-            desc: 'Direct Distribution is a logistics and marketing support company based in Scotland that provides distribution and event support services. The company specialises in print distribution and event logistics for clients across Scotland, particularly in the culture, tourism, leisure, and communication sectors.',
+            desc: 'Direct Distribution is a logistics and marketing support company based in Scotland, providing distribution and event support services for clients across the culture, tourism, leisure, and communications sectors.',
         },
         {
-            desc: 'At Direct Distribution, I actively supported a range of operations and live events across Scotland. This involved managing print distribution, logistics, and ensuring efficient stock flow. I also played a role in large-scale warehouse activities and provided technical and logistical support for diverse events and marketing efforts throughout the country, including both major events like the UCI Championship, World Pipe Band Championships, and city events like, Mela and Charity Runs, applying technical skills and collaborating effectively across varied and fast-paced settings.',
+            desc: 'I supported operations across 17 live events around Scotland, including large-scale events like the UCI Championships and the World Pipe Band Championships, alongside city events such as Mela and various charity runs. The work was fast-paced and hands-on: managing logistics and print distribution, running large-scale warehouse operations, and solving problems in real time as they came up on-site.',
+        },      
+        {
+            desc: 'A recurring part of the role was working directly with client systems and stakeholders in the field — including configuring FirstBus devices to align with live schedules, and travelling to unfamiliar locations across Scotland to pitch and onboard new business sites. I was responsible for planning efficient delivery logistics for these new locations and managing inventory flow across the network, often making decisions on the ground with limited time and shifting constraints.',
         },
     ]}
 />

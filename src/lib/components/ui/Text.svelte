@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { ContentItem } from '$lib/types';
+    import Collage from './Collage.svelte';
     import PageLinks from './PageLinks.svelte';
     import Video from './Video.svelte';
 
@@ -23,7 +24,8 @@
         {@const descClass =
             item.heading || twoCol || item.title ? 'type-body' : 'type-lead'}
         {@const itemLinks = item.links ?? []}
-        <div class="flex min-w-0 flex-col {item.video ? 'gap-5 sm:gap-6' : ''}">
+        {@const hasMedia = Boolean(item.video) || Boolean(item.images?.length)}
+        <div class="flex min-w-0 flex-col {hasMedia ? 'gap-5 sm:gap-6' : ''}">
             {#if columns}
                 <article class="animate min-w-0">
                     <div class={listGrid}>
@@ -120,6 +122,14 @@
                     src={item.video}
                     poster={item.videoPoster}
                     title={item.videoTitle ?? item.title ?? 'Video'}
+                />
+            {/if}
+
+            {#if item.images && item.images.length > 0}
+                <Collage
+                    images={item.images}
+                    title={item.imagesTitle ?? item.title ?? 'Photos'}
+                    emphasis={item.imagesEmphasis ?? 2}
                 />
             {/if}
         </div>

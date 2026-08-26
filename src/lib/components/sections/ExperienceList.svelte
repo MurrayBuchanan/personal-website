@@ -37,17 +37,13 @@
                             <ListItem
                                 role={entry.role}
                                 company={entry.company}
-                                location={category === 'projects' || category === 'community'
-                                    ? undefined
-                                    : entry.location}
+                                location={entry.location}
                                 date={entry.date}
                                 badges={entry.badges ?? []}
-                                url={entry.url}
+                                url={entry.url ?? ''}
                                 externalUrl={entry.externalUrl ?? ''}
                                 subdued={entry.subdued === true}
-                                positions={category === 'projects' || category === 'community'
-                                    ? (entry.positions ?? []).map((p) => ({ ...p, location: undefined }))
-                                    : (entry.positions ?? [])}
+                                positions={entry.positions ?? []}
                             />
                         </li>
                     {/each}
