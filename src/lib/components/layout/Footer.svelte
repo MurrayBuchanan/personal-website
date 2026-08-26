@@ -48,7 +48,7 @@
         </div>
 
         <nav aria-label="Contact" class="w-full min-w-0">
-            <ul class="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <ul class="flex flex-wrap items-center gap-x-8 gap-y-3">
                 {#each contactLinks as link (link.href)}
                     <li class="min-w-0">
                         <InlineLink

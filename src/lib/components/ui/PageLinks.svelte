@@ -9,7 +9,7 @@
 
 {#if links.length > 0}
     <nav class="animate {className}" aria-label={label}>
-        <ul class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <ul class="flex flex-wrap items-center gap-x-8 gap-y-3">
             {#each links as link (link.url)}
                 <li class="min-w-0">
                     <InlineLink href={link.url} label={link.title} />
