@@ -11,9 +11,9 @@
     $: openNewTab = newTab || external;
 
     const linkClass =
-        'type-link group/link inline-flex w-fit max-w-full self-start items-center gap-1 py-0.5 -my-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-light/30 dark:focus-visible:ring-secondary-dark/40';
+        'type-link group/link relative inline-flex w-fit max-w-full items-center py-0.5 -my-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 dark:focus-visible:ring-accent-dark/40';
     const iconClass =
-        'shrink-0 stroke-[1.75] text-tertiary-light dark:text-tertiary-dark opacity-0 transition-opacity duration-150 group-hover/link:opacity-100 group-focus-visible/link:opacity-100';
+        'pointer-events-none absolute left-full top-1/2 ml-0.5 -translate-y-1/2 stroke-[1.75] text-tertiary-light opacity-0 transition-opacity duration-150 group-hover/link:opacity-100 group-focus-visible/link:opacity-100 dark:text-tertiary-dark';
 
     $: classes = className ? `${linkClass} ${className}` : linkClass;
 </script>

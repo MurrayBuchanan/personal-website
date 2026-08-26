@@ -1,6 +1,12 @@
 export type ContentItem = {
     title?: string;
+    heading?: string;
     desc?: string | string[];
+    links?: PageLink[];
+    split?: boolean;
+    video?: string;
+    videoTitle?: string;
+    videoPoster?: string;
 };
 
 export type PageLink = {

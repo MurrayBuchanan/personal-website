@@ -2,7 +2,7 @@
     import { page } from '$app/stores';
     import type { PageLink } from '$lib/types';
     import IconLink from '$lib/components/ui/IconLink.svelte';
-    import InlineLink from '$lib/components/ui/InlineLink.svelte';
+    import PageLinks from '$lib/components/ui/PageLinks.svelte';
 
     export let title = '';
     export let desc = '';
@@ -10,7 +10,7 @@
     export let links: PageLink[] = [];
 
     const heroSlot =
-        'mb-1.5 w-full min-h-[2.75rem] sm:mb-2 sm:min-h-[3rem] md:min-h-[3.25rem] lg:min-h-[3.5rem]';
+        'mb-4 w-full min-h-[2.75rem] sm:mb-5 sm:min-h-[3rem] md:min-h-[3.25rem] lg:min-h-[3.5rem]';
 
     $: isHomepage = $page.url.pathname === '/';
     $: linksSpacing = intro ? 'pb-3 sm:pb-3.5' : 'pb-5 sm:pb-6';
@@ -33,16 +33,10 @@
         </p>
     {/if}
 
-    {#if links.length > 0}
-        <nav
-            class="animate flex flex-col gap-1 {desc ? 'mt-0.5' : ''} {linksSpacing}"
-            aria-label="Primary"
-        >
-            {#each links as link (link.url)}
-                <InlineLink href={link.url} label={link.title} />
-            {/each}
-        </nav>
-    {/if}
+    <PageLinks
+        {links}
+        className="{desc ? 'mt-0.5' : ''} {linksSpacing}"
+    />
 
     {#if intro}
         <p class="type-intro animate pb-3 pt-0 sm:pb-4">

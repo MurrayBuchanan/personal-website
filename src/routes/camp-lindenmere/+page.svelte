@@ -5,7 +5,7 @@
 <ContentPage
     title="Camp Lindenmere"
     desc="Teaching • Counsellor • Spirit Leader"
-    links={[{ url: 'https://camplindenmere.com/', title: 'Visit Website' }]}
+    links={[{ url: 'https://camplindenmere.com/', title: 'camplindenmere.com' }]}
     content={[
         {
             desc: 'During the summer between my second and third year at University, I had the unforgettable opportunity to work at a Summer Camp in Pennsylvania for three months. It was an incredible experience, working alongside some truly amazing people.',

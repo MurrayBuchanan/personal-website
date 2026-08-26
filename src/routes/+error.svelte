@@ -14,7 +14,7 @@
 
 <PageLayout>
     <div
-        class="animate mt-0 flex w-full min-h-[2.75rem] flex-col items-start justify-end pt-[env(safe-area-inset-top,0px)] mb-1.5 sm:mb-2 sm:min-h-[3rem] md:min-h-[3.25rem] lg:min-h-[3.5rem]"
+        class="animate mt-0 flex w-full min-h-[2.75rem] flex-col items-start justify-end pt-[env(safe-area-inset-top,0px)] mb-4 sm:mb-5 sm:min-h-[3rem] md:min-h-[3.25rem] lg:min-h-[3.5rem]"
     >
         <IconLink href="../" label="Home" name="home" size="lg" />
     </div>

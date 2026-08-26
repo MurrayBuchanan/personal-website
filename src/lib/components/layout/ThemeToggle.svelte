@@ -14,11 +14,11 @@
     ];
 
     const btnBase =
-        'group inline-flex cursor-pointer text-secondary-light transition-[color,opacity] duration-100 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-secondary-light/30 dark:text-secondary-dark dark:focus-visible:ring-secondary-dark/40';
+        'group inline-flex cursor-pointer text-secondary-light transition-[color,opacity] duration-100 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent/40 dark:text-secondary-dark dark:focus-visible:ring-accent-dark/40';
     const btnActive =
-        'opacity-100 hover:text-neutral-950 dark:hover:text-white';
+        'opacity-100 hover:text-neutral-950 dark:hover:text-secondary-dark';
     const btnInactive =
-        'opacity-[0.62] hover:text-neutral-950 hover:opacity-100 dark:opacity-[0.55] dark:hover:text-white dark:hover:opacity-100';
+        'opacity-[0.62] hover:text-neutral-950 hover:opacity-100 dark:opacity-[0.55] dark:hover:text-secondary-dark dark:hover:opacity-100';
     const iconClass =
         'group-hover:[stroke-width:1.75] group-aria-pressed:[stroke-width:1.75]';
 

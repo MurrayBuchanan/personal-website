@@ -16,8 +16,8 @@ export const experienceSectionLabels: Record<ExperienceCategory, string> = {
 
 export const experienceEntries: ExperienceEntry[] = [
     {
-        company: 'J.P. Morgan Chase & Co.',
-        date: '2023–Current',
+        company: 'JPMorgan Chase & Co.',
+        date: '2025–Current',
         url: '/jpmorganchase',
         category: 'work',
         positions: [
@@ -27,7 +27,7 @@ export const experienceEntries: ExperienceEntry[] = [
                 location: 'Glasgow, UK',
             },
             {
-                role: 'Analyst',
+                role: 'Summer Analyst',
                 date: '2025',
                 location: 'Glasgow, UK',
             },
@@ -64,17 +64,8 @@ export const experienceEntries: ExperienceEntry[] = [
         role: 'Researcher & Developer',
         company: 'Dementia Linguistic Anomaly Detection',
         location: 'Glasgow, UK',
-        date: '2026',
-        badges: ['Open source'],
-        url: 'https://github.com/MurrayBuchanan/verba-tool',
-        category: 'projects',
-    },
-    {
-        role: 'Creator & Developer',
-        company: 'Chibb',
-        location: 'Kintyre, UK',
-        date: '2023',
-        url: '/chibb',
+        date: '2025-2026',
+        url: '/dementia-linguistic-anomaly-detection',
         category: 'projects',
     },
     {
@@ -86,10 +77,19 @@ export const experienceEntries: ExperienceEntry[] = [
         category: 'projects',
     },
     {
+        role: 'Creator & Developer',
+        company: 'Chibb',
+        location: 'Kintyre, UK',
+        date: '2019-2024',
+        url: '/chibb',
+        category: 'projects',
+    },
+    {
         role: 'Computer Science Course Lead & Instructor',
         company: 'Camp Lindenmere',
         location: 'Pennsylvania, USA',
         date: '2024',
+        badges: ['Spirit Leader'],
         url: '/camp-lindenmere',
         category: 'work',
     },

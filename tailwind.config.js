@@ -35,70 +35,76 @@ export default {
         '128': '32rem',
       },
       colors: {
-        customGreen: '#32a852',
-        customDark: '#0d0d0d',
+        customGreen: '#4cb782',
+        customDark: '#08090a',
+        // Linear.app colours
+        accent: {
+          DEFAULT: '#5e6ad2',
+          light: '#5e6ad2',
+          dark: '#828fff',
+        },
         neutral: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#ebebeb',
-          300: '#d6d6d6',
-          400: '#b1b1b1',
-          500: '#8a8a8a',
-          600: '#6b6b6b',
-          700: '#4a4a4a',
-          800: '#2a2a2a',
-          900: '#1a1a1a',
-          950: '#141414',
+          50: '#f7f8f8',
+          100: '#f4f5f8',
+          200: '#e8e9eb',
+          300: '#d0d6e0',
+          400: '#8a8f98',
+          500: '#8a8f98',
+          600: '#5a5f6b',
+          700: '#3e3e44',
+          800: '#23252a',
+          900: '#0f1011',
+          950: '#08090a',
         },
         primary: {
-          light: '#f5f5f5',
-          DEFAULT: '#f5f5f5',
-          dark: '#141414',
+          light: '#f4f5f8',
+          DEFAULT: '#f4f5f8',
+          dark: '#08090a',
         },
         secondary: {
-          light: '#000000',
-          DEFAULT: '#000000',
-          dark: '#f5f5f5',
+          light: '#222326',
+          DEFAULT: '#222326',
+          dark: '#f7f8f8',
         },
         tertiary: {
-          light: '#b1b1b1',
-          DEFAULT: '#b1b1b1',
-          dark: '#b1b1b1',
+          light: '#8a8f98',
+          DEFAULT: '#8a8f98',
+          dark: '#8a8f98',
         },
         orange: {
-          light: '#FF9F00',          // Light orange
-          DEFAULT: '#FF9500',        // Default orange
-          dark: '#FF9F00',           // Darker orange
+          light: '#f2994a',
+          DEFAULT: '#f2994a',
+          dark: '#f2994a',
         },
         yellow: {
-          light: '#FFD60A',          // Light yellow
-          DEFAULT: '#FFCC00',        // Default yellow
-          dark: '#FFD60A',           // Darker yellow
+          light: '#f2c94c',
+          DEFAULT: '#f2c94c',
+          dark: '#f2c94c',
         },
         green: {
-          light: '#30D158',          // Light green
-          DEFAULT: '#28CD41',        // Default green
-          dark: '#32D74B',           // Darker green
+          light: '#4cb782',
+          DEFAULT: '#4cb782',
+          dark: '#4cb782',
         },
         mint: {
-          light: '#66D4CF',          // Light mint
-          DEFAULT: '#00C7BE',        // Default mint
-          dark: '#32D74B',           // Darker mint
+          light: '#26b5ce',
+          DEFAULT: '#26b5ce',
+          dark: '#26b5ce',
         },
         blue: {
-          light: '#0A84FF',          // Light blue
-          DEFAULT: '#007AFF',        // Default blue
-          dark: '#0A84FF',           // Darker blue
+          light: '#5e6ad2',
+          DEFAULT: '#5e6ad2',
+          dark: '#828fff',
         },
         indigo: {
-          light: '#5E5CE6',          // Light indigo
-          DEFAULT: '#5856D6',        // Default indigo
-          dark: '#5E5CE6',           // Darker indigo
+          light: '#5e6ad2',
+          DEFAULT: '#5e6ad2',
+          dark: '#828fff',
         },
         purple: {
-          light: '#BF5AF2',          // Light purple
-          DEFAULT: '#AF52DE',        // Default purple
-          dark: '#BF5AF2',           // Darker purple
+          light: '#bb87fc',
+          DEFAULT: '#bb87fc',
+          dark: '#bb87fc',
         },
       },
     },

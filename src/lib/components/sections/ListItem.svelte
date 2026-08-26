@@ -73,7 +73,7 @@
                     <div class="flex min-w-0 gap-3 pb-4 last:pb-0">
                         <div class="flex w-1.5 shrink-0 flex-col items-center">
                             <span
-                                class="my-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-600"
+                                class="my-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400"
                                 aria-hidden="true"
                             />
                             {#if i < positions.length - 1}

@@ -12,6 +12,7 @@
     export let content: ContentItem[] | undefined = undefined;
     export let textCustom = '';
     export let textColumns = false;
+    export let textSplit = false;
     export let extraScrollPadding = false;
 </script>
 
@@ -21,7 +22,7 @@
         {#if textColumns}
             <Divider />
         {/if}
-        <Text {content} custom={textCustom} columns={textColumns} />
+        <Text {content} custom={textCustom} columns={textColumns} split={textSplit} />
     {/if}
     <slot />
 </PageLayout>

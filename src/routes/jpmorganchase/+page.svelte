@@ -3,13 +3,17 @@
 </script>
 
 <ContentPage
-    title="J.P. Morgan Chase"
+    title="JPMorgan Chase & Co."
     desc="Software Engineer • Full-Stack • Global Research"
     links={[{ url: 'https://www.jpmorganchase.com/', title: 'Visit Website' }]}
+    textSplit
     content={[
         {
             title: 'What do I do?',
-            desc: 'Full-Stack Software Engineer within Global Research, with a strong emphasis on cloud technologies and system architecture.',
+            heading:
+                'I’m a full-stack engineer working on infrastructure for platforms within Global Research. Given the sensitive nature of the work, I’ll keep the detail here high-level.',
+            desc: 'My work spans three areas: building tools that get market data to research and trading teams in a usable form, strengthening access control and auditing around that data, and building internal tooling to remove manual work from day-to-day processes.',
+            split: false,
         },
     ]}
 />

@@ -11,7 +11,7 @@
         min-height: 100vh;
         min-height: 100svh;
         overscroll-behavior-y: none;
-        @apply bg-primary-light font-sans text-body text-neutral-600 antialiased dark:text-neutral-400;
+        @apply bg-primary-light font-sans text-body text-neutral-600 antialiased dark:text-neutral-300;
         font-feature-settings: 'cv02' 1, 'cv03' 1, 'cv04' 1;
         text-rendering: optimizeLegibility;
         scrollbar-width: none;
@@ -85,7 +85,7 @@
     }
 
     .type-body {
-        @apply max-w-prose font-sans text-body font-normal text-neutral-600 dark:text-neutral-400;
+        @apply max-w-prose font-sans text-body font-normal text-neutral-600 dark:text-neutral-300;
     }
 
     .type-meta {
@@ -106,6 +106,6 @@
     }
 
     .type-link:hover .type-link-text::after {
-        @apply bg-neutral-400 dark:bg-neutral-600;
+        @apply bg-neutral-400;
     }
 }
