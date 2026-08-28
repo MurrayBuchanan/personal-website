@@ -5,7 +5,7 @@
 <ContentPage
     title="JPMorgan Chase & Co."
     desc="Software Engineer • Full-Stack • Global Research"
-    links={[{ url: 'https://www.jpmorganchase.com/', title: 'Visit Website' }]}
+    links={[{ url: 'https://www.jpmorganchase.com/', title: 'jpmorganchase.com' }]}
     textSplit
     content={[
         {

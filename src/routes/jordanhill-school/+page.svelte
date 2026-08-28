@@ -5,7 +5,7 @@
 <ContentPage
     title="Jordanhill School"
     desc="School Captain • Academic Honours • Computer Science"
-    links={[{ url: 'https://www.jordanhill.glasgow.sch.uk/', title: 'Visit Website' }]}
+    links={[{ url: 'https://www.jordanhill.glasgow.sch.uk/', title: 'jordanhill.glasgow.sch.uk' }]}
     textSplit
     content={[
         {

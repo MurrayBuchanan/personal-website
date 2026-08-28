@@ -5,7 +5,7 @@
 <ContentPage
     title="University of Strathclyde"
     desc="BSc (Hons) Computer Science • First-Class"
-    links={[{ url: 'https://www.strath.ac.uk/', title: 'Visit Website' }]}
+    links={[{ url: 'https://www.strath.ac.uk/', title: 'strath.ac.uk' }]}
     textSplit
     content={[
         {

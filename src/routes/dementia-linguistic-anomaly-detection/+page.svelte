@@ -5,7 +5,7 @@
 <ContentPage
     title="Dementia Linguistic Anomaly Detection"
     desc="Researcher & Developer • Speech • NLP • Anomaly Detection"
-    links={[{ url: 'https://github.com/MurrayBuchanan/verba-tool', title: 'View Source' }]}
+    links={[{ url: 'https://anomaly.org.uk/', title: 'anomaly.org.uk' }]}
     content={[
         {
             desc: 'This was my final-year dissertation at the University of Strathclyde, supervised by Dr Kieren Egan and awarded a distinction. The question was how to use speech as a signal in dementia rehabilitation: not to diagnose, but to notice linguistic change over time and make that change visible to the people supporting someone living with dementia.',

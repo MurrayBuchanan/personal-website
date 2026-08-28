@@ -5,10 +5,7 @@
 <ContentPage
     title="Set Piece"
     desc="Team Training • App Dev • Data Analysis"
-    links={[
-        { url: 'https://setpiece.dev/', title: 'Client Application' },
-        { url: 'https://github.com/SetPiece-App', title: 'Demo' },
-    ]}
+    links={[{ url: 'https://setpiece.build/', title: 'setpiece.build' }]}
     content={[
         {
             desc: "This project centres on improving communication and clarity in team sports training. I'm developing an app designed to connect coaches and players efficiently. It allows coaches to assign specific training tasks directly to the team.",
