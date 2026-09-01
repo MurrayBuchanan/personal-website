@@ -1,6 +1,13 @@
 <script lang="ts">
     import { onDestroy } from 'svelte';
     import { browser } from '$app/environment';
+    import IconArrowClockwiseFill from 'phosphor-icons-svelte/IconArrowClockwiseFill.svelte';
+    import IconCornersInRegular from 'phosphor-icons-svelte/IconCornersInRegular.svelte';
+    import IconCornersOutRegular from 'phosphor-icons-svelte/IconCornersOutRegular.svelte';
+    import IconPauseFill from 'phosphor-icons-svelte/IconPauseFill.svelte';
+    import IconPlayFill from 'phosphor-icons-svelte/IconPlayFill.svelte';
+    import IconSpeakerSimpleHighFill from 'phosphor-icons-svelte/IconSpeakerSimpleHighFill.svelte';
+    import IconSpeakerSimpleXFill from 'phosphor-icons-svelte/IconSpeakerSimpleXFill.svelte';
 
     export let src: string;
     export let title = 'Video';
@@ -411,7 +418,7 @@
 
 {#if youtubeId}
     <div
-        class="player animate relative w-full overflow-hidden rounded-2xl bg-neutral-950 ring-1 ring-neutral-900/[0.06] dark:ring-white/[0.08]"
+        class="player animate relative w-full overflow-hidden rounded-2xl bg-neutral-950 ring-1 ring-black/[0.08] dark:ring-white/[0.08]"
         role="region"
         aria-label={title}
     >
@@ -467,7 +474,7 @@
 <div
     bind:this={playerEl}
     use:onPlayerMount
-    class="player animate group/video relative w-full overflow-hidden bg-neutral-950 outline-none ring-1 ring-neutral-900/[0.06] dark:ring-white/[0.08] {fullscreen
+    class="player animate group/video relative w-full overflow-hidden bg-neutral-950 outline-none ring-1 ring-black/[0.08] dark:ring-white/[0.08] {fullscreen
         ? 'rounded-none ring-0'
         : 'rounded-2xl'}"
     class:is-fullscreen={fullscreen}
@@ -516,9 +523,7 @@
 
         {#if !hasPlayed}
             <button type="button" data-video-play class="play-cta" aria-label="Play" on:click={togglePlay}>
-                <svg viewBox="0 0 24 24" class="play-cta-icon" fill="currentColor" aria-hidden="true">
-                    <path d="M8 5.14v13.72L19 12 8 5.14Z" />
-                </svg>
+                <IconPlayFill class="play-cta-icon" />
             </button>
         {/if}
 
@@ -560,22 +565,11 @@
                         aria-hidden="true"
                     />
                 {:else if ended}
-                    <svg viewBox="0 0 16 16" class="h-4 w-4" fill="currentColor" aria-hidden="true">
-                        <path
-                            d="M8 1.5a6.5 6.5 0 1 0 6.32 8.05.75.75 0 0 0-1.46-.3A5 5 0 1 1 8 3v1.75a.75.75 0 0 0 1.2.6l2.5-1.88a.75.75 0 0 0 0-1.2L9.2 1.4A.75.75 0 0 0 8 2V1.5Z"
-                        />
-                    </svg>
+                    <IconArrowClockwiseFill class="h-4 w-4 text-base" />
                 {:else if paused}
-                    <svg viewBox="0 0 16 16" class="h-4 w-4" fill="currentColor" aria-hidden="true">
-                        <path
-                            d="m5.604 2.41 7.23 4.502a1.375 1.375 0 0 1-.02 2.345L5.585 13.6a1.375 1.375 0 0 1-2.083-1.18V3.576A1.375 1.375 0 0 1 5.604 2.41Z"
-                        />
-                    </svg>
+                    <IconPlayFill class="h-4 w-4 text-base" />
                 {:else}
-                    <svg viewBox="0 0 16 16" class="h-4 w-4" fill="currentColor" aria-hidden="true">
-                        <rect x="3.25" y="2.5" width="3" height="11" rx="0.9" />
-                        <rect x="9.75" y="2.5" width="3" height="11" rx="0.9" />
-                    </svg>
+                    <IconPauseFill class="h-4 w-4 text-base" />
                 {/if}
             </button>
 
@@ -588,17 +582,9 @@
                     on:click={toggleMute}
                 >
                     {#if muted || volume === 0}
-                        <svg viewBox="0 0 16 16" class="h-4 w-4" fill="currentColor" aria-hidden="true">
-                            <path
-                                d="M8.2 2.3a.75.75 0 0 1 .3.6v10.2a.75.75 0 0 1-1.22.58L4.4 11.1H2.25A1.25 1.25 0 0 1 1 9.85v-3.7C1 5.47 1.56 4.9 2.25 4.9H4.4l2.88-2.58A.75.75 0 0 1 8.2 2.3Zm3.04 3.16 1.51 1.51 1.51-1.51a.75.75 0 1 1 1.06 1.06L13.81 8l1.51 1.51a.75.75 0 1 1-1.06 1.06L12.75 9.06l-1.51 1.51a.75.75 0 1 1-1.06-1.06L11.69 8l-1.51-1.51a.75.75 0 0 1 1.06-1.06Z"
-                            />
-                        </svg>
+                        <IconSpeakerSimpleXFill class="h-4 w-4 text-base" />
                     {:else}
-                        <svg viewBox="0 0 16 16" class="h-4 w-4" fill="currentColor" aria-hidden="true">
-                            <path
-                                d="M8.2 2.3a.75.75 0 0 1 .3.6v10.2a.75.75 0 0 1-1.22.58L4.4 11.1H2.25A1.25 1.25 0 0 1 1 9.85v-3.7C1 5.47 1.56 4.9 2.25 4.9H4.4l2.88-2.58A.75.75 0 0 1 8.2 2.3ZM11.6 5.22a.75.75 0 0 1 1.06.02 4.25 4.25 0 0 1 0 5.52.75.75 0 1 1-1.08-1.04 2.75 2.75 0 0 0 0-3.44.75.75 0 0 1 .02-1.06Z"
-                            />
-                        </svg>
+                        <IconSpeakerSimpleHighFill class="h-4 w-4 text-base" />
                     {/if}
                 </button>
 
@@ -676,13 +662,9 @@
                 on:click={toggleFullscreen}
             >
                 {#if fullscreen}
-                    <svg viewBox="0 0 16 16" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                        <path d="M6 3.5H3.5V6M10 3.5h2.5V6M6 12.5H3.5V10M10 12.5h2.5V10" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                    <IconCornersInRegular class="h-4 w-4 text-base" />
                 {:else}
-                    <svg viewBox="0 0 16 16" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                        <path d="M3.5 6V3.5H6M12.5 6V3.5H10M3.5 10v2.5H6M12.5 10v2.5H10" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                    <IconCornersOutRegular class="h-4 w-4 text-base" />
                 {/if}
             </button>
         </div>
@@ -739,6 +721,7 @@
     .play-cta-icon {
         width: 36px;
         height: 36px;
+        font-size: 36px;
         margin-left: 3px;
     }
 

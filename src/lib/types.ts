@@ -37,6 +37,7 @@ export type ExperienceEntry = {
     role?: string | null;
     company: string;
     location?: string | null;
+    locationLinks?: PageLink[];
     date: string;
     badges?: string[];
     url?: string;

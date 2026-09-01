@@ -5,7 +5,7 @@
     export let split = false;
 
     const lineClass =
-        'h-px shrink-0 rounded-full bg-neutral-900/[0.06] dark:bg-white/[0.08]';
+        'h-px shrink-0 rounded-full bg-black/[0.08] dark:bg-white/[0.08]';
     const listGrid = 'grid min-w-0 grid-cols-[11rem_1fr] gap-x-6 sm:gap-x-8';
     const splitGrid =
         'grid min-w-0 grid-cols-2 gap-x-10 xl:gap-x-12';

@@ -15,6 +15,7 @@
 		"@sveltejs/kit": "^2.15.1",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"autoprefixer": "^10.4.20",
+		"phosphor-icons-svelte": "^1.1.2",
 		"postcss": "^8.4.45",
 		"svelte": "^4.2.7",
 		"svelte-check": "^4.0.1",
@@ -25,7 +26,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/inter": "^5.2.8",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@tailwindcss/typography": "^0.5.15",
 		"flowbite-svelte": "^0.44.20",

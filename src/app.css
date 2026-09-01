@@ -1,6 +1,4 @@
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/inter/600.css';
+@import url('/assets/font/css/general-sans.css');
 
 @tailwind base;
 @tailwind components;
@@ -11,8 +9,7 @@
         min-height: 100vh;
         min-height: 100svh;
         overscroll-behavior-y: none;
-        @apply bg-primary-light font-sans text-body text-neutral-600 antialiased dark:text-neutral-300;
-        font-feature-settings: 'cv02' 1, 'cv03' 1, 'cv04' 1;
+        @apply bg-primary-light font-sans text-body text-tertiary-light antialiased dark:text-tertiary-dark;
         text-rendering: optimizeLegibility;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -77,23 +74,31 @@
     }
 
     .type-intro {
-        @apply max-w-prose font-sans text-body font-normal leading-[1.6] text-neutral-500 dark:text-neutral-400;
+        @apply max-w-prose font-sans text-body font-normal leading-[1.6] text-tertiary-light dark:text-tertiary-dark;
     }
 
     .type-section {
-        @apply font-sans text-section font-medium text-neutral-500 dark:text-neutral-400;
+        @apply font-sans text-section font-medium text-muted-light dark:text-muted-dark;
     }
 
     .type-body {
-        @apply max-w-prose font-sans text-body font-normal text-neutral-600 dark:text-neutral-300;
+        @apply max-w-prose font-sans text-body font-normal text-tertiary-light dark:text-tertiary-dark;
     }
 
     .type-meta {
-        @apply font-sans text-meta font-normal text-neutral-500 dark:text-neutral-400;
+        @apply font-sans text-meta font-normal text-muted-light dark:text-muted-dark;
     }
 
     .type-link {
         @apply font-sans text-body font-normal text-secondary-light no-underline transition-colors duration-100 ease-out dark:text-secondary-dark;
+    }
+
+    .type-link-meta {
+        @apply text-meta;
+    }
+
+    .type-link-meta .type-link-text {
+        @apply overflow-visible whitespace-normal align-baseline pb-[0.15em];
     }
 
     .type-link-text {
@@ -102,10 +107,10 @@
 
     .type-link-text::after {
         content: '';
-        @apply pointer-events-none absolute inset-x-0 bottom-0 h-[1.5px] rounded-full bg-neutral-300 transition-colors duration-100 ease-out dark:bg-neutral-700;
+        @apply pointer-events-none absolute inset-x-0 bottom-0 h-px rounded-full bg-black/[0.08] transition-colors duration-100 ease-out dark:bg-white/[0.08];
     }
 
     .type-link:hover .type-link-text::after {
-        @apply bg-neutral-400;
+        @apply bg-secondary-light dark:bg-secondary-dark;
     }
 }

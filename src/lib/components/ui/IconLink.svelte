@@ -9,8 +9,7 @@
     export let size: 'sm' | 'md' | 'lg' = 'md';
 
     const wrapClass =
-        'group inline-flex w-fit shrink-0 text-secondary-light opacity-[0.62] transition-[color,opacity] duration-100 ease-out hover:text-neutral-950 hover:opacity-100 dark:text-secondary-dark dark:opacity-[0.55] dark:hover:text-secondary-dark dark:hover:opacity-100';
-    const iconClass = 'group-hover:[stroke-width:1.75]';
+        'group inline-flex w-fit shrink-0 text-secondary-light opacity-[0.62] transition-[color,opacity] duration-100 ease-out hover:text-secondary-light hover:opacity-100 dark:text-secondary-dark dark:opacity-[0.55] dark:hover:text-secondary-dark dark:hover:opacity-100';
 
     $: external = isExternalUrl(href);
 </script>
@@ -22,5 +21,5 @@
     target={external ? '_blank' : undefined}
     rel={external ? 'noopener noreferrer' : undefined}
 >
-    <Icon {name} {size} className={iconClass} />
+    <Icon {name} {size} />
 </a>

@@ -2,13 +2,14 @@
     import Badge from '$lib/components/ui/Badge.svelte';
     import InlineLink from '$lib/components/ui/InlineLink.svelte';
     import { isExternalUrl } from '$lib/utils/url';
-    import type { ExperiencePosition } from '$lib/types';
+    import type { ExperiencePosition, PageLink } from '$lib/types';
 
     export let date = '';
     export let badges: string[] = [];
     export let role: string | null | undefined = '';
     export let company = '';
     export let location: string | null | undefined = '';
+    export let locationLinks: PageLink[] = [];
     export let desc = '';
     export let url = '';
     export let externalUrl = '';
@@ -17,6 +18,46 @@
 
     $: linkHref = externalUrl || url;
     $: openInNewTab = isExternalUrl(linkHref);
+    $: locationParts = splitLocationText(location ?? '', locationLinks);
+
+    function splitLocationText(text: string, links: PageLink[]) {
+        if (!text) return [];
+        if (links.length === 0) return [{ text }];
+
+        const matches: { start: number; end: number; title: string; url: string }[] = [];
+
+        for (const link of links) {
+            if (!link.title) continue;
+            let from = 0;
+            while (from < text.length) {
+                const start = text.indexOf(link.title, from);
+                if (start === -1) break;
+                const end = start + link.title.length;
+                const overlaps = matches.some((match) => start < match.end && end > match.start);
+                if (!overlaps) {
+                    matches.push({ start, end, title: link.title, url: link.url });
+                }
+                from = end;
+            }
+        }
+
+        matches.sort((a, b) => a.start - b.start);
+
+        const parts: { text: string; href?: string }[] = [];
+        let cursor = 0;
+        for (const match of matches) {
+            if (match.start > cursor) {
+                parts.push({ text: text.slice(cursor, match.start) });
+            }
+            parts.push({ text: match.title, href: match.url });
+            cursor = match.end;
+        }
+        if (cursor < text.length) {
+            parts.push({ text: text.slice(cursor) });
+        }
+
+        return parts.length > 0 ? parts : [{ text }];
+    }
 
     const dateColGrid =
         'grid-cols-[6.5rem_minmax(0,1fr)] sm:grid-cols-[11rem_minmax(0,1fr)]';
@@ -54,7 +95,7 @@
                             </p>
                         {/if}
                         {#each badges as badge (badge)}
-                            <Badge text={badge} />
+                            <Badge text={badge} accent={badge === 'First-Class'} />
                         {/each}
                     </div>
                 {/if}
@@ -65,13 +106,19 @@
                         {role}
                     </p>
                     {#each badges as badge (badge)}
-                        <Badge text={badge} />
+                        <Badge text={badge} accent={badge === 'First-Class'} />
                     {/each}
                 </div>
             {/if}
             {#if location}
                 <p class="type-meta !max-w-none">
-                    {location}
+                    {#each locationParts as part, i (`${part.text}-${i}`)}
+                        {#if part.href}
+                            <InlineLink href={part.href} label={part.text} size="meta" />
+                        {:else}
+                            {part.text}
+                        {/if}
+                    {/each}
                 </p>
             {/if}
             {#if desc}
@@ -91,12 +138,12 @@
                     <div class="flex min-w-0 gap-3 pb-4 last:pb-0">
                         <div class="flex w-1.5 shrink-0 flex-col items-center">
                             <span
-                                class="my-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400"
+                                class="my-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-light dark:bg-muted-dark"
                                 aria-hidden="true"
                             />
                             {#if i < positions.length - 1}
                                 <span
-                                    class="w-px flex-1 bg-neutral-900/[0.08] dark:bg-white/[0.1]"
+                                    class="w-px flex-1 bg-black/[0.08] dark:bg-white/[0.08]"
                                     aria-hidden="true"
                                 />
                             {/if}
@@ -108,7 +155,7 @@
                                     {position.role}
                                 </p>
                                 {#each position.badges ?? [] as badge (badge)}
-                                    <Badge text={badge} />
+                                    <Badge text={badge} accent={badge === 'First-Class'} />
                                 {/each}
                             </div>
                             {#if position.location}

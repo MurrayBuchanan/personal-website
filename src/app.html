@@ -15,9 +15,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" alt="Image of Murray Buchanan" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" alt="Image of Murray Buchanan" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" alt="Image of Murray Buchanan" />
-    <meta name="theme-color" content="#F4F5F8" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#08090a" media="(prefers-color-scheme: dark)" />
-    <meta name="msapplication-TileColor" content="#F4F5F8" />
+    <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="msapplication-TileColor" content="#fafaf9" />
     <meta name="msapplication-TileImage" content="/favicon.png" alt="Image of Murray Buchanan" />
 
     <!-- Social: Open Graph -->
@@ -49,6 +49,18 @@
         "https://github.com/MurrayBuchanan"
       ]
     }
+    </script>
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var isDark =
+            stored === 'dark' ||
+            (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', isDark);
+        } catch (e) {}
+      })();
     </script>
 
     <!-- SvelteKit Head -->

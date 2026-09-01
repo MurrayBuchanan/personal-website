@@ -32,7 +32,7 @@
             <div
                 role="separator"
                 aria-orientation="vertical"
-                class="w-px shrink-0 self-stretch rounded-full bg-neutral-900/[0.06] dark:bg-white/[0.08]"
+                class="w-px shrink-0 self-stretch rounded-full bg-black/[0.08] dark:bg-white/[0.08]"
             ></div>
             <p
                 class="font-sans text-3xl font-medium tracking-tight text-secondary-light dark:text-secondary-dark sm:text-4xl md:text-5xl"

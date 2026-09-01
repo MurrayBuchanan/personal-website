@@ -38,6 +38,7 @@
                                 role={entry.role}
                                 company={entry.company}
                                 location={entry.location}
+                                locationLinks={entry.locationLinks ?? []}
                                 date={entry.date}
                                 badges={entry.badges ?? []}
                                 url={entry.url ?? ''}

@@ -8,7 +8,7 @@
 
 {#if images.length > 0}
     <figure
-        class="collage animate relative w-full overflow-hidden bg-neutral-950 ring-1 ring-neutral-900/[0.06] dark:ring-white/[0.08] {images.length ===
+        class="collage animate relative w-full overflow-hidden bg-neutral-950 ring-1 ring-black/[0.08] dark:ring-white/[0.08] {images.length ===
         5
             ? 'is-mosaic'
             : 'is-grid'}"

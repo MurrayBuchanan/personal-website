@@ -54,6 +54,12 @@ export const experienceEntries: ExperienceEntry[] = [
     {
         company: 'Set Piece',
         location: 'Co-Founder and Funded by StrathInspire',
+        locationLinks: [
+            {
+                title: 'StrathInspire',
+                url: 'https://www.strath.ac.uk/workwithus/strathclydeinspire/',
+            },
+        ],
         date: '2022–Current',
         url: '/setpiece',
         category: 'projects',

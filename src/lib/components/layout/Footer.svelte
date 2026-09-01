@@ -39,10 +39,9 @@
         <div
             class="flex w-full min-w-0 flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
         >
-            <div class="flex min-w-0 flex-col gap-1 text-left">
-                <p class="type-lead !max-w-none">Murray Buchanan</p>
-                <p class="type-meta !max-w-none">© {year}</p>
-            </div>
+            <p class="type-lead !max-w-none min-w-0 text-left">
+                © {year} Murray Buchanan
+            </p>
 
             <ThemeToggle />
         </div>
