@@ -7,9 +7,11 @@
     export let newTab = false;
     export let className = '';
     export let size: 'body' | 'meta' = 'body';
+    export let relExtra = '';
 
     $: external = isExternalUrl(href);
     $: openNewTab = newTab || external;
+    $: rel = [relExtra, openNewTab ? 'noopener noreferrer' : ''].filter(Boolean).join(' ') || undefined;
 
     const bodyLinkClass =
         'type-link group/link relative inline-flex w-fit max-w-full items-center py-0.5 -my-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-light/40 dark:focus-visible:ring-secondary-dark/40';
@@ -26,7 +28,7 @@
     {href}
     class={classes}
     target={openNewTab ? '_blank' : undefined}
-    rel={openNewTab ? 'noopener noreferrer' : undefined}
+    rel={rel}
 >
     <span class="type-link-text">{label}</span>
     <Icon name={external ? 'arrow-up-right' : 'arrow-right'} size="sm" className={iconClass} />

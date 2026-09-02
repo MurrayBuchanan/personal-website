@@ -1,0 +1,22 @@
+{
+    "name": "Murray Buchanan",
+    "short_name": "Murray B",
+    "description": "I build full-stack products across research, apps, and community platforms.",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#fafaf9",
+    "theme_color": "#fafaf9",
+    "lang": "en-GB",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "147x147",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ]
+}

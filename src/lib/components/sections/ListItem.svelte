@@ -79,20 +79,24 @@
             {#if company}
                 {#if role}
                     {#if linkHref}
-                        <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
+                        <h3 class="min-w-0">
+                            <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
+                        </h3>
                     {:else}
-                        <p class="type-lead !max-w-none">
+                        <h3 class="type-lead !max-w-none">
                             {company}
-                        </p>
+                        </h3>
                     {/if}
                 {:else}
                     <div class="flex flex-wrap items-center gap-2">
                         {#if linkHref}
-                            <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
+                            <h3 class="min-w-0">
+                                <InlineLink href={linkHref} label={company} newTab={openInNewTab} />
+                            </h3>
                         {:else}
-                            <p class="type-lead !max-w-none">
+                            <h3 class="type-lead !max-w-none">
                                 {company}
-                            </p>
+                            </h3>
                         {/if}
                         {#each badges as badge (badge)}
                             <Badge text={badge} accent={badge === 'First-Class'} />

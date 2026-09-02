@@ -25,6 +25,7 @@
                     src={image.src}
                     alt={image.alt}
                     loading={isHero ? 'eager' : 'lazy'}
+                    fetchpriority={isHero ? 'high' : 'low'}
                     decoding="async"
                     draggable="false"
                     style={image.objectPosition

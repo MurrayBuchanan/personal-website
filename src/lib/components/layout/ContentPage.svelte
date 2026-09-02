@@ -16,7 +16,7 @@
     export let extraScrollPadding = false;
 </script>
 
-<PageLayout {extraScrollPadding}>
+<PageLayout {extraScrollPadding} seoTitle={title} {desc} {intro} {content}>
     <Heading {title} {desc} {intro} {links} />
     {#if content}
         {#if textColumns}

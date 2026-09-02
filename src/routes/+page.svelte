@@ -10,7 +10,11 @@
     import Divider from '$lib/components/ui/Divider.svelte';
 </script>
 
-<PageLayout extraScrollPadding>
+<PageLayout
+    extraScrollPadding
+    seoTitle="Murray Buchanan | Software Engineer"
+    intro="I build full-stack products across research, apps, and community platforms."
+>
     <Heading
         title="Murray Buchanan"
         desc="Software Engineer"

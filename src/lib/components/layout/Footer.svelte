@@ -10,6 +10,7 @@
         href: string;
         label: string;
         newTab?: boolean;
+        relExtra?: string;
     };
 
     const year = new Date().getFullYear();
@@ -19,11 +20,13 @@
         {
             href: 'https://www.linkedin.com/in/murraycbuchanan/',
             label: 'LinkedIn',
+            relExtra: 'me',
         },
-        { href: 'https://github.com/MurrayBuchanan', label: 'GitHub' },
+        { href: 'https://github.com/MurrayBuchanan', label: 'GitHub', relExtra: 'me' },
         {
             href: 'https://www.instagram.com/murray.c.buchanan/',
             label: 'Instagram',
+            relExtra: 'me',
         },
     ];
 </script>
@@ -54,6 +57,7 @@
                             href={link.href}
                             label={link.label}
                             newTab={link.newTab ?? true}
+                            relExtra={link.relExtra ?? ''}
                         />
                     </li>
                 {/each}

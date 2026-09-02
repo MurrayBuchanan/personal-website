@@ -8,15 +8,11 @@
     $: message = error?.message ?? 'Page not found';
 </script>
 
-<svelte:head>
-    <title>Murray Buchanan | {status}</title>
-</svelte:head>
-
-<PageLayout>
+<PageLayout noindex seoTitle="Murray Buchanan | {status}" seoDescription={message}>
     <div
         class="animate mt-0 flex w-full min-h-[2.75rem] flex-col items-start justify-end pt-[env(safe-area-inset-top,0px)] mb-4 sm:mb-5 sm:min-h-[3rem] md:min-h-[3.25rem] lg:min-h-[3.5rem]"
     >
-        <IconLink href="../" label="Home" name="home" size="lg" />
+        <IconLink href="/" label="Home" name="home" size="lg" />
     </div>
 
     <div

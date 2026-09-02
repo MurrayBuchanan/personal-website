@@ -22,14 +22,14 @@
             {/if}
 
             <section class="flex flex-col" aria-labelledby="section-{category}">
-                <p
+                <h2
                     id="section-{category}"
                     class="type-section animate px-0 pb-3 {sectionIndex === 0
                         ? 'pt-0'
                         : 'pt-4 sm:pt-5'}"
                 >
                     {sectionLabels[category]}
-                </p>
+                </h2>
 
                 <ul class="flex flex-col gap-4 sm:gap-5">
                     {#each rows as entry (entry.company)}

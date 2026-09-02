@@ -31,9 +31,9 @@
                     <div class={listGrid}>
                         <div class="col-span-1 min-w-0 text-left">
                             {#if item.title}
-                                <p class="type-lead !max-w-none">
+                                <h2 class="type-lead !max-w-none">
                                     {item.title}
-                                </p>
+                                </h2>
                             {/if}
                         </div>
 
@@ -68,9 +68,9 @@
                     {#if item.title || twoCol}
                         <div class="min-w-0 text-left">
                             {#if item.title}
-                                <h3 class="type-display">
+                                <h2 class="type-display">
                                     {item.title}
-                                </h3>
+                                </h2>
                             {/if}
                         </div>
                     {/if}
@@ -108,9 +108,9 @@
             {:else}
                 <section class="animate flex flex-col gap-3 sm:gap-3.5">
                     {#if item.title}
-                        <h3 class="type-section">
+                        <h2 class="type-section">
                             {item.title}
-                        </h3>
+                        </h2>
                     {/if}
 
                     <PageLinks links={itemLinks} label={item.title ?? 'Links'} />

@@ -19,13 +19,13 @@
 <main class="animate mt-0 pt-[env(safe-area-inset-top,0px)]">
     <div class="animate flex flex-col items-start justify-end {heroSlot}">
         {#if !isHomepage}
-            <IconLink href="../" label="Home" name="home" size="lg" />
+            <IconLink href="/" label="Home" name="home" size="lg" />
         {/if}
     </div>
 
-    <h2 class="type-display animate {!desc ? 'mb-6' : ''}">
+    <h1 class="type-display animate {!desc ? 'mb-6' : ''}">
         {title}
-    </h2>
+    </h1>
 
     {#if desc}
         <p class="type-lead animate pb-1 pt-1">

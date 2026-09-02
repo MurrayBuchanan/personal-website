@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /linkedin
+Disallow: /linkedin/
+
+Sitemap: https://murrayb.com/sitemap.xml
