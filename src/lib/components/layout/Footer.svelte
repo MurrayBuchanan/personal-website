@@ -49,8 +49,11 @@
             <ThemeToggle />
         </div>
 
-        <nav aria-label="Contact" class="w-full min-w-0">
-            <ul class="flex flex-wrap items-center gap-x-8 gap-y-3">
+        <nav
+            aria-label="Contact"
+            class="flex w-full min-w-0 flex-wrap items-center justify-between gap-x-8 gap-y-3"
+        >
+            <ul class="flex min-w-0 flex-wrap items-center gap-x-8 gap-y-3">
                 {#each contactLinks as link (link.href)}
                     <li class="min-w-0">
                         <InlineLink
@@ -62,6 +65,8 @@
                     </li>
                 {/each}
             </ul>
+
+            <InlineLink href="https://server.murrayb.com" label="Console" />
         </nav>
     </div>
 </footer>
