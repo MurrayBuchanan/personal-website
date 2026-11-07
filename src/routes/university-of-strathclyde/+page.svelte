@@ -28,6 +28,12 @@
             ],
         },
         {
+            title: 'Affiliate Lecturer',
+            desc: [
+                'I taught CS217 as an Affiliate Lecturer as part of the Agile Software Engineering in Practice (ASEP) team from JPMorgan Chase & Co.',
+            ],
+        },
+        {
             title: 'Final Project',
             desc: 'This was my dissertation, supervised by Dr Kieren Egan and awarded a distinction. The question was how to use speech as a signal in dementia rehabilitation: not to diagnose, but to notice linguistic change over time and make that change visible to the people supporting someone living with dementia.',
             links: [

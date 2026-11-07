@@ -52,6 +52,24 @@ export const experienceEntries: ExperienceEntry[] = [
         ],
     },
     {
+        company: 'University of Strathclyde',
+        date: '2025–Current',
+        url: '/university-of-strathclyde',
+        category: 'work',
+        positions: [
+            {
+                role: 'Affiliate Lecturer',
+                date: '2026–Current',
+                location: 'Glasgow, UK',
+            },
+            {
+                role: 'Teaching Assistant',
+                date: '2025',
+                location: 'Glasgow, UK',
+            },
+        ],
+    },
+    {
         company: 'Set Piece',
         location: 'Co-Founder and Funded by StrathInspire',
         locationLinks: [
